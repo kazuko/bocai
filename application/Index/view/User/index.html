@@ -1,0 +1,257 @@
+{include file="public/header" /}
+<section class="admin-user-list-middle">
+	<div class="admin-user-list-middle-sosobox"></div>
+	<div class="admin-user-list-middle-soso">
+		<form method="POST" action="{:url('Index/User/index')}">
+			<input type="text" name="soso" value="{$soso}" placeholder="请输入IP或者账号或者昵称"><button>查询</button>
+		</form>
+	</div>
+	<ul class="admin-user-list-middle-ul">
+		{foreach $list as $key => $vo}
+		<li>
+			<h3>{$vo.username}</h3>
+			<dl>
+				账号：{$vo.username}
+			</dl>
+			<dl>
+				昵称：{$vo.nickname}
+			</dl>
+			<dl>
+				电话：{$vo.phoneNumber}
+			</dl>
+			<dl>
+				总金币：{$vo.gold+$vo.bank}
+			</dl>
+			<dl>
+				可用金币：{$vo.gold}
+			</dl>
+			<dl>
+				银行金币：{$vo.bank}
+			</dl>
+			<dl>
+				积分：{$vo.integral}
+			</dl>
+			<dl>
+				状态：<span class="US{$vo.id}">{if $vo['status']==1}已查封{else/}正常{/if}</span>
+			</dl>
+			{foreach $vo['ips'] as $k => $v} 
+			<dl>
+				IP地址：{$v}
+			</dl>
+			{/foreach}
+			<div>
+				<span onclick="submitForm('sliver{$vo.id}')">积分流水</span>
+				<form method="post" action="{:url('Index/User/sliver')}" id="sliver{$vo.id}" style="display: none;">
+					<input type="hidden" name="username" value="{$vo.username}">
+				</form>
+				<span onclick="submitForm('pride{$vo.id}')">奖励</span>
+				<form style="display: none;" id="pride{$vo.id}" method="post" action="{:url('Index/User/pride')}">
+					<input type="hidden" name="username" value="{$vo.username}">
+				</form>
+				{if $vo['status']==1}
+				<span class="U{$vo.id}" data-acount="{$vo.id}" data-status="0" onclick="closeDown_deblocking(this)">解封</span>
+				{else/}
+				<span class="U{$vo.id}" data-acount="{$vo.id}" data-status="1" onclick="closeDown_deblocking(this)">查封</span>
+				{/if}
+				<span onclick="submitForm('{$vo.id}')">金币流水</span>
+				<form style="display: none;" id="{$vo.id}" method="post" action="{:url('Index/User/gold')}">
+					<input type="hidden" name="username" value="{$vo.username}">
+				</form>
+			</div>
+		</li>
+		{/foreach}
+	</ul>
+	<div class="admin-user-list-middle-loading">
+		加载中<span class="admin-user-list-middle-loading-status">...</span>
+	</div>
+	<script type="text/javascript">
+		// user_acount:用户账号
+		// user_status:0、表示解封；1、表示查封
+		var user_status,user_acount;
+		function closeDown_deblocking(that){
+			user_status = Number($(that).attr('data-status'));
+			user_acount = Number($(that).attr('data-acount'));
+			console.log('acount:'+user_acount+'; type:'+typeof(user_acount));
+			console.log('status:'+user_status+'; type:'+typeof(user_status));
+			if(user_status){
+				var tips = '您确定查封该用户？';
+			}else{
+				var tips = '您确定解封该用户？';
+			}
+			show_tips_box(tips,'提示',1,500,1000,3,true,true,function(){
+				$.ajax({
+					url: '{:url("Index/User/index")}',
+					type: 'POST',
+					data: {
+						id:user_acount,
+						status:user_status
+					},
+					dataType: 'json',
+					success:function(res){
+						console.log(res)
+						if(res['code']){
+							if(user_status){
+								show_tips_box('查封失败！');
+							}else{
+								show_tips_box('解封失败！');
+							}
+						}else{
+							if(user_status){
+								$('.U'+user_acount).html('解封');
+								$('.US'+user_acount).html('已查封');
+								$('.U'+user_acount).attr('data-status',0);
+							}else{
+								$('.U'+user_acount).html('查封');
+								$('.US'+user_acount).html('正常');
+								$('.U'+user_acount).attr('data-status',1);
+							}
+						}
+					},
+					fail:function(res){
+						console.log(res)
+						show_tips_box('发生未知错误！刷新试试！');
+					}
+				});
+			})
+
+		}
+
+		var page = 1;
+		var end = false;
+		var h_intval;
+		var loading = false;
+		function setIntval(){
+			$(".admin-user-list-middle-loading").show();
+			var i = 1;
+			h_intval = setInterval(function(e){
+				var str = '';
+				for(var j=0 ; j<i; j++){
+					str += '.';
+				}
+				console.log(str);
+				i++;
+				if(i==4){
+					i=1;
+				}
+				$(".admin-user-list-middle-loading-status").html(str);
+			},500);
+		}
+		function clearIntval(){
+			$(".admin-user-list-middle-loading").hide();
+			$(".admin-user-list-middle-loading-status").html('...');
+			clearInterval(h_intval);
+			h_intval = null;
+		}
+		$(window).scroll(function(){
+			if(end){
+				return false;
+			}
+			var scrollTop = $(this).scrollTop();
+			var scrollHeight = $(document).height();
+			var windowHeight = $(this).height();
+			　　if(scrollTop + windowHeight == scrollHeight){
+				if(loading){
+					return false;
+				}
+				loading = true;
+				if(!h_intval){
+					setIntval();
+				}
+				var soso = $('input[name="soso"]').val();
+				$.ajax({
+					url: '{:url("Index/User/index")}',
+					type: 'POST',
+					data: {
+						page: page,
+						condition: soso
+					},
+					dataType: 'json',
+					success: function(res){
+						clearIntval();
+						if(res[0]){
+							refresh(res);
+							page++;
+						}else{
+							end = true;
+						}
+						loading = false;
+					},
+					fial: function(res){
+						clearIntval();
+						show_tips_box('发生小小的意外，请检查网络是否正常！');
+						loading = false;
+					}
+				});
+			　　}
+		});
+
+		function refresh(data){
+			console.log(data.length);
+			var str = '';
+			for(var i = 0; i < data.length; i++){
+				str += '<li>';
+				str += '<h3>'+data[i]['username']+'</h3>';
+				str += '<dl>';
+				str += '账号：'+data[i]['username'];
+				str += '</dl>';
+				str += '<dl>';
+				str += '昵称：'+data[i]['nickname'];
+				str += '</dl>';
+				str += '<dl>';
+				str += '电话：'+data[i]['phoneNumber'];
+				str += '</dl>';
+				str += '<dl>';
+				str += '总金币：'+(data[i]['gold']+data[i]['bank']);
+				str += '</dl>';
+				str += '<dl>';
+				str += '可用金币：'+data[i]['gold'];
+				str += '</dl>';
+				str += '<dl>';
+				str += '银行金币：'+data[i]['bank'];
+				str += '</dl>';
+				str += '<dl>';
+				str += '积分：'+data[i]['integral'];
+				str += '</dl>';
+				str += '<dl>';
+				str += '状态：<span class="US'+data[i]['id']+'">';
+				if(data[i]['status']==1){
+					str += '已查封';
+				}else{
+					str += '正常';
+				}
+				str += '</span>';
+				str += '</dl>';
+				if(data[i]['ips']){
+					for(var j = 0; j < data[i]['ips'].length; j++){
+						str += '<dl>';
+						str += 'IP地址：'+data[i]['ips'][j];
+						str += '</dl>';
+					}
+				}
+				str += '<div>';
+				str += '<span style="margin-left:3vw;" onclick="submitForm('+"'"+'sliver'+data[i]['id']+"'"+')">积分流水</span>';
+				str += '<form method="post" action="{:url('Index/User/sliver')}" id="sliver'+data[i]['id']+'" style="display: none;">';
+				str += '<input type="hidden" name="username" value="'+data[i]['username']+'">';
+				str += '</form>';
+				str += '<span style="margin-left:3vw;" onclick="submitForm('+"'"+'pride'+data[i]['id']+"'"+')">奖励</span>';
+				str += '<form style="display: none;" id="pride'+data[i]['id']+'" method="post" action="{:url('Index/User/pride')}">';
+				str += '<input type="hidden" name="username" value="'+data[i]['username']+'">';
+				str += '</form>';
+				if(data[i]['status']==1){
+					str += '<span style="margin-left:3vw;" class="U'+data[i]['id']+'" data-acount="'+data[i]['id']+'" data-status="0" onclick="closeDown_deblocking(this)">解封</span>';
+				}else{
+					str += '<span style="margin-left:3vw;" class="U'+data[i]['id']+'" data-acount="'+data[i]['id']+'" data-status="1" onclick="closeDown_deblocking(this)">查封</span>';
+				}
+				str += '<span style="margin-left:3vw;" onclick="submitForm('+"'"+data[i]['id']+"'"+')">金币流水</span>';
+				str += '<form style="display: none;" id="'+data[i]['id']+'" method="post" action="{:url('Index/User/gold')}">';
+				str += '<input type="hidden" name="username" value="'+data[i]['username']+'">';
+				str += '</form>';
+				str += '</div>';
+				str += '</li>';
+			}
+
+			$(".admin-user-list-middle-ul").append(str);
+		}
+	</script>
+</section>
+{include file="public/footer" /}

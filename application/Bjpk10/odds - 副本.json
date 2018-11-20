@@ -1,0 +1,91 @@
+{
+  "version":0,
+  "rule":{
+
+  },
+  "odds":{
+    "qianyi":{
+      "qianyi":{
+        "qianyi":9.800
+      }
+    },
+    "qianer":{
+      "qianer":{
+        "qianerfushi":88.200,
+        "qianerdanshi":88.200
+      }
+    },
+    "qiansan":{
+      "qiansan":{
+        "qiansanfushi":705.600,
+        "qiansandanshi":705.600
+      }
+    },
+    "dindanwei":{
+      "dindanwei":{
+        "dindanwei":9.800,
+        "1~5":9.800,
+        "6~10":9.800
+      }
+    },
+    "guanyahe":{
+      "guanyahe":{
+        "hezhi":{
+          "sum_3":44.100,
+          "sum_4":44.100,
+          "sum_5":22.050,
+          "sum_6":22.050,
+          "sum_7":14.700,
+          "sum_8":14.700,
+          "sum_9":11.025,
+          "sum_10":11.025,
+          "sum_11":8.820,
+          "sum_12":11.025,
+          "sum_13":11.025,
+          "sum_14":14.700,
+          "sum_15":14.700,
+          "sum_16":22.050,
+          "sum_17":22.050,
+          "sum_18":44.100,
+          "sum_19":44.100
+        }
+      }
+    },
+    "longhu":{
+      "longhu":{
+        "guanjun":1.980,
+        "yajun":1.980,
+        "jijun":1.980,
+        "disimin":1.980,
+        "diwumin":1.980
+      }
+    },
+    "wuxin":{
+      "wuxin":{
+        "guanjun":4.851,
+        "yajun":4.851,
+        "jijun":4.851
+      }
+    },
+    "daxiaodanshuang":{
+      "daxiao": {
+        "daxiao~guanjun": 1.96,
+        "daxiao~yajun": 1.96,
+        "daxiao~jijun": 1.96
+      },
+      "danshuang": {
+        "danshuang~guanjun": 1.96,
+        "danshuang~yajun": 1.96,
+        "danshuang~jijun": 1.96
+      },
+      "guanyahe": {
+        "daxiaodanshuang": {
+          "da": 2.205,
+          "xiao": 1.764,
+          "dan": 1.764,
+          "shuang": 2.205
+        }
+      }   
+    }
+  }
+}

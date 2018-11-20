@@ -1,0 +1,240 @@
+{include file="public/header" /}
+<section class="admin-rank-middle">
+	<div class="admin-rank-nav">
+		<span class="active">积分头衔</span>
+		<span>金币头衔</span>
+		<span>特殊头衔</span>
+	</div>
+	<div class="admin-rank-navbox"></div>
+	<ul class="admin-rank-list">
+		{foreach $list1 as $key => $vo}
+		<li id="Li{$vo.id}">
+			<form method="POST" id="form{$vo.id}" enctype="multipart/form-data">
+				<div>
+					<span>头衔</span>
+					<input type="text" name="name" value="{$vo.name}">
+					<span>积分</span>
+					<input type="text" name="min" value="{$vo.min}">—<input type="text" name="max" value="{$vo.max}">
+				</div>
+				<div>
+					<span class="leftbox">
+						<i>勋章</i>
+						<i onclick="uploadFunc('upload0{$key}Input')">上传</i>
+						<input type="hidden" name="id" value="{$vo.id}">
+						<input id="upload0{$key}Input" type="file" name="src" style="display: none;" onchange="preview('upload0{$key}Input','upload0{$key}Img')">
+					</span>
+					<span class="centerbox">
+						<img id="upload0{$key}Img" src="{$vo.src}">
+					</span>
+					<span class="rightbox">
+						<textarea name="desc">{$vo.desc}</textarea>
+					</span>
+					<dl>
+						<button type="button" onclick="save('form{$vo.id}')">保存</button>
+						<button type="button" onclick="delRank({$vo.id})">删除</button>
+					</dl>
+				</div>
+				<input type="hidden" name="flag" value="{$vo.flag}">
+			</form>
+			<div class="clear" style="height: 0px;padding: 0px;"></div>
+		</li>
+		{/foreach}
+	</ul>
+	<ul class="admin-rank-list" style="display: none;">
+		{foreach $list2 as $key => $vo}
+		<li id="Li{$vo.id}">
+			<form method="POST" id="form{$vo.id}" enctype="multipart/form-data">
+				<div>
+					<span>头衔</span>
+					<input type="text" name="name" value="{$vo.name}">
+					<span>积分</span>
+					<input type="text" name="min" value="{$vo.min}">—<input type="text" name="max" value="{$vo.max}">
+				</div>
+				<div>
+					<span class="leftbox">
+						<i>勋章</i>
+						<i onclick="uploadFunc('upload1{$key}Input')">上传</i>
+						<input type="hidden" name="id" value="{$vo.id}">
+						<input id="upload1{$key}Input" type="file" name="src" style="display: none;" onchange="preview('upload1{$key}Input','upload1{$key}Img')">
+					</span>
+					<span class="centerbox">
+						<img id="upload1{$key}Img" src="{$vo.src}">
+					</span>
+					<span class="rightbox">
+						<textarea name="desc">{$vo.desc}</textarea>
+					</span>
+					<dl>
+						<button type="button" onclick="save('form{$vo.id}')">保存</button>
+						<button type="button" onclick="delRank({$vo.id})">删除</button>
+					</dl>
+				</div>
+				<input type="hidden" name="flag" value="{$vo.flag}">
+			</form>
+			<div class="clear" style="height: 0px;padding: 0px;"></div>
+		</li>
+		{/foreach}
+	</ul>
+	<ul class="admin-rank-list" style="display: none;">
+		{foreach $list3 as $key => $vo}
+		<li id="Li{$vo.id}">
+			<form method="POST" id="form{$vo.id}" enctype="multipart/form-data">
+				<div>
+					<span>头衔</span>
+					<input type="text" name="name" value="{$vo.name}" style="width: 80%;">
+				</div>
+				<div>
+					<span class="leftbox">
+						<i>勋章</i>
+						<i onclick="uploadFunc('upload2{$key}Input')">上传</i>
+						<input type="hidden" name="id" value="{$vo.id}">
+						<input id="upload2{$key}Input" type="file" name="src" style="display: none;" onchange="preview('upload2{$key}Input','upload2{$key}Img')">
+					</span>
+					<span class="centerbox">
+						<img id="upload2{$key}Img" src="{$vo.src}">
+					</span>
+					<span class="rightbox">
+						<textarea name="desc">{$vo.desc}</textarea>
+					</span>
+					<dl>
+						<button type="button" onclick="save('form{$vo.id}')">保存</button>
+						<button type="button" onclick="delRank({$vo.id})">删除</button>
+					</dl>
+				</div>
+				<input type="hidden" name="flag" value="{$vo.flag}">
+			</form>
+			<div class="clear" style="height: 0px;padding: 0px;"></div>
+		</li>
+		{/foreach}
+	</ul>
+	<div class="admin-rank-addBtn">
+		<button onclick="addLi()">添加勋章</button>
+	</div>
+	<script type="text/javascript">
+		var delid = '';
+		function delRank(rankid){
+			delid = rankid;
+			show_tips_box('该操作可能会给系统运行带来不良影响，您确定删除该勋章？','提示',1,500,1000,3,true,true,function(){
+				$.ajax({
+					url: '{:url("Index/Rank/delete")}',
+					type: 'post',
+					dataType: 'json',
+					data: {
+						id: delid
+					},
+					success: function(res){
+						show_tips_box(res['msg']);
+						if(!res['code']){
+							$("#Li"+delid).remove();
+						}
+					},
+					fail: function(res){
+						show_tips_box("请检查网络是否正常！");
+					}
+				});
+			});
+		}
+		
+		function save(formid){
+			submitForm(formid,'{:url("Index/Rank/save")}',function(res){
+				show_tips_box(res['msg']);
+				if(res['id']){
+					$("#"+formid).find('input[name="id"]').val(res['id']);
+					$("#"+formid).parent('li').attr('id','Li'+res['id']);
+					$("#"+formid).find('button').eq(1).html('删除').attr('onclick','delRank('+res['id']+')');
+				}
+			});
+		}
+		function cancel(i,j){
+			$("#Li"+i+'-'+j).remove();
+		}
+		// 添加勋章
+		function addLi(){
+			var i = $(".active").index();
+			// console.log(i);
+			var j = $('.admin-rank-middle ul').eq(i).find('li').last().index();
+			if((j+1)<=0){
+				j=0;
+			}else{
+				j = j+1;
+			}
+			var str = '<li id="Li'+i+'-'+j+'">'
+			str += '<form method="post" id="form'+i+'-'+j+'">';
+			str += '<div>';
+			str += '<span>头衔</span>';
+			str += '<input style="margin-left:2.6vw;';
+			if(Number(i)==2){
+				str += 'width: 80% !important;';
+			}
+			str += '" type="text" name="name" value="">';
+			if(i!=2){
+				str += '<span style="margin-left:2.6vw;">积分</span>';
+				str += '<input style="margin-left:2.6vw;" type="text" onfocus="mkval(this)" name="min" value="0">—<input type="text" onfocus="mkval(this)" name="max" value="0">';
+			}
+			str += '</div>';
+			str += '<div>';
+			str += '<span class="leftbox">';
+			str += '<i>勋章</i>';
+			str += '<i onclick="uploadFunc('+"'upload"+i+'-'+j+"Input'"+')">上传</i>';
+			str += '<input type="hidden" name="id" value="">';
+			str += '<input id="upload'+i+'-'+j+'Input" type="file" onchange="preview('+"'upload"+i+'-'+j+"Input'"+','+"'upload"+i+'-'+j+"Img'"+')" name="src" style="display: none;">';
+			str += '</span>';
+			str += '<span class="centerbox">';
+			str += '<img id="upload'+i+'-'+j+'Img" src="">';
+			str += '</span>';
+			str += '<span class="rightbox">';
+			str += '<textarea name="desc"></textarea>';
+			str += '</span>';
+			str += '<dl>';
+			str += '<button type="button" onclick="save('+"'"+'form'+i+'-'+j+"'"+')">保存</button>';
+			str += '<button type="button" class="" style="margin-left:3vw;" onclick="cancel('+i+','+j+')">取消</button>';
+			str += '</dl>';
+			str += '</div>';
+			str += '<input type="hidden" name="flag" value="'+i+'" />';
+			str += '</form>';
+			str += '<div class="clear" style="height: 0px;padding: 0px;"></div>';
+			str += '</li>';
+			// console.log(str)
+			$('.admin-rank-middle ul').eq(i).append(str);
+			$('.admin-rank-middle ul li').trigger('create');
+		}
+		function uploadFunc(id){
+			$('#'+id).trigger('click');
+		}
+		function preview(fileId,prevId){
+			console.log(fileId);
+			console.log(prevId);
+			var file = document.getElementById(fileId).files[0];
+			if(!file || file.length===0){
+				return;
+			}
+			var prev = document.getElementById(prevId);
+			var r = new FileReader();
+			r.readAsDataURL(file);
+			r.onload = function(e){
+				prev.src = this.result;			
+			}
+		}
+		function mkval(that){
+			$(that).on('input propertychange',function(res){
+				$(this).val($(this).val().match(/[0-9]*/));
+			});
+		}
+		$('.admin-rank-nav span').click(function(e){
+			$(this).addClass('active').siblings().removeClass('active');
+			var i = $(this).index();
+			console.log(i)
+			$('.admin-rank-middle ul').each(function(x,y){
+				console.log(x);
+				if(x==i){
+					$(this).show();
+				}else{
+					$(this).hide();
+				}
+			});
+		});
+		$('input[name="min"],input[name="max"]').on('input propertychange',function(res){
+			$(this).val($(this).val().match(/[0-9]*/));
+		});
+	</script>
+</section>
+{include file="public/footer" /}

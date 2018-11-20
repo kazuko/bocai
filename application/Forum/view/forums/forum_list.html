@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Ch">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10,chrome=1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="description" content="">
+<meta name="author" content="">
+<title>菠菜论坛</title>
+<link href="__PUBLIC__/luntan/css/bootstrap.min.css" rel="stylesheet"
+	type="text/css">
+<link href="__PUBLIC__/luntan/css/style.css" rel="stylesheet">
+<link href="__PUBLIC__/luntan/color/default.css" rel="stylesheet">
+<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+<!--[if lt IE 9]>
+	  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<!-- [if lt IE 7]> 
+  <script src='http://ie7-js.googlecode.com/svn/version/2.0(beta)/IE7.js' type=”text/javascript”></script> 
+  <![endif]-–> -->
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+	{if isset($user_id) }
+	<header>
+		<!-- 导航 -->
+		<nav class="navbar navbar-fixed-bottom" role="navigation">
+			<!-- 收集导航链接、表单和其他内容以进行切换。 -->
+			<div align="center">
+				<a href="#intro" class="totop"><i class="fa fa-angle-up fa-3x"></i></a>
+			</div>
+			<div class="btn-group btn-group-justified" role="group" aria-label="">
+				<a class="btn navbar-custom"
+					style="font-size: 18px; font-weight: 700;" role="button"
+					href="#about">主页</a> <a class="btn navbar-custom"
+					style="font-size: 18px; font-weight: 700;" role="button"
+					href="#service">聊天</a> <a class="btn navbar-custom"
+					style="font-size: 18px; font-weight: 700;" role="button"
+					href="#works">社区</a> <a class="btn navbar-custom"
+					style="font-size: 18px; font-weight: 700;" role="button"
+					href="#contact">我</a>
+			</div>
+			<!-- /.导航条-崩溃 -->
+		</nav>
+		<!-- /导航条 -->
+	</header>
+
+	<section id="intro" class="section-heading text-center">
+		<div class="tiezi">
+			<a href="forum_list.html" class="left-a-details"><span
+				class="glyphicon glyphicon-chevron-left"></span></a>
+			<h6 style="color: #fff;">社区</h6>
+			<a href="{:url('Forum/Forums/forum_exit')}" class="right-a-details"><span
+				class="glyphicon glyphicon-log-out"></span></a>
+		</div>
+		<div class="panel panel-default">
+			<!-- Table -->
+			<table class="table table-hover">
+				<tr>
+					{if isset($result) && $result == 500}
+					<div class="alert alert-danger alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<strong>发生未知错误，请您重新登录!</strong>
+					</div>
+					{/if} {if isset($result) && $result == 501}
+					<div class="alert alert-warning alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<strong>尊敬的用户，该区只限定会员才可进入！</strong>
+					</div>
+					{/if}
+				</tr>
+				{volist name="zone" id="vo" empty="暂时没有分区" }
+				<tr class="text-left luntan-href"
+					onclick="window.location.href='{:url('Forum/Forums/forum_details')}?user_id={$user_id}&id={$vo.id}'">
+					<td class="success">
+						<div class="pull-left">
+							<img class="pull-left label-left" src="{$vo.img}" width="50px" height="50px"/>
+						</div>
+						<div class="pull-left index-content">
+							<span class="index-bt pull-left">{$vo.title}</span>
+							<span class="index-zt">帖数:{$vo.COUNT}</span>
+							<span class="index-content-content">{$vo.post_title}</span>
+						</div>
+						<div class="pull-right index-right">
+							<span class="label label-primary pull-right time-label">{$vo.name}</span>
+							<span class="time-span" title="{$vo.ADDTIME}">{$vo.ADDTIME}&nbsp;{$vo.user_name}</span>
+						</div>
+					</td>
+				</tr>
+				{/volist}
+			</table>
+		</div>
+	</section>
+	{else /}
+	<a href="{:url('Forum/Forums/forum_login')}">登录超时，点击重新登录</a>
+	{/if}
+	<!-- 核心JavaScript文件 -->
+	<script src="__PUBLIC__/luntan/js/jquery.min.js"></script>
+	<script src="__PUBLIC__/luntan/js/bootstrap.min.js"></script>
+	<script src="__PUBLIC__/luntan/contactform/contactform.js"></script>
+</body>
+
+</html>

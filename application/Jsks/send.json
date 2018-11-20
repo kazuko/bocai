@@ -1,0 +1,114 @@
+{
+  "version": 0,
+  "rules": {
+    "twoDiffrent-twoDiffrent-commom": {
+      "tips": "从1-6中任选2个不相同的号码组成一注。",
+      "rule": "不限顺序，开奖号中包含全部所选号，即为中奖。",
+      "case": "选号：24，开奖号：24*。"
+    },
+    "twoDiffrent-twoDiffrent-handy": {
+      "tips": "手动输入1个两位数号码组成一注。",
+      "rule": "不限顺序，开奖号中包含全部输入号，即为中奖。",
+      "case": "输入号：24，开奖号：24*%"
+    },
+    "twoDiffrent-twoDiffrent-dantuo": {
+      "tips": "选1个胆码和1-5个拖码组成一注，胆拖码不少于2个号码。",
+      "rule": "所选号与开奖号任意2号相同，即为中奖。",
+      "case": "胆码：2，拖码：4，开奖号：24*。"
+    },
+    "twoSame-twoSame-handy": {
+      "tips": "手动输入1个三位数号码（其中两个号码需相同）组成一注。",
+      "rule": "不限顺序，开奖号中包含全部输入号，即为中奖。",
+      "case": "输入号：355，开奖号：355。"
+    },
+    "twoSame-twoSameSg-commom": {
+      "tips": "从二同号和不同号中各选1个号码组成一注。",
+      "rule": "不限顺序，开奖号中包含全部所选号，即为中奖。",
+      "case": "选号：35，开奖号：3*5。"
+    },
+
+    "twoSame-twoSameDb-twoSameDb": {
+      "tips": "从6组对子中任选1组对子号码组成一注。",
+      "rule": "不含豹子号码，开奖号中包含所选的对子号码，即为中奖。",
+      "case": "选号：11*，开奖号：11*，即为中奖。"
+    },
+    "threeDiffrent-threeDiffrent-commom": {
+      "tips": "从1-6中任选3个不相同的号码组成一注。",
+      "rule": "不限顺序，所选号与开奖号相同，即为中奖。",
+      "case": "选号：256，开奖号：256。"
+    },
+    "threeDiffrent-threeDiffrent-handy": {
+      "tips": "手动输入3个不同的号码组成一注。",
+      "rule": "不限顺序，输入号与开奖号相同，即为中奖。",
+      "case": "输入号：256，开奖号：256。"
+    },
+    "threeSame-threeSameSg-threeSameSg": {
+      "tips": "选任意一组豹子号码组成一注。",
+      "rule": "所选号与开奖号相同，即为中奖。",
+      "case": "选号：333，开奖号：333。"
+    },
+    "threeSame-threeSameDb-threeSameDb": {
+      "tips": "对6组豹子号码进行通选投注。",
+      "rule": "开奖号与6组豹子号中任意一组号码相同，即为中奖。",
+      "case": "选号：111 222 333 444 555 666，开奖号：333。"
+    },
+    "threeConAll-threeConAll-threeConAllCommom": {
+      "tips": "对4组三连号进行通选投注。",
+      "rule": "开奖号与4组三连号中任意一组号码相同，即为中奖。",
+      "case": "选号：123 234 345 456，开奖号：234。"
+    },
+    "sum-sum-size": {
+      "tips": "对3个开奖号相加之和的大（11~18）、小（3~10）、单、双进行投注，任选一个形态为一注。",
+      "rule": "所选的形态与3个开奖号码相加之和的形态相同，即为中奖。",
+      "case": "投注：大单，开奖号256，3个开奖号相加之和13为单数，且在大的范围内，故中奖。"
+    },
+    "sum-sum-sum": {
+      "tips": "从3-18中任选1个号码组成一注。",
+      "rule": "所选号等于开奖号的3个号码相加之和，即为中奖。",
+      "case": "选号：14，开奖号：356，和值为14。"
+    }
+  },
+  "odds": {
+    "sum": {
+      "sum": {
+        "sum_3": 190,
+        "sum_4": 60,
+        "sum_5": 31,
+        "sum_6": 18,
+        "sum_7": 12,
+        "sum_8": 9,
+        "sum_9": 8,
+        "sum_10": 7,
+        "sum_11": 7,
+        "sum_12": 8,
+        "sum_13": 9,
+        "sum_14": 12,
+        "sum_15": 19,
+        "sum_16": 31,
+        "sum_17": 63,
+        "sum_18": 190
+      },
+      "size": {
+        "big": 2,
+        "small": 2,
+        "bigSingle": 3,
+        "bigDouble": 3,
+        "smallSingle": 3,
+        "smallDouble": 3,
+        "single": 2,
+        "double": 2
+      }
+    },
+    "threeSame": {
+      "threeSameDb": 32,
+      "threeSameSg": 190
+    },
+    "threeConAll": 8,
+    "threeDiffrent": 32,
+    "twoSame": {
+      "twoSameDb": 12,
+      "twoSameSg": 63
+    },
+    "twoDiffrent": 6
+  }
+}

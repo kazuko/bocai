@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>庄家</title>
+</head>
+<body onload=connect('banker')>
+<button onclick=sanGong('tom')>庄家发牌</button>
+</body>
+</html>
+
+<script type="text/javascript">
+ws = new WebSocket("ws://127.0.0.1:2300");
+function sanGong(sanGong){
+	var data = '{"player":"banker","id":13}'
+	var obj = JSON.parse(data);         
+    alert("庄家 :"+obj.id+" 开始发牌");
+    ws.send(data);
+}
+
+function connect(sanGong){
+	ws.onopen = function() {
+	    alert("给服务端发送一个字符串:"+sanGong);
+	    ws.send(sanGong);
+	};
+	
+	ws.onmessage = function(e) {
+	switch(e.data){
+		case 0:
+		alert("收到服务端的消息：" + e.data);
+		break;
+		default:
+	    console.log(e.data);
+	    // ws.send(e.data);
+	    break;
+	}
+};
+}
+
+</script>
+</body>
+</html>

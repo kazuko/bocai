@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>菠菜注册系统</title>
+  <meta name="renderer" content="webkit|ie-comp|ie-stand">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+  <script type="text/javascript" src="__PUBLIC__/Home/static/js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/Home/static/js/layer.js"></script>
+  <!-- <script type="text/javascript" src="__PUBLIC__/xadmin/lib/layui/lay/modules/layer.js"></script> -->
+  <style type="text/css">
+  body{
+    text-align:center;
+  }
+    .register.container{
+      margin:2vh auto;
+    }
+    .linebox{
+    }
+    .linebox label{
+    }
+    .linebox input{
+      border:1px solid black;
+      margin-top:2vh;
+    }
+    .linebox span{
+    }
+    .linebox a{
+    }
+    .linebox button{
+    }
+  </style>
+</head>
+<body>
+  <div class="register container">
+    <form>
+      <div class="linebox">
+        <label>&nbsp;&nbsp;&nbsp;&nbsp;登录：</label>
+         <input type="text" name="username">
+      </div>
+      <div class="linebox">
+        <label>&nbsp;&nbsp;&nbsp;&nbsp;密码：</label>
+         <input type="text" name="password">
+      </div>
+      <div class="linebox">
+        <label>确认密码：</label>
+         <input type="text" name="repassword">
+      </div>
+      <div class="linebox">
+         <input type="phonenumber" name="phonenumber" placeholder="请输入手机号" id="show_statu">
+         <button class="getverify" type="button" id="Submitbfs">获取验证码</button>
+      </div>
+      <div class="linebox">
+        <input type="verify" name="verify">
+        <label>验证码</label>
+      </div>
+      <div class="linebox">
+         <button class="register" type="button">注册</button>
+      </div>
+      <div class="linebox">
+        <span>已有账号：：？ </span><a href="{:url('Home/Login/login')}">登录</a>
+      </div>
+    </form>    
+  </div>
+  
+   <!-- 控制手机获取验证的时间间隔 -->
+  <script type="text/javascript" src="__PUBLIC__/Home/static/js/yz.js"></script>
+    <script>
+      //获取手机验证码
+      $("button.getverify").click(function(){
+        var phonenumber = $("input[name='phonenumber']").val();
+        var url = "{:url('Home/Login/getverify')}";//getverify获取验证码
+        if(!phonenumber){
+          layer.msg("手机号不能为空");
+          return false;
+        }
+        $.ajax({
+          type:"GET",
+          url:url,
+          data:{"phonenumber":phonenumber},
+          datatype:'text',
+          success:function(data){
+            layer.msg(data);
+            return false;
+          },
+          error:function(data){
+            layer.msg(data);
+            return false;
+          }
+        })
+      })
+      //输入手机验证码之后的ajax表单验证
+      $("button.register").click(function(){
+        var username = $("input[name='username']").val();
+        var phonenumber = $("input[name='phonenumber']").val();
+        var verify = $("input[name='verify']").val();
+        var password = $("input[name='password']").val();
+        var repassword = $("input[name='repassword']").val();
+        var url = "{:url('Home/Login/register')}";
+        if(!username){
+          layer.msg("用户名不能为空");
+          return false;
+        }
+         if(!phonenumber){
+          layer.msg("手机号不能为空");
+          return false;
+        }
+         if(!password){
+          layer.msg("用户密码不能为空");
+          return false;
+        }
+         if(password!=repassword){
+          layer.msg("两次输入密码不一致");
+          return false;
+        }
+        if(!verify){
+          layer.msg("验证码不能为空");
+          return false;
+        }
+        $.ajax({
+          type:"GET",
+          url : url,
+          data:{username:username,password:password,phonenumber:phonenumber,verify:verify},
+          datatype:"text",
+          success:function(data){
+            if(data==1){
+              layer.msg('注册成功',function(){
+                window.location.href="{:url('Home/index/index')}";
+              });
+            }
+            else{
+              layer.msg('注册失败');
+            }
+          },
+          error:function(data){
+            console.log(data);
+            return false;
+          }
+        })
+      })
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,752 @@
+2018-08-25 11:47:34 pid:1 exception 'think\exception\ErrorException' with message 'Undefined variable: output' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:68
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(68): think\Error::appError(8, 'Undefined varia...', 'H:\\phpstudy\\WWW...', 68, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onWorkerStart(Object(Workerman\Worker))
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2220): call_user_func(Array, Object(Workerman\Worker))
+#3 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1225): Workerman\Worker->run()
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1168): Workerman\Worker::forkWorkersForWindows()
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(478): Workerman\Worker::forkWorkers()
+#6 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(95): Workerman\Worker::runAll()
+#7 H:\phpstudy\WWW\bc\application\http\MyWorker.php(68): app\http\controller\MyWorkerServer->start()
+#8 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#9 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#10 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#13 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#14 {main}
+2018-08-25 11:47:35 pid:1 Worker process terminated
+2018-08-25 11:49:13 pid:1 exception 'think\exception\ErrorException' with message 'Undefined variable: host' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:71
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(71): think\Error::appError(8, 'Undefined varia...', 'H:\\phpstudy\\WWW...', 71, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onWorkerStart(Object(Workerman\Worker))
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2220): call_user_func(Array, Object(Workerman\Worker))
+#3 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1225): Workerman\Worker->run()
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1168): Workerman\Worker::forkWorkersForWindows()
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(478): Workerman\Worker::forkWorkers()
+#6 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(98): Workerman\Worker::runAll()
+#7 H:\phpstudy\WWW\bc\application\http\MyWorker.php(68): app\http\controller\MyWorkerServer->start()
+#8 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#9 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#10 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#13 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#14 {main}
+2018-08-25 11:49:14 pid:1 Worker process terminated
+2018-08-25 11:50:52 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'app\http\controller\Application' not found in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php on line 77"
+2018-08-25 14:25:35 pid:1 exception 'think\exception\ErrorException' with message 'Object of class Workerman\Connection\TcpConnection could not be converted to string' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:88
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(88): think\Error::appError(4096, 'Object of class...', 'H:\\phpstudy\\WWW...', 88, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #90)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(289): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2235): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1225): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1168): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(478): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(98): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(68): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-08-25 14:25:35 pid:1 Worker process terminated
+2018-08-25 14:27:48 pid:1 exception 'think\exception\ErrorException' with message 'Object of class Workerman\Connection\TcpConnection could not be converted to string' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:88
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(88): think\Error::appError(4096, 'Object of class...', 'H:\\phpstudy\\WWW...', 88, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #90)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(289): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2235): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1225): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1168): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(478): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(98): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(68): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-08-25 14:27:48 pid:1 Worker process terminated
+2018-08-25 14:41:27 pid:1 exception 'think\exception\ErrorException' with message 'Array to string conversion' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:89
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(89): think\Error::appError(8, 'Array to string...', 'H:\\phpstudy\\WWW...', 89, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #90)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(289): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2235): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1225): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1168): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(478): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(100): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(68): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-08-25 14:41:27 pid:1 Worker process terminated
+2018-08-25 14:46:05 pid:1 exception 'think\exception\ErrorException' with message 'Cannot modify header information - headers already sent by (output started at H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:88)' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:89
+Stack trace:
+#0 [internal function]: think\Error::appError(2, 'Cannot modify h...', 'H:\\phpstudy\\WWW...', 89, Array)
+#1 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(89): header('HTTP/1.1', true, 200)
+#2 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#3 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #90)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(289): call_user_func_array(Array, Array)
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2235): Workerman\Events\Select->loop()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1225): Workerman\Worker->run()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1168): Workerman\Worker::forkWorkersForWindows()
+#9 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(478): Workerman\Worker::forkWorkers()
+#10 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(101): Workerman\Worker::runAll()
+#11 H:\phpstudy\WWW\bc\application\http\MyWorker.php(68): app\http\controller\MyWorkerServer->start()
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#17 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#18 {main}
+2018-08-25 14:46:05 pid:1 Worker process terminated
+2018-08-25 14:48:07 pid:1 exception 'think\exception\ErrorException' with message 'Cannot modify header information - headers already sent by (output started at H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:88)' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:89
+Stack trace:
+#0 [internal function]: think\Error::appError(2, 'Cannot modify h...', 'H:\\phpstudy\\WWW...', 89, Array)
+#1 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(89): header('HTTP/1.1', true, 200)
+#2 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#3 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #90)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(289): call_user_func_array(Array, Array)
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2235): Workerman\Events\Select->loop()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1225): Workerman\Worker->run()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1168): Workerman\Worker::forkWorkersForWindows()
+#9 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(478): Workerman\Worker::forkWorkers()
+#10 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(101): Workerman\Worker::runAll()
+#11 H:\phpstudy\WWW\bc\application\http\MyWorker.php(68): app\http\controller\MyWorkerServer->start()
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#17 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#18 {main}
+2018-08-25 14:48:07 pid:1 Worker process terminated
+2018-08-25 14:53:54 pid:1 Worker process terminated with ERROR: E_ERROR "Call to a member function getMessage() on array in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php on line 88"
+2018-08-25 14:57:09 pid:1 Worker process terminated with ERROR: E_ERROR "Call to undefined method think\worker\Application::delete() in H:\phpstudy\WWW\bc\vendor\topthink\think-worker\src\Application.php on line 38"
+2018-08-25 15:22:39 pid:1 exception 'think\exception\ErrorException' with message 'preg_match_all(): Unknown modifier 'g'' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:94
+Stack trace:
+#0 [internal function]: think\Error::appError(2, 'preg_match_all(...', 'H:\\phpstudy\\WWW...', 94, Array)
+#1 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(94): preg_match_all('/\\[(.*)\\](.*)/g', '[client1-client...', NULL)
+#2 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '[client1-client...')
+#3 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '[client1-client...')
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #91)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(289): call_user_func_array(Array, Array)
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2235): Workerman\Events\Select->loop()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1225): Workerman\Worker->run()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1168): Workerman\Worker::forkWorkersForWindows()
+#9 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(478): Workerman\Worker::forkWorkers()
+#10 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(108): Workerman\Worker::runAll()
+#11 H:\phpstudy\WWW\bc\application\http\MyWorker.php(68): app\http\controller\MyWorkerServer->start()
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#17 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#18 {main}
+2018-08-25 15:22:39 pid:1 Worker process terminated
+2018-08-25 15:47:48 pid:1 exception 'Exception' with message 'You can't send(array) to client, you need to convert it to a string. ' in H:\phpstudy\WWW\bc\vendor\workerman\workerman\Protocols\Websocket.php:236
+Stack trace:
+#0 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(336): Workerman\Protocols\Websocket::encode(Array, Object(Workerman\Connection\TcpConnection))
+#1 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(105): Workerman\Connection\TcpConnection->send(Array)
+#2 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '[client1-client...')
+#3 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '[client1-client...')
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #91)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(289): call_user_func_array(Array, Array)
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2235): Workerman\Events\Select->loop()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1225): Workerman\Worker->run()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1168): Workerman\Worker::forkWorkersForWindows()
+#9 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(478): Workerman\Worker::forkWorkers()
+#10 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(117): Workerman\Worker::runAll()
+#11 H:\phpstudy\WWW\bc\application\http\MyWorker.php(68): app\http\controller\MyWorkerServer->start()
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#17 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#18 {main}
+2018-08-25 15:47:48 pid:1 Worker process terminated
+2018-08-25 15:57:01 pid:1 exception 'think\exception\ErrorException' with message 'Undefined offset: 2' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:99
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(99): think\Error::appError(8, 'Undefined offse...', 'H:\\phpstudy\\WWW...', 99, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '[client1-client...')
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '[client1-client...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #95)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(289): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2235): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1225): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1168): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(478): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(122): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(68): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-08-25 15:57:01 pid:1 Worker process terminated
+2018-08-25 15:57:35 pid:1 exception 'think\exception\ErrorException' with message 'Undefined offset: 2' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:99
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(99): think\Error::appError(8, 'Undefined offse...', 'H:\\phpstudy\\WWW...', 99, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '[client2-client...')
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '[client2-client...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #91)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(289): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2235): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1225): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1168): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(478): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(122): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(68): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-08-25 15:57:35 pid:1 Worker process terminated
+2018-08-25 16:03:53 pid:1 exception 'think\exception\ErrorException' with message 'Undefined variable: message' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:94
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(94): think\Error::appError(8, 'Undefined varia...', 'H:\\phpstudy\\WWW...', 94, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), 'client1')
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Array, Object(Workerman\Connection\TcpConnection), 'client1')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #91)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(289): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2235): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1225): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1168): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(478): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(122): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(68): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-08-25 16:03:53 pid:1 Worker process terminated
+2018-08-25 16:19:57 pid:1 exception 'think\exception\ErrorException' with message 'Invalid argument supplied for foreach()' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:97
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(97): think\Error::appError(2, 'Invalid argumen...', 'H:\\phpstudy\\WWW...', 97, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '{"handle":true,...')
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '{"handle":true,...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #91)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(289): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2235): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1225): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1168): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(478): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(142): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(68): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-08-25 16:19:57 pid:1 Worker process terminated
+2018-08-25 17:23:27 pid:1 exception 'think\exception\ErrorException' with message 'Use of undefined constant data - assumed 'data'' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:110
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(110): think\Error::appError(8, 'Use of undefine...', 'H:\\phpstudy\\WWW...', 110, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '{"me":"client1"...')
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '{"me":"client1"...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #92)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(289): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2235): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1225): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1168): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(478): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(130): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(68): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-08-25 17:23:27 pid:1 Worker process terminated
+2018-08-25 17:26:39 pid:1 exception 'think\exception\ErrorException' with message 'Cannot modify header information - headers already sent by (output started at H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:106)' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:111
+Stack trace:
+#0 [internal function]: think\Error::appError(2, 'Cannot modify h...', 'H:\\phpstudy\\WWW...', 111, Array)
+#1 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(111): header('charset="utf-8"')
+#2 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '{"me":"client1"...')
+#3 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '{"me":"client1"...')
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #92)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(289): call_user_func_array(Array, Array)
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2235): Workerman\Events\Select->loop()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1225): Workerman\Worker->run()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1168): Workerman\Worker::forkWorkersForWindows()
+#9 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(478): Workerman\Worker::forkWorkers()
+#10 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(131): Workerman\Worker::runAll()
+#11 H:\phpstudy\WWW\bc\application\http\MyWorker.php(68): app\http\controller\MyWorkerServer->start()
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#17 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#18 {main}
+2018-08-25 17:26:39 pid:1 Worker process terminated
+2018-08-26 16:06:18 pid:1 exception 'think\exception\ErrorException' with message 'Use of undefined constant __ROOT__ - assumed '__ROOT__'' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:118
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(118): think\Error::appError(8, 'Use of undefine...', 'H:\\phpstudy\\WWW...', 118, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '{"me":"client1"...')
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '{"me":"client1"...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #95)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(289): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2235): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1225): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1168): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(478): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(153): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(68): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-08-26 16:06:18 pid:1 Worker process terminated
+2018-08-26 18:15:22 pid:1 exception 'think\exception\ErrorException' with message 'Use of undefined constant __ROOT__ - assumed '__ROOT__'' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:148
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(148): think\Error::appError(8, 'Use of undefine...', 'H:\\phpstudy\\WWW...', 148, Array)
+#1 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(111): app\http\controller\MyWorkerServer->oneToOne(Object(Workerman\Connection\TcpConnection), Array)
+#2 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '{"me":"client1"...')
+#3 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '{"me":"client1"...')
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #92)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(289): call_user_func_array(Array, Array)
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2235): Workerman\Events\Select->loop()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1225): Workerman\Worker->run()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1168): Workerman\Worker::forkWorkersForWindows()
+#9 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(478): Workerman\Worker::forkWorkers()
+#10 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(122): Workerman\Worker::runAll()
+#11 H:\phpstudy\WWW\bc\application\http\MyWorker.php(68): app\http\controller\MyWorkerServer->start()
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#17 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#18 {main}
+2018-08-26 18:15:22 pid:1 Worker process terminated
+2018-08-26 18:18:22 pid:1 exception 'think\exception\ErrorException' with message 'fopen(\bc\cRoom\index.php): failed to open stream: No such file or directory' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:153
+Stack trace:
+#0 [internal function]: think\Error::appError(2, 'fopen(\\bc\\cRoom...', 'H:\\phpstudy\\WWW...', 153, Array)
+#1 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(153): fopen('\\bc\\cRoom\\index...', 'r')
+#2 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(113): app\http\controller\MyWorkerServer->oneToOne(Object(Workerman\Connection\TcpConnection), Array)
+#3 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '{"me":"client1"...')
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(650): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '{"me":"client1"...')
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #95)
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(289): call_user_func_array(Array, Array)
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2235): Workerman\Events\Select->loop()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1225): Workerman\Worker->run()
+#9 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1168): Workerman\Worker::forkWorkersForWindows()
+#10 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(478): Workerman\Worker::forkWorkers()
+#11 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(124): Workerman\Worker::runAll()
+#12 H:\phpstudy\WWW\bc\application\http\MyWorker.php(68): app\http\controller\MyWorkerServer->start()
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#16 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#17 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#18 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#19 {main}
+2018-08-26 18:18:22 pid:1 Worker process terminated
+2018-08-27 09:13:52 pid:1 exception 'think\exception\ErrorException' with message 'Undefined variable: res' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:70
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(70): think\Error::appError(8, 'Undefined varia...', 'H:\\phpstudy\\WWW...', 70, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onConnect(Object(Workerman\Connection\TcpConnection))
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2302): call_user_func(Array, Object(Workerman\Connection\TcpConnection))
+#3 [internal function]: Workerman\Worker->acceptConnection(Resource id #87)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(289): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2235): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1225): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1168): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(478): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(126): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(68): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-08-27 09:13:52 pid:1 Worker process terminated
+2018-08-27 09:27:00 pid:1 exception 'think\exception\ErrorException' with message 'Missing argument 2 for app\http\controller\MyWorkerServer::onConnect()' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:69
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(69): think\Error::appError(2, 'Missing argumen...', 'H:\\phpstudy\\WWW...', 69, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onConnect(Object(Workerman\Connection\TcpConnection))
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2302): call_user_func(Array, Object(Workerman\Connection\TcpConnection))
+#3 [internal function]: Workerman\Worker->acceptConnection(Resource id #87)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(289): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2235): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1225): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1168): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(478): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(129): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(68): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-08-27 09:27:00 pid:1 Worker process terminated
+2018-08-27 09:29:17 pid:1 exception 'think\exception\ErrorException' with message 'Missing argument 2 for app\http\controller\MyWorkerServer::onConnect()' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:69
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(69): think\Error::appError(2, 'Missing argumen...', 'H:\\phpstudy\\WWW...', 69, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onConnect(Object(Workerman\Connection\TcpConnection))
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2302): call_user_func(Array, Object(Workerman\Connection\TcpConnection))
+#3 [internal function]: Workerman\Worker->acceptConnection(Resource id #87)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(289): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2235): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1225): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1168): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(478): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(133): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(68): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-08-27 09:29:17 pid:1 Worker process terminated
+2018-08-28 14:48:24 pid:1 exception 'think\exception\ErrorException' with message 'Undefined index: type' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:112
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(112): think\Error::appError(8, 'Undefined index...', 'H:\\phpstudy\\WWW...', 112, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '{"handle":true,...')
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(667): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '{"handle":true,...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #92)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(310): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2312): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1199): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(487): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(222): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(70): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-08-28 14:48:24 pid:1 Worker process terminated
+2018-08-28 15:02:03 pid:1 exception 'think\exception\ErrorException' with message 'Undefined index: rType' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:128
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(128): think\Error::appError(8, 'Undefined index...', 'H:\\phpstudy\\WWW...', 128, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '{"uid":1,"usern...')
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(667): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '{"uid":1,"usern...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #92)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(310): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2312): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1199): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(487): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(222): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(70): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-08-28 15:02:03 pid:1 Worker process terminated
+2018-09-01 09:30:23 pid:1 Worker process terminated with ERROR: E_ERROR "Cannot use object of type Workerman\Connection\TcpConnection as array in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php on line 97"
+2018-09-01 09:32:33 pid:1 Worker process terminated with ERROR: E_ERROR "Cannot use object of type Workerman\Connection\TcpConnection as array in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php on line 98"
+2018-09-01 15:19:08 pid:1 exception 'think\exception\ErrorException' with message 'Use of undefined constant data - assumed 'data'' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:223
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(223): think\Error::appError(8, 'Use of undefine...', 'H:\\phpstudy\\WWW...', 223, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(667): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #92)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(310): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2312): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1199): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(487): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(309): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(70): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-09-01 15:19:08 pid:1 Worker process terminated
+2018-09-01 19:25:22 pid:1 Worker process terminated
+2018-09-01 19:27:43 pid:1 Worker process terminated with ERROR: E_ERROR "Call to a member function close() on array in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php on line 203"
+2018-09-01 19:34:18 pid:1 exception 'think\exception\ErrorException' with message 'Undefined offset: 11' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:205
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(205): think\Error::appError(8, 'Undefined offse...', 'H:\\phpstudy\\WWW...', 205, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(667): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #92)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(310): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2312): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1199): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(487): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(310): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(70): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-09-01 19:34:18 pid:1 Worker process terminated
+2018-09-01 21:45:01 pid:1 exception 'think\exception\PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'falg' in 'where clause'' in H:\phpstudy\WWW\bc\thinkphp\library\think\db\Connection.php:675
+Stack trace:
+#0 H:\phpstudy\WWW\bc\thinkphp\library\think\db\Connection.php(912): think\db\Connection->query('SELECT `content...', Array, false, false)
+#1 H:\phpstudy\WWW\bc\thinkphp\library\think\db\Query.php(2470): think\db\Connection->select(Object(think\db\Query))
+#2 H:\phpstudy\WWW\bc\application\Home\controller\Login.php(271): think\db\Query->select()
+#3 H:\phpstudy\WWW\bc\application\Home\controller\Login.php(286): app\Home\controller\Login::friends(11)
+#4 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(224): app\Home\controller\Login::listInfo(11)
+#5 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(667): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #112)
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(310): call_user_func_array(Array, Array)
+#9 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2312): Workerman\Events\Select->loop()
+#10 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker->run()
+#11 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1199): Workerman\Worker::forkWorkersForWindows()
+#12 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(487): Workerman\Worker::forkWorkers()
+#13 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(310): Workerman\Worker::runAll()
+#14 H:\phpstudy\WWW\bc\application\http\MyWorker.php(70): app\http\controller\MyWorkerServer->start()
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#16 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#17 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#18 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#19 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#20 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#21 {main}
+2018-09-01 21:45:01 pid:1 Worker process terminated
+2018-09-03 11:57:29 pid:1 exception 'think\exception\ErrorException' with message 'Undefined offset: 11' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:205
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(205): think\Error::appError(8, 'Undefined offse...', 'H:\\phpstudy\\WWW...', 205, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(667): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #280)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(310): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2312): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1199): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(487): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(310): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(70): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-09-03 11:57:29 pid:1 Worker process terminated
+2018-09-03 19:45:30 pid:1 Worker process terminated
+2018-09-04 10:43:26 pid:1 exception 'think\exception\ErrorException' with message 'Undefined offset: 11' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:211
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(211): think\Error::appError(8, 'Undefined offse...', 'H:\\phpstudy\\WWW...', 211, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(667): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #124)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(310): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2312): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1199): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(487): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(318): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(70): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-09-04 10:43:26 pid:1 Worker process terminated
+2018-09-04 15:28:47 pid:1 exception 'think\exception\ErrorException' with message 'Undefined offset: 11' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:212
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(212): think\Error::appError(8, 'Undefined offse...', 'H:\\phpstudy\\WWW...', 212, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(667): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #112)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(310): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2312): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1199): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(487): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(319): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(70): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-09-04 15:28:47 pid:1 Worker process terminated
+2018-09-04 15:32:01 pid:1 exception 'think\exception\ErrorException' with message 'Undefined offset: 11' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:212
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(212): think\Error::appError(8, 'Undefined offse...', 'H:\\phpstudy\\WWW...', 212, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(667): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #92)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(310): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2312): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1199): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(487): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(319): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(70): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-09-04 15:32:01 pid:1 Worker process terminated
+2018-09-04 15:41:52 pid:1 exception 'think\exception\ErrorException' with message 'Undefined offset: 11' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:212
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(212): think\Error::appError(8, 'Undefined offse...', 'H:\\phpstudy\\WWW...', 212, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(667): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #124)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(310): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2312): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1199): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(487): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(319): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(70): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-09-04 15:41:52 pid:1 Worker process terminated
+2018-09-04 16:45:13 pid:1 exception 'think\exception\ErrorException' with message 'Undefined index: send_id' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:152
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(152): think\Error::appError(8, 'Undefined index...', 'H:\\phpstudy\\WWW...', 152, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '{"type":"handle...')
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(667): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '{"type":"handle...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #125)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(310): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2312): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1199): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(487): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(319): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(70): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-09-04 16:45:13 pid:1 Worker process terminated
+2018-09-04 17:29:08 pid:1 exception 'think\exception\ErrorException' with message 'Undefined offset: 11' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:213
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(213): think\Error::appError(8, 'Undefined offse...', 'H:\\phpstudy\\WWW...', 213, Array)
+#1 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#2 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(667): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #137)
+#4 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(310): call_user_func_array(Array, Array)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2312): Workerman\Events\Select->loop()
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker->run()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1199): Workerman\Worker::forkWorkersForWindows()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(487): Workerman\Worker::forkWorkers()
+#9 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(320): Workerman\Worker::runAll()
+#10 H:\phpstudy\WWW\bc\application\http\MyWorker.php(70): app\http\controller\MyWorkerServer->start()
+#11 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#16 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#17 {main}
+2018-09-04 17:29:08 pid:1 Worker process terminated
+2018-09-04 19:33:54 pid:1 Worker process terminated
+2018-09-04 21:23:48 pid:1 exception 'think\exception\ErrorException' with message 'Missing argument 1 for app\http\controller\MyWorkerServer::closeSocket(), called in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php on line 165 and defined' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:231
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(231): think\Error::appError(2, 'Missing argumen...', 'H:\\phpstudy\\WWW...', 231, Array)
+#1 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(165): app\http\controller\MyWorkerServer->closeSocket()
+#2 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#3 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(667): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #401)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(310): call_user_func_array(Array, Array)
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2312): Workerman\Events\Select->loop()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker->run()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1199): Workerman\Worker::forkWorkersForWindows()
+#9 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(487): Workerman\Worker::forkWorkers()
+#10 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(338): Workerman\Worker::runAll()
+#11 H:\phpstudy\WWW\bc\application\http\MyWorker.php(70): app\http\controller\MyWorkerServer->start()
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#17 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#18 {main}
+2018-09-04 21:23:49 pid:1 Worker process terminated
+2018-09-05 08:43:08 pid:1 exception 'think\exception\ErrorException' with message 'Missing argument 1 for app\http\controller\MyWorkerServer::closeSocket(), called in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php on line 165 and defined' in H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php:231
+Stack trace:
+#0 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(231): think\Error::appError(2, 'Missing argumen...', 'H:\\phpstudy\\WWW...', 231, Array)
+#1 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(165): app\http\controller\MyWorkerServer->closeSocket()
+#2 [internal function]: app\http\controller\MyWorkerServer->onMessage(Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#3 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Connection\TcpConnection.php(667): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '{"send_id":11,"...')
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #121)
+#5 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Events\Select.php(310): call_user_func_array(Array, Array)
+#6 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(2312): Workerman\Events\Select->loop()
+#7 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1258): Workerman\Worker->run()
+#8 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(1199): Workerman\Worker::forkWorkersForWindows()
+#9 H:\phpstudy\WWW\bc\vendor\workerman\workerman\Worker.php(487): Workerman\Worker::forkWorkers()
+#10 H:\phpstudy\WWW\bc\application\http\controller\MyWorkerServer.php(338): Workerman\Worker::runAll()
+#11 H:\phpstudy\WWW\bc\application\http\MyWorker.php(70): app\http\controller\MyWorkerServer->start()
+#12 H:\phpstudy\WWW\bc\thinkphp\library\think\console\Command.php(175): app\http\MyWorker->execute(Object(think\console\Input), Object(think\console\Output))
+#13 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(596): think\console\Command->run(Object(think\console\Input), Object(think\console\Output))
+#14 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(196): think\Console->doRunCommand(Object(app\http\MyWorker), Object(think\console\Input), Object(think\console\Output))
+#15 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(133): think\Console->doRun(Object(think\console\Input), Object(think\console\Output))
+#16 H:\phpstudy\WWW\bc\thinkphp\library\think\Console.php(90): think\Console->run()
+#17 H:\phpstudy\WWW\bc\think(20): think\Console::init()
+#18 {main}
+2018-09-05 08:43:08 pid:1 Worker process terminated

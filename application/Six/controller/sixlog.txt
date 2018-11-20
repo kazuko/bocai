@@ -1,0 +1,75 @@
+Log opened at 2018-10-09 07:49:30
+I: Connecting to configured address/port: localhost:9000.
+I: Connected to client. :-)
+-> <init xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" fileuri="file:///D:/phpStudy/PHPTutorial/WWW/bcweb/application/Six/controller/Active.php" language="PHP" xdebug:language_version="7.0.5" protocol_version="1.0" appid="1852" idekey="Administrator"><engine version="2.4.1"><![CDATA[Xdebug]]></engine><author><![CDATA[Derick Rethans]]></author><url><![CDATA[http://xdebug.org]]></url><copyright><![CDATA[Copyright (c) 2002-2016 by Derick Rethans]]></copyright></init>
+
+<- breakpoint_list -i 1
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="breakpoint_list" transaction_id="1"></response>
+
+<- breakpoint_set -i 2 -t line -f file:///d:/phpStudy/PHPTutorial/WWW/bcweb/application/Six/controller/Active.php -n 21
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="breakpoint_set" transaction_id="2" id="18520001"></response>
+
+<- breakpoint_set -i 3 -t line -f file:///d:/phpStudy/PHPTutorial/WWW/bcweb/application/Six/controller/Active.php -n 53
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="breakpoint_set" transaction_id="3" id="18520002"></response>
+
+<- breakpoint_set -i 4 -t line -f file:///d:/phpStudy/PHPTutorial/WWW/bcweb/application/Six/controller/Active.php -n 195
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="breakpoint_set" transaction_id="4" id="18520003"></response>
+
+<- breakpoint_list -i 5
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="breakpoint_list" transaction_id="5"><breakpoint type="line" filename="file:///D:/phpStudy/PHPTutorial/WWW/bcweb/application/Six/controller/Active.php" lineno="195" state="enabled" hit_count="0" hit_value="0" id="18520003"></breakpoint><breakpoint type="line" filename="file:///D:/phpStudy/PHPTutorial/WWW/bcweb/application/Six/controller/Active.php" lineno="53" state="enabled" hit_count="0" hit_value="0" id="18520002"></breakpoint><breakpoint type="line" filename="file:///D:/phpStudy/PHPTutorial/WWW/bcweb/application/Six/controller/Active.php" lineno="21" state="enabled" hit_count="0" hit_value="0" id="18520001"></breakpoint></response>
+
+<- breakpoint_list -i 6
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="breakpoint_list" transaction_id="6"><breakpoint type="line" filename="file:///D:/phpStudy/PHPTutorial/WWW/bcweb/application/Six/controller/Active.php" lineno="195" state="enabled" hit_count="0" hit_value="0" id="18520003"></breakpoint><breakpoint type="line" filename="file:///D:/phpStudy/PHPTutorial/WWW/bcweb/application/Six/controller/Active.php" lineno="53" state="enabled" hit_count="0" hit_value="0" id="18520002"></breakpoint><breakpoint type="line" filename="file:///D:/phpStudy/PHPTutorial/WWW/bcweb/application/Six/controller/Active.php" lineno="21" state="enabled" hit_count="0" hit_value="0" id="18520001"></breakpoint></response>
+
+<- breakpoint_set -i 7 -t exception -x *
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="breakpoint_set" transaction_id="7" id="18520004"></response>
+
+<- run -i 8
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="run" transaction_id="8" status="break" reason="ok"><xdebug:message filename="file:///D:/phpStudy/PHPTutorial/WWW/bcweb/application/Six/controller/Active.php" lineno="21"></xdebug:message></response>
+
+<- stack_get -i 9
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="stack_get" transaction_id="9"><stack where="{main}" level="0" type="file" filename="file:///D:/phpStudy/PHPTutorial/WWW/bcweb/application/Six/controller/Active.php" lineno="21"></stack></response>
+
+<- context_names -i 10 -d 0
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_names" transaction_id="10"><context name="Locals" id="0"></context><context name="Superglobals" id="1"></context><context name="User defined constants" id="2"></context></response>
+
+<- context_get -i 11 -d 0 -c 0
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="11" context="0"><property name="$active" fullname="$active" type="uninitialized"></property></response>
+
+<- step_into -i 12
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="step_into" transaction_id="12" status="break" reason="ok"><xdebug:message filename="file:///D:/phpStudy/PHPTutorial/WWW/bcweb/application/Six/controller/Active.php" lineno="22"></xdebug:message></response>
+
+<- stack_get -i 13
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="stack_get" transaction_id="13"><stack where="{main}" level="0" type="file" filename="file:///D:/phpStudy/PHPTutorial/WWW/bcweb/application/Six/controller/Active.php" lineno="22"></stack></response>
+
+<- context_names -i 14 -d 0
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_names" transaction_id="14"><context name="Locals" id="0"></context><context name="Superglobals" id="1"></context><context name="User defined constants" id="2"></context></response>
+
+<- context_get -i 15 -d 0 -c 0
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="15" context="0"><property name="$active" fullname="$active" type="uninitialized"></property></response>
+
+<- step_into -i 16
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="step_into" transaction_id="16" status="break" reason="ok"><xdebug:message filename="file:///D:/phpStudy/PHPTutorial/WWW/bcweb/application/Six/controller/Active.php" lineno="25"></xdebug:message></response>
+
+<- stack_get -i 17
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="stack_get" transaction_id="17"><stack where="{main}" level="0" type="file" filename="file:///D:/phpStudy/PHPTutorial/WWW/bcweb/application/Six/controller/Active.php" lineno="25"></stack></response>
+
+<- context_names -i 18 -d 0
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_names" transaction_id="18"><context name="Locals" id="0"></context><context name="Superglobals" id="1"></context><context name="User defined constants" id="2"></context></response>
+
+<- context_get -i 19 -d 0 -c 0
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="19" context="0"><property name="$active" fullname="$active" type="uninitialized"></property></response>
+
+<- context_get -i 20 -d 0 -c 1
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="20" context="1"><property name="$_COOKIE" fullname="$_COOKIE" type="array" children="0" numchildren="0" page="0" pagesize="32"></property><property name="$_ENV" fullname="$_ENV" type="array" children="0" numchildren="0" page="0" pagesize="32"></property><property name="$_FILES" fullname="$_FILES" type="array" children="0" numchildren="0" page="0" pagesize="32"></property><property name="$_GET" fullname="$_GET" type="array" children="0" numchildren="0" page="0" pagesize="32"></property><property name="$_POST" fullname="$_POST" type="array" children="0" numchildren="0" page="0" pagesize="32"></property><property name="$_REQUEST" fullname="$_REQUEST" type="array" children="0" numchildren="0" page="0" pagesize="32"></property><property name="$_SERVER" fullname="$_SERVER" type="array" children="1" numchildren="55" page="0" pagesize="32"><property name="ALLUSERSPROFILE" fullname="$_SERVER[&#39;ALLUSERSPROFILE&#39;]" type="string" size="14" encoding="base64"><![CDATA[QzpcUHJvZ3JhbURhdGE=]]></property><property name="APPDATA" fullname="$_SERVER[&#39;APPDATA&#39;]" type="string" size="38" encoding="base64"><![CDATA[QzpcVXNlcnNcQWRtaW5pc3RyYXRvclxBcHBEYXRhXFJvYW1pbmc=]]></property><property name="CommonProgramFiles" fullname="$_SERVER[&#39;CommonProgramFiles&#39;]" type="string" size="35" encoding="base64"><![CDATA[QzpcUHJvZ3JhbSBGaWxlcyAoeDg2KVxDb21tb24gRmlsZXM=]]></property><property name="CommonProgramFiles(x86)" fullname="$_SERVER[&#39;CommonProgramFiles(x86)&#39;]" type="string" size="35" encoding="base64"><![CDATA[QzpcUHJvZ3JhbSBGaWxlcyAoeDg2KVxDb21tb24gRmlsZXM=]]></property><property name="CommonProgramW6432" fullname="$_SERVER[&#39;CommonProgramW6432&#39;]" type="string" size="29" encoding="base64"><![CDATA[QzpcUHJvZ3JhbSBGaWxlc1xDb21tb24gRmlsZXM=]]></property><property name="COMPUTERNAME" fullname="$_SERVER[&#39;COMPUTERNAME&#39;]" type="string" size="15" encoding="base64"><![CDATA[UEMtMjAxODA2MjVURVhE]]></property><property name="ComSpec" fullname="$_SERVER[&#39;ComSpec&#39;]" type="string" size="27" encoding="base64"><![CDATA[QzpcV2luZG93c1xzeXN0ZW0zMlxjbWQuZXhl]]></property><property name="FP_NO_HOST_CHECK" fullname="$_SERVER[&#39;FP_NO_HOST_CHECK&#39;]" type="string" size="2" encoding="base64"><![CDATA[Tk8=]]></property><property name="GOOGLE_API_KEY" fullname="$_SERVER[&#39;GOOGLE_API_KEY&#39;]" type="string" size="39" encoding="base64"><![CDATA[QUl6YVN5QVFmeFBKaW91bmtoT2pPREVPNVppZWZmZUJ2NnlmdDJR]]></property><property name="HOMEDRIVE" fullname="$_SERVER[&#39;HOMEDRIVE&#39;]" type="string" size="2" encoding="base64"><![CDATA[Qzo=]]></property><property name="HOMEPATH" fullname="$_SERVER[&#39;HOMEPATH&#39;]" type="string" size="20" encoding="base64"><![CDATA[XFVzZXJzXEFkbWluaXN0cmF0b3I=]]></property><property name="LOCALAPPDATA" fullname="$_SERVER[&#39;LOCALAPPDATA&#39;]" type="string" size="36" encoding="base64"><![CDATA[QzpcVXNlcnNcQWRtaW5pc3RyYXRvclxBcHBEYXRhXExvY2Fs]]></property><property name="LOGONSERVER" fullname="$_SERVER[&#39;LOGONSERVER&#39;]" type="string" size="17" encoding="base64"><![CDATA[XFxQQy0yMDE4MDYyNVRFWEQ=]]></property><property name="NUMBER_OF_PROCESSORS" fullname="$_SERVER[&#39;NUMBER_OF_PROCESSORS&#39;]" type="string" size="1" encoding="base64"><![CDATA[NA==]]></property><property name="OS" fullname="$_SERVER[&#39;OS&#39;]" type="string" size="10" encoding="base64"><![CDATA[V2luZG93c19OVA==]]></property><property name="Path" fullname="$_SERVER[&#39;Path&#39;]" type="string" size="628" encoding="base64"><![CDATA[QzpcV2luZG93c1xzeXN0ZW0zMjtDOlxXaW5kb3dzO0M6XFdpbmRvd3NcU3lzdGVtMzJcV2JlbTtDOlxXaW5kb3dzXFN5c3RlbTMyXFdpbmRvd3NQb3dlclNoZWxsXHYxLjBcO0Q6XHBocHN0dWR5XFBIUFR1dG9yaWFsXFdXV1x0aGlua3BocDUuMTtEOlxUb3J0b2lzZVNWTlxiaW47RDpcbm9kZS5qc1yjukQ6XHBocFN0dWR5XFBIUFR1dG9yaWFsXHBocFxwaHAtNy4wLjEyLW50cztDOlxVc2Vyc1xBZG1pbmlzdHJhdG9yXEFwcERhdGFcUm9hbWluZ1xDb21wb3Nlclx2ZW5kb3JcYmluO0M6XFVzZXJzXEFkbWluaXN0cmF0b3JcQXBwRGF0YVxMb2NhbFxhdG9tXGJpbjtEOlxwaHBzdHVkeVxQSFBUdXRvcmlhbFx3d3c7RDpccGhwc3R1ZHlcUEhQVHV0b3JpYWxcd3d3XHBocFxwaHAtNy4xLjEzLW50cztEOlxwaHBzdHVkeVxQSFBUdXRvcmlhbFxNeVNRTFxiaW47QzpcVXNlcnNcQWRtaW5pc3RyYXRvclxBcHBEYXRhXFJvYW1pbmdcbnBtXGNucG07RTpccmVkaXM7QzpcVXNlcnNcQWRtaW5pc3RyYXRvclxBcHBEYXRhXFJvYW1pbmdcbnBtO0Q6XE1pY3Jvc29mdCBWUyBDb2RlXGJpbjtEOlxwaHBzdHVkeVxQSFBUdXRvcmlhbFxXV1dcYmM7RDpccGhwU3R1ZHlcUEhQVHV0b3JpYWxccGhwXHBocC03LjAuMTItbnRzOw==]]></property><property name="PATHEXT" fullname="$_SERVER[&#39;PATHEXT&#39;]" type="string" size="53" encoding="base64"><![CDATA[LkNPTTsuRVhFOy5CQVQ7LkNNRDsuVkJTOy5WQkU7LkpTOy5KU0U7LldTRjsuV1NIOy5NU0M=]]></property><property name="PROCESSOR_ARCHITECTURE" fullname="$_SERVER[&#39;PROCESSOR_ARCHITECTURE&#39;]" type="string" size="3" encoding="base64"><![CDATA[eDg2]]></property><property name="PROCESSOR_ARCHITEW6432" fullname="$_SERVER[&#39;PROCESSOR_ARCHITEW6432&#39;]" type="string" size="5" encoding="base64"><![CDATA[QU1ENjQ=]]></property><property name="PROCESSOR_IDENTIFIER" fullname="$_SERVER[&#39;PROCESSOR_IDENTIFIER&#39;]" type="string" size="51" encoding="base64"><![CDATA[SW50ZWw2NCBGYW1pbHkgNiBNb2RlbCAxNTggU3RlcHBpbmcgOSwgR2VudWluZUludGVs]]></property><property name="PROCESSOR_LEVEL" fullname="$_SERVER[&#39;PROCESSOR_LEVEL&#39;]" type="string" size="1" encoding="base64"><![CDATA[Ng==]]></property><property name="PROCESSOR_REVISION" fullname="$_SERVER[&#39;PROCESSOR_REVISION&#39;]" type="string" size="4" encoding="base64"><![CDATA[OWUwOQ==]]></property><property name="ProgramData" fullname="$_SERVER[&#39;ProgramData&#39;]" type="string" size="14" encoding="base64"><![CDATA[QzpcUHJvZ3JhbURhdGE=]]></property><property name="ProgramFiles" fullname="$_SERVER[&#39;ProgramFiles&#39;]" type="string" size="22" encoding="base64"><![CDATA[QzpcUHJvZ3JhbSBGaWxlcyAoeDg2KQ==]]></property><property name="ProgramFiles(x86)" fullname="$_SERVER[&#39;ProgramFiles(x86)&#39;]" type="string" size="22" encoding="base64"><![CDATA[QzpcUHJvZ3JhbSBGaWxlcyAoeDg2KQ==]]></property><property name="ProgramW6432" fullname="$_SERVER[&#39;ProgramW6432&#39;]" type="string" size="16" encoding="base64"><![CDATA[QzpcUHJvZ3JhbSBGaWxlcw==]]></property><property name="PSModulePath" fullname="$_SERVER[&#39;PSModulePath&#39;]" type="string" size="51" encoding="base64"><![CDATA[QzpcV2luZG93c1xzeXN0ZW0zMlxXaW5kb3dzUG93ZXJTaGVsbFx2MS4wXE1vZHVsZXNc]]></property><property name="PUBLIC" fullname="$_SERVER[&#39;PUBLIC&#39;]" type="string" size="15" encoding="base64"><![CDATA[QzpcVXNlcnNcUHVibGlj]]></property><property name="SESSIONNAME" fullname="$_SERVER[&#39;SESSIONNAME&#39;]" type="string" size="7" encoding="base64"><![CDATA[Q29uc29sZQ==]]></property><property name="SystemDrive" fullname="$_SERVER[&#39;SystemDrive&#39;]" type="string" size="2" encoding="base64"><![CDATA[Qzo=]]></property><property name="SystemRoot" fullname="$_SERVER[&#39;SystemRoot&#39;]" type="string" size="10" encoding="base64"><![CDATA[QzpcV2luZG93cw==]]></property><property name="TEMP" fullname="$_SERVER[&#39;TEMP&#39;]" type="string" size="36" encoding="base64"><![CDATA[QzpcVXNlcnNcQURNSU5JfjFcQXBwRGF0YVxMb2NhbFxUZW1w]]></property></property></response>
+
+<- context_get -i 21 -d 0 -c 2
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="context_get" transaction_id="21" context="2"></response>
+
+<- stop -i 22
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="stop" transaction_id="22" status="stopped" reason="ok"></response>
+
+-> <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="http://xdebug.org/dbgp/xdebug" command="stop" transaction_id="22" status="stopping" reason="ok"></response>
+
+Log closed at 2018-10-09 07:50:31
+

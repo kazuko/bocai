@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+</head>
+<body>
+    <p>websocket manager</p>
+    <script>
+        var socket = new WebSocket('ws://127.0.0.1:2525');
+        var object = {
+            // "type":"ping",
+            "type":"deskInfo",
+            "game":"Jsks",
+            "orderNumber":"20181190052821",
+            'issue' :"2018120",
+            "order":{
+                0:{
+                    'id' :"11",
+                    'issue' :"2018120",
+                    'zhuShu' :"1",
+                    'type' :"sb",
+                    'leiXin' :"ssb",
+                    'gold' :"10",
+                    'allGold' :"10",
+                    'number' :"ssblb_lan",
+                    'odds' :"2.86"
+
+                }
+            }
+        };
+        
+        object = JSON.stringify(object);
+        console.log(object);
+        socket.addEventListener('open',function(){
+            socket.send(object);
+        });
+            
+    </script>
+</body>
+</html>

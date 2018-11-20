@@ -1,0 +1,53 @@
+{include file="common/header"/}
+	<div class="containbox">
+		<div class="linebox">
+			<dl class="small">
+				<dt>用户金币</dt>
+				<dd><span>:</span>{$user['property']}</dd>
+			</dl>
+			<dl class="small">
+				<dt>用户积分</dt>
+				<dd><span>:</span>{$user['integral']}</dd>
+			</dl>
+			<dl style="clear: both;"></dl>
+		</div>
+		<div class="linebox">
+			<dl class="large">{$user['username']}</dl>
+			<dl class="large">			
+				{foreach $medal as $key=>$value}
+					<img src="{$value['src']}" width="40px" height="40px">
+				{/foreach}
+			</dl>
+			<dl style="clear: both;"></dl>
+		</div>
+		<div class="linebox">
+			<a href="{:url('Home/Friends/index')}"><dl class="middle"><span class="information">5</span>我的好友 </dl></a>
+			<dl class="middle">社区银行</dl>
+			<dl style="clear: both;"></dl>
+		</div>		
+		<div class="linebox">
+			<dl class="middle"><a href="{:url('Home/Setting/index')}">我的设置</a></dl>
+			<dl class="middle">我的红包</dl>
+			<dl style="clear: both;"></dl>
+		</div>
+		<div class="linebox">
+			<dl class="middle">社区广播</dl>
+			<dl class="middle">我的帖子</dl>
+			<dl style="clear: both;"></dl>
+		</div>
+		<div class="linebox">
+			<dl class="middle">充值</dl>
+			<dl class="middle">提现</dl>
+			<dl style="clear: both;"></dl>
+		</div>
+		<div class="linebox">
+			<dl class="middle"><a href="{:url('Home/Medal/index')}">勋章</a></dl>
+			<dl class="middle"><a href="{:url('Login/logout')}">安全离线</a></dl>
+			<dl style="clear: both;"></dl>
+		</div>
+		<div class="linebox"><dl class="middle"><a href="{:url('Home/Active/index')}">用户充值签到活动</a></dl>
+			<dl style="clear: both;"></dl>
+		</div>
+	</div>
+
+{include file="common/footer"}

@@ -1,0 +1,75 @@
+{include file='public/header' /}
+<section class="admin-input-limit-middle">
+	<form id="admin-input-limit-middle-form" method="post">
+		<input type="hidden" name="id" value="{$info.id}">
+		<ul class="admin-input-limit-middle-ul">
+			<li>
+				<span>过滤模式：</span>
+				<select name="filter_mod">
+					<option {if $info['filter_mod']==1}selected="selected"{/if} value="1">开始</option>
+					<option {if $info['filter_mod']==0}selected="selected"{/if} value="0">关闭</option>
+					<option {if $info['filter_mod']==-1}selected="selected"{/if} value="-1">禁止发布</option>
+				</select>
+			</li>
+			<li>
+				<span>替换内容：</span>
+				<input type="text" name="filter_replace" value="{$info.filter_replace}">
+			</li>
+			<li>
+				<span>过滤字眼：</span>
+				<div>
+					<textarea name="filter_words" placeholder="多个字眼用‘|’隔开">{$info.filter_words}</textarea>
+				</div>
+			</li>
+			<li>
+				<span>限制输入：</span>
+				<select name="filter_input">
+					<option {if $info['filter_input']==1}selected="selected"{/if} value="1">开启</option>
+					<option {if $info['filter_input']==0}selected="selected"{/if} value="0">关闭</option>
+				</select>
+			</li>
+			<li>
+				<span>显示字眼：</span>
+				<select name="filter_show">
+					<option {if $info['filter_show']==1}selected="selected"{/if} value="1">开启</option>
+					<option {if $info['filter_show']==0}selected="selected"{/if} value="0">关闭</option>
+				</select>
+			</li>
+			<li>
+				<span>阻止提示：</span>
+				<div>
+					<textarea name="filter_tips">{$info.filter_tips}</textarea>
+				</div>
+			</li>
+			<li>
+				<span>允许次数：</span>
+				<input type="text" name="filter_allow" value="{$info.filter_allow}">
+			</li>
+			<li>
+				<span>自动加黑：</span>
+				<select name="filter_defriend">
+					<option {if $info['filter_defriend']==1}selected="selected"{/if} value="1">开启</option>
+					<option {if $info['filter_defriend']==0}selected="selected"{/if} value="0">关闭</option>
+				</select>
+			</li>
+			<li>
+				<span>加黑类型：</span>
+				<select name="defriend_mod">
+					<option {if $info['defriend_mod']==1}selected="selected"{/if} value="1">禁止发言</option>
+					<option {if $info['defriend_mod']==2}selected="selected"{/if} value="2">禁止登陆</option>
+				</select>
+			</li>
+			<li>
+				<span>通知版主：</span>
+				<select name="filter_notice">
+					<option {if $info['filter_notice']==1}selected="selected"{/if} value="1">开启</option>
+					<option {if $info['filter_notice']==0}selected="selected"{/if} value="0">关闭</option>
+				</select>
+			</li>
+			<li style="padding: 0px;">
+				<button type="button" onclick="submitForm('admin-input-limit-middle-form','{:url("Index/LimitInput/index")}')">确定</button>
+			</li>
+		</ul>
+	</form>
+</section>
+{include file='public/footer' /}

@@ -1,0 +1,224 @@
+{
+    "code": 0, //0 登录成功 1失败
+    "msg": "ok",
+    "user": { //登录用户信息
+        "id": 1789843, //登录用户的id
+        "username": "jackie", //用户的昵称
+        "password": "123", //密码
+        "gold": 18, //自由使用的金币
+        "bank": 1092, //银行存款
+        "integral": 37, //积分
+        "head": "/bocai/Uploads/1233.jpg", //头部图片地址
+        "phoneNumber": "15622953830", //手机号码
+        "trading": 100111, //交易密码 ，默认0
+        "signature": "123", //个性签名
+        "frvalidation": 0, //好友验证 0 不开启 1 开启
+        "stmessage": 0, //陌生人信息 0不开启 1开启
+        "broadcast": 0, // 广播信息  0不开启 1开启
+        "online": 41145, //在线时长
+        "lasttime": 1534231823, //最后登录时间
+        "seven": 1, //七天免登陆 1开启 0关闭
+        "recharge": 0, //历史充值总额 单位人民币
+        "status": 0, //0开封 1封号
+        "ips": "", //用户登录的ip
+        "medal": [ //用户拥有的勋章
+            {
+                "id": 1,
+                "name": "士大夫", //勋章的头衔
+                "min": 0,
+                "max": 100,
+                "src": "/bcweb/public\\uploads\\20180806/102225-ZGVtbzEw.jpg", //勋章的地址
+                "desc": "这是积分投降撒阿斯利康的肌肤撒旦克里夫", //勋章的简介
+                "flag": 0 //0 不佩戴 1佩戴
+            },
+            {
+                "id": 18,
+                "name": "大家发的房间爱的",
+                "min": 0,
+                "max": 0,
+                "src": "/bcweb/public\\uploads\\20180806/154348-aWNvbjM=.png",
+                "desc": "附近的解放军爱对方拒绝",
+                "flag": 1
+            },
+            {
+                "id": 12,
+                "name": "单位",
+                "min": 100,
+                "max": 200,
+                "src": "/bcweb/public\\uploads\\20180806/154348-aWNvbjM=.png",
+                "desc": "撒地方暗示的发去玩去儿二万人3",
+                "flag": 1
+            },
+            {
+                "id": 2,
+                "name": "叫阿撒",
+                "min": 10,
+                "max": 12,
+                "src": "/bcweb/public\\uploads\\20180806/113432-YW5zZGVtbzE=.jpg",
+                "desc": "是看得见风景阿斯顿；啊可是大家",
+                "flag": 0
+            },
+            {
+                "id": 3,
+                "name": "撒地方",
+                "min": 14,
+                "max": 18,
+                "src": "/bcweb/public\\uploads\\20180806/113738-aWNvbjNh.png",
+                "desc": "ask的经济啊速度加快ask大家ask的飞机绿卡",
+                "flag": 0
+            },
+            {
+                "id": 4,
+                "name": "到付即",
+                "min": 24,
+                "max": 30,
+                "src": "/bcweb/public\\uploads\\20180806/114054-bG9nbw==.png",
+                "desc": "撒地方卢卡斯就卡是大家饭卡机是的",
+                "flag": 0
+            }
+        ]
+    },
+    //添加好友信息这里没有发送人的名字这一个是我查少了
+    "addfriend": [ //添加好友信息，陌生信息模块置顶
+        {
+            "id": 7,
+            "send_id": "171289844",
+            "get_id": "1789843",
+            "time": "1533865675",
+            "status": "3",
+            "content": "请求好友消息", //信息内容
+            "flag": 0 //0 未读
+        }
+    ],
+    "messagenum": { //未读信息
+        "sum": 6, //未读信息总数
+        "friends": 3, //未读信息 好友
+        "strange": 1, //未读信息 陌生人
+        "system": 1, //未读信息 系统
+        "red": 3 //未读信息 红包
+    },
+    "friends": [ //好友信息
+        {
+            "id": 17812844,
+            "username": "mary1",
+            "password": "123",
+            "gold": 0,
+            "bank": 0,
+            "integral": 0,
+            "head": "/bocai/public/Home/static/images/head.jpg",
+            "phoneNumber": "15622953832",
+            "trading": 0,
+            "signature": "123",
+            "frvalidation": 0,
+            "stmessage": 0,
+            "broadcast": 0,
+            "online": 0,
+            "lasttime": 0,
+            "seven": 1,
+            "recharge": 0,
+            "status": 0,
+            "ips": "",
+            "message": 2,
+            "medal": [
+                {
+                    "id": 1,
+                    "name": "士大夫",
+                    "min": 0,
+                    "max": 100,
+                    "src": "/bcweb/public\\uploads\\20180806/102225-ZGVtbzEw.jpg",
+                    "desc": "这是积分投降撒阿斯利康的肌肤撒旦克里夫",
+                    "flag": 0
+                }
+            ]
+        },
+        {
+            "id": 1789124,
+            "username": "mary2",
+            "password": "123",
+            "gold": 0,
+            "bank": 0,
+            "integral": 0,
+            "head": "/bocai/public/Home/static/images/head.jpg",
+            "phoneNumber": "15622953833",
+            "trading": 0,
+            "signature": "123",
+            "frvalidation": 0,
+            "stmessage": 0,
+            "broadcast": 0,
+            "online": 0,
+            "lasttime": 0,
+            "seven": 1,
+            "recharge": 0,
+            "status": 0,
+            "ips": "",
+            "message": 1,
+            "medal": [
+                {
+                    "id": 1,
+                    "name": "士大夫",
+                    "min": 0,
+                    "max": 100,
+                    "src": "/bcweb/public\\uploads\\20180806/102225-ZGVtbzEw.jpg",
+                    "desc": "这是积分投降撒阿斯利康的肌肤撒旦克里夫",
+                    "flag": 0
+                }
+            ]
+        },
+        {
+            "id": 1712189849,
+            "username": "mary11",
+            "password": "123",
+            "gold": 0,
+            "bank": 0,
+            "integral": 0,
+            "head": "/bocai/public/Home/static/images/head.jpg",
+            "phoneNumber": "15622953811",
+            "trading": 0,
+            "signature": "123",
+            "frvalidation": 0,
+            "stmessage": 0,
+            "broadcast": 0,
+            "online": 0,
+            "lasttime": 0,
+            "seven": 1,
+            "recharge": 0,
+            "status": 0,
+            "ips": "",
+            "message": 0,
+            "medal": [
+                {
+                    "id": 1,
+                    "name": "士大夫",
+                    "min": 0,
+                    "max": 100,
+                    "src": "/bcweb/public\\uploads\\20180806/102225-ZGVtbzEw.jpg",
+                    "desc": "这是积分投降撒阿斯利康的肌肤撒旦克里夫",
+                    "flag": 0
+                }
+            ]
+        }
+    ],
+    "strange": [ //陌生人信息
+        {
+            "phoneNumber": "15622953836",
+            "password": "123",
+            "id": 171289844,
+            "username": "mary6",
+            "signature": "123",
+            "trading": 0,
+            "gold": 0,
+            "message": 1
+        }
+    ],
+    "system": [ //系统消息
+        {
+            "id": 6,
+            "send_id": "1712189845",
+            "get_id": "1789843",
+            "time": "1533865675",
+            "status": "4",
+            "content": "系统消息",
+            "flag": 0
+        }
+    ]
+}

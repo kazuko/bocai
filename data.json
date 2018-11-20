@@ -1,0 +1,267 @@
+$playerData = [
+    '2' => [
+        '0' => [
+            "id" => 11, //用户的id
+            'type' => "qianyi",
+            'leiXin' => "qianyi", //前一 - 前一
+            "name"=>"qianyi",
+            "number" => ["guanjun"=>['01', '02','04','05','07','08','09','10']],
+            "smallName"=>"",
+            "gold" => 10,
+            "allGold" => 50, //下注总金额
+            "total" => 5, //总注数
+            "remaining" => 1000, //剩余金币user_user表查询
+        ],
+        '1' => [
+            "id" => 11, //用户的id
+            'type' => "qianer",
+            'leiXin' => "qianer", //前一 - 前一
+            "name"=>"qianerfushi",
+            "number" => ['guanjun'=>['01', '02','04','05','07','08','09','10'], "yajun"=>['01', '02','04','05','07','08','09','10']],
+            "smallName"=>"",
+            "gold" => 10,
+            "allGold" => 50, //下注总金额
+            "total" => 5, //总注数
+            "remaining" => 1000, //剩余金币user_user表查询
+        ],
+        '2' => [
+            "id" => 11, //用户的id
+            'type' => "qianer",
+            'leiXin' => "qianer", //前一 - 前一
+            "name"=>"qianerdanshi",
+            "number" => ['guanjun'=>['01', '02','04','05','07','08','09','10'], "yajun"=>['01', '02','04','05','07','08','09','10']],
+            "smallName"=>"",
+            "gold" => 10,
+            "allGold" => 50, //下注总金额
+            "total" => 5, //总注数
+            "remaining" => 1000, //剩余金币user_user表查询
+        ],
+        '3' => [
+            "id" => 11, //用户的id
+            'type' => "qiansan",
+            'leiXin' => "qiansan", //前一 - 前一
+            "name"=>"qiansanfushi",
+            "number" => [
+                        "guanjun"=>['01', '02','04','05','07','08','09','10'],
+                        "yajun"=>['01', '02','04','05','07','08','09','10'],
+                        'jijun'=>['01', '02','04','05','07','08','09','10']
+                    ],
+            "smallName"=>"",
+            "gold" => 10,
+            "allGold" => 50, //下注总金额
+            "total" => 5, //总注数
+            "remaining" => 1000, //剩余金币user_user表查询
+        ],
+        '4' => [
+            "id" => 11, //用户的id
+            'type' => "qiansan",
+            'leiXin' => "qiansan", //前一 - 前一
+            "name"=>"qiansandanshi",
+            "number" => [
+                "guanjun"=>['01'],
+                "yajun"=>['02'],
+                'jijun'=>['03']
+            ],
+            "smallName"=>"",
+            "gold" => 10,
+            "allGold" => 50, //下注总金额
+            "total" => 5, //总注数
+            "remaining" => 1000, //剩余金币user_user表查询
+        ],
+        '5' => [
+            "id" => 11, //用户的id
+            'type' => "dindanwei",
+            'leiXin' => "dindanwei", //前一 - 前一
+            "name"=>"dindanwei",
+            "number" => ['01', '02','04','05','07','08','09','10'],
+            "smallName"=>"guanjun",//亚军季军
+            //smallName所有字段 guanjun yajun jijun di4min di5min di6min di7min di8min di9min di10min
+            "gold" => 10,
+            "allGold" => 50, //下注总金额
+            "total" => 5, //总注数
+            "remaining" => 1000, //剩余金币user_user表查询
+        ],
+        '6' => [
+            "id" => 11, //用户的id
+            'type' => "dindanwei",
+            'leiXin' => "dindanwei", //前一 - 前一
+            "name"=>"1~5",
+            "number" => ['01', '02','04','05','07','08','09','10'],
+            "smallName"=>"guanjun",
+            //smallName所有字段 guanjun yajun jijun di4min di5min di6min 
+            "gold" => 10,
+            "allGold" => 50, //下注总金额
+            "total" => 5, //总注数
+            "remaining" => 1000, //剩余金币user_user表查询
+        ],
+        '7' => [
+            "id" => 11, //用户的id
+            'type' => "dindanwei",
+            'leiXin' => "dindanwei", //前一 - 前一
+            "name"=>"6~10",
+            "number" => ['01', '02','04','05','07','08','09','10'],
+            "smallName"=>"di6min",//亚军季军
+            //smallName所有字段 di6min di7min di8min di9min di10min
+            "gold" => 10,
+            "allGold" => 50, //下注总金额
+            "total" => 5, //总注数
+            "remaining" => 1000, //剩余金币user_user表查询
+        ],
+        '8' => [
+            "id" => 11, //用户的id
+            'type' => "guanyahe",
+            'leiXin' => "guanyahe", //前一 - 前一
+            "name"=>"hezhi",
+            "number" => ["3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19"],
+            "smallName"=>"",
+            "gold" => 10,
+            "allGold" => 50, //下注总金额
+            "total" => 5, //总注数
+            "remaining" => 1000, //剩余金币user_user表查询
+        ],
+        '9' => [
+            "id" => 11, //用户的id
+            'type' => "longhu",
+            'leiXin' => "longhu", //前一 - 前一
+            "name"=>"guanjun",
+            "number" => ['long', 'hu'],
+            "smallName"=>"",
+            "gold" => 10,
+            "allGold" => 50, //下注总金额
+            "total" => 5, //总注数
+            "remaining" => 1000, //剩余金币user_user表查询
+        ],
+        '10' => [
+            "id" => 11, //用户的id
+            'type' => "longhu",
+            'leiXin' => "longhu", //前一 - 前一
+            "name"=>"yajun",
+            "number" => ['long', 'hu'],
+            "smallName"=>"",
+            "gold" => 10,
+            "allGold" => 50, //下注总金额
+            "total" => 5, //总注数
+            "remaining" => 1000, //剩余金币user_user表查询
+        ],
+        '12' => [
+            "id" => 11, //用户的id
+            'type' => "longhu",
+            'leiXin' => "longhu", //前一 - 前一
+            "name"=>"jijun",
+            "number" => ['long', 'hu'],
+            "smallName"=>"",
+            "gold" => 10,
+            "allGold" => 50, //下注总金额
+            "total" => 5, //总注数
+            "remaining" => 1000, //剩余金币user_user表查询
+        ],
+        '13' => [
+            "id" => 11, //用户的id
+            'type' => "longhu",
+            'leiXin' => "longhu", //前一 - 前一
+            "name"=>"disimin",
+            "number" => ['long', 'hu'],
+            "smallName"=>"",
+            "gold" => 10,
+            "allGold" => 50, //下注总金额
+            "total" => 5, //总注数
+            "remaining" => 1000, //剩余金币user_user表查询
+        ],
+        '14' => [
+            "id" => 11, //用户的id
+            'type' => "longhu",
+            'leiXin' => "longhu", //前一 - 前一
+            "name"=>"diwumin",
+            "number" => ['long', 'hu'],
+            "smallName"=>"",
+            "gold" => 10,
+            "allGold" => 50, //下注总金额
+            "total" => 5, //总注数
+            "remaining" => 1000, //剩余金币user_user表查询
+        ],
+        '15' => [
+            "id" => 11, //用户的id
+            'type' => "wuxin",
+            'leiXin' => "wuxin", //前一 - 前一
+            "name"=>"guanjun",
+            "number" => ['01', '02','04','05','07','08','09','10'],
+            "smallName"=>"",
+            "gold" => 10,
+            "allGold" => 50, //下注总金额
+            "total" => 5, //总注数
+            "remaining" => 1000, //剩余金币user_user表查询
+        ],
+        '16' => [
+            "id" => 11, //用户的id
+            'type' => "wuxin",
+            'leiXin' => "wuxin", //前一 - 前一
+            "name"=>"yajun",
+            "number" => ['01', '02','04','05','07','08','09','10'],
+            "smallName"=>"",
+            "gold" => 10,
+            "allGold" => 50, //下注总金额
+            "total" => 5, //总注数
+            "remaining" => 1000, //剩余金币user_user表查询
+        ],
+        '17' => [
+            "id" => 11, //用户的id
+            'type' => "wuxin",
+            'leiXin' => "wuxin", //前一 - 前一
+            "name"=>"jijun",
+            "number" => ['01', '02','04','05','07','08','09','10'],
+            "smallName"=>"",
+            "gold" => 10,
+            "allGold" => 50, //下注总金额
+            "total" => 5, //总注数
+            "remaining" => 1000, //剩余金币user_user表查询
+        ],
+        '18' => [
+            "id" => 11, //用户的id
+            'type' => "daxiaodanshuang",
+            'leiXin' => "daxiao", //前一 - 前一
+            "name"=>"daxiao_guanjun",
+            "number" => ['daxiao', 'xiao'],
+            "smallName"=>"",
+            "gold" => 10,
+            "allGold" => 50, //下注总金额
+            "total" => 5, //总注数
+            "remaining" => 1000, //剩余金币user_user表查询
+        ],
+        '19' => [
+            "id" => 11, //用户的id
+            'type' => "daxiaodanshuang",
+            'leiXin' => "daxiao", //前一 - 前一
+            "name"=>"daxiao_yajun",
+            "number" => ['dan', 'shuang'],
+            "smallName"=>"",
+            "gold" => 10,
+            "allGold" => 50, //下注总金额
+            "total" => 5, //总注数
+            "remaining" => 1000, //剩余金币user_user表查询
+        ],
+        '20' => [
+            "id" => 11, //用户的id
+            'type' => "daxiaodanshuang",
+            'leiXin' => "daxiao", //前一 - 前一
+            "name"=>"daxiao_jijun",
+            "number" => ['da', 'xiao'],
+            "smallName"=>"",
+            "gold" => 10,
+            "allGold" => 50, //下注总金额
+            "total" => 5, //总注数
+            "remaining" => 1000, //剩余金币user_user表查询
+        ],
+        '21' => [
+            "id" => 11, //用户的id
+            'type' => "daxiaodanshuang",
+            'leiXin' => "guanyahe", //前一 - 前一
+            "name"=>"daxiaodanshuang",
+            "number" => ['dan', 'shuang'],
+            "smallName"=>"",
+            "gold" => 10,
+            "allGold" => 50, //下注总金额
+            "total" => 5, //总注数
+            "remaining" => 1000, //剩余金币user_user表查询
+        ],
+    ],
+];

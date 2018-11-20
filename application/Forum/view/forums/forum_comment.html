@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-Ch">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10,chrome=1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="description" content="">
+<meta name="author" content="">
+<title>菠菜论坛</title>
+<script type="text/javascript"
+	src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.all.js"></script>
+<script type="text/javascript"
+	src="__PUBLIC__/ueditor/lang/zh-cn/zh-cn.js"></script>
+<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+<!--[if lt IE 9]>
+	  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<!-- [if lt IE 7]> 
+  <script src='http://ie7-js.googlecode.com/svn/version/2.0(beta)/IE7.js' type=”text/javascript”></script> 
+  <![endif]-–> -->
+<!-- css -->
+<link href="__PUBLIC__/luntan/css/bootstrap.min.css" rel="stylesheet"
+	type="text/css">
+<link href="__PUBLIC__/luntan/css/style.css" rel="stylesheet">
+<link href="__PUBLIC__/luntan/color/default.css" rel="stylesheet">
+</head>
+<style>
+#editor {
+	width: 100%;
+	padding: 0;
+	margin: 10px auto;
+}
+</style>
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+	{if isset($user_id) }
+	<section>
+		<div class="tiezi">
+			<a
+				href="{:url('Forum/Forums/forum_details')}?user_id={$user_id}&id={$post.zone_id}"
+				class="left-a-details"><span
+				class="glyphicon glyphicon-chevron-left"></span></a>
+			<h6 style="color: #fff;">回复</h6>
+			<a href="{:url('Forum/Forums/forum_exit')}" class="right-a-details"><span
+				class="glyphicon glyphicon-log-out"></span></a>
+		</div>
+		<!-- Table -->
+
+		<table class="table table-hover">
+			<thead>
+				<tr class="tieba-label">
+					<th width="15%"><em class="reply-em"><img class="find"
+							src="__PUBLIC__/luntan/img/luntan/find.png" />:<span>{$post.visitor}</span></em><br>
+						<em class="reply-em"><img class="msg"
+							src="__PUBLIC__/luntan/img/luntan/msg.png" />:<span>{:count($comment)}</span></em></th>
+					<th width="85%"><cite class="tieba-reply-title">{$post.title}<img
+							src="__PUBLIC__/luntan/img/luntan/image_s.gif" alt="attach_img"
+							title="图片附件"></cite></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="info text-left">
+					<td class="pls">
+						<div class="pls favatar" style="top: 33px;">
+							<div class="pi">
+								<div class="authi">
+									<a href="#" target="_blank" class="xw1">{$author.nickname}</a>
+								</div>
+							</div>
+							<div>
+								<div class="avatar" align="center">
+									<a href="home.php?mod=space&amp;uid=677056" class="avtm"
+										target="_blank"><img class="img-responsive"
+										src="{$author.head}" onerror=""></a>
+								</div>
+							</div>
+							<div class="tns xg2" align="center">
+								<table cellspacing="0" cellpadding="0">
+									<tbody>
+										<tr>
+											<th><p>
+												<form action="{:url('Forum/Forums/forum_post_like')}"
+													method="post" role="form" class="forum_post_like">
+													<input type="hidden" name="post_id" value="{$post.id}" />
+													<input type="hidden" name="user_id" value="{$user_id}" />
+													<button type="submit">喜欢（{$like}）</button>
+												</form>
+												</p>
+												<p>{$post.addtime}</p></th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<p>
+								<em><a
+									href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=13"
+									target="_blank">Lord</a></em>
+							</p>
+							<p>
+								<img class="reply-badge"
+									src="__PUBLIC__/luntan/img/badge/blue.png"> <img
+									class="reply-badge" src="__PUBLIC__/luntan/img/badge/green.png">
+								<img class="reply-badge"
+									src="__PUBLIC__/luntan/img/badge/red.png"> <img
+									class="reply-badge" src="__PUBLIC__/luntan/img/badge/cyan.png">
+								<img class="reply-badge"
+									src="__PUBLIC__/luntan/img/badge/purple.png">
+							</p>
+						</div>
+					</td>
+					{if isset($result) && $result == 405}
+					<div class="alert alert-info alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<strong>该贴禁止评论</strong>
+					</div>
+					{/if}
+					{if isset($result) && $result == 403}
+					<div class="alert alert-info alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<strong>操作过快，点击<a href=''>充值金币</a>不再限制或稍后再试</strong>
+					</div>
+					{/if}
+					{if isset($result) && $result == 402}
+					<div class="alert alert-info alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<strong>新用户需稍后才可发帖，点击<a href=''>充值金币</a>不再限制或稍后再试</strong>
+					</div>
+					{/if}
+					<td>{$post.content|raw}</td>
+				</tr>
+
+				{volist name="comment" id="vo" key="i" }
+				<tr class="info text-left">
+					<td class="pls">
+						<div class="pls favatar" style="top: 33px;">
+							<div class="pi">
+								<div class="authi">
+									<a href="#" target="_blank" class="xw1">{$vo.user.nickname}</a>
+								</div>
+							</div>
+							<div>
+								<div class="avatar" align="center">
+									<a href="" class="avtm" target="_blank"><img
+										class="img-responsive" src="{$vo.user.head}" onerror=""></a>
+								</div>
+							</div>
+							<p>
+								<em><a href="" target="_blank">Lord</a></em>
+							</p>
+							<p>
+								<em>{$vo.addtime}</em>
+							</p>
+							<p>
+								<em>{$i}楼</em>
+							</p>
+							<p>
+								<img class="reply-badge"
+									src="__PUBLIC__/luntan/img/badge/blue.png"> <img
+									class="reply-badge" src="__PUBLIC__/luntan/img/badge/green.png">
+								<img class="reply-badge"
+									src="__PUBLIC__/luntan/img/badge/red.png"> <img
+									class="reply-badge" src="__PUBLIC__/luntan/img/badge/cyan.png">
+								<img class="reply-badge"
+									src="__PUBLIC__/luntan/img/badge/purple.png">
+							</p>
+						</div>
+					</td>
+					<td>{$vo.content|raw}<button  type="button" onclick="reply('{$vo.user.nickname}',{$vo.id})">
+             		 回复</button>
+					<ul>
+					{volist name="$vo.reply" id="vi"}
+					<li>{$vi.user_name}回复{$vo.user.nickname}:{$vi.content|raw}<em class="pull-right">{$vi.addtime}</em></li>
+					{/volist}
+					</ul>
+					</td>
+				</tr>
+				{/volist}
+			<tbody>
+		</table>
+	</section>
+	<form action="{:url('Forum/Forums/forum_comment')}" method="post"
+		role="form" class="forum_comment">
+		<input type="hidden" id="id" name="id" value="" />
+		<input type="hidden" name="post_id" value="{$post.id}" /> <input
+			type="hidden" name="user_id" value="{$user_id}" />
+		<footer>
+			<nav class="navbar navbar-fixed-bottom navbarC" role="navigation">
+
+				<!-- 收集导航链接、表单和其他内容以进行切换。 -->
+				<div class="btn-group btn-group-justified" role="group"
+					aria-label="">
+					<div class="btn-group" role="button">
+						<button type="submit" class="btn navbar-custom issue-buttonC"
+							role="button">评论</button>
+					</div>
+<!-- 					<div class="form-group" align="center"> -->
+<!-- 						<textarea name="content" class="form-control" rows="1" required data-msg="请输入发帖内容" -->
+<!-- 							placeholder="Message" ></textarea> -->
+<!-- 					</div> -->
+					<div class="form-group" align="left">
+					<span id="huifu"></span>
+						<textarea id="editor" class="form-control" name="content" rows="5"
+							required data-msg="请输入发帖内容" placeholder="Message"
+							style="height: 20px;"></textarea>
+					</div>
+				</div>
+				<!-- /.导航条-崩溃 -->
+			</nav>
+		</footer>
+	</form>
+	<script>
+	function reply(name,a){
+		var huifu=window.document .getElementById ("huifu");
+		var id=window.document .getElementById ("id");
+		id.value =a;
+		huifu.innerHTML = "@"+name;
+	 };
+		//本来是这样的:UE.getEditor('editor'); 传入参数后就是下面那样子了，toolbars里的就是工具的图标
+		UE.getEditor('editor', {
+			 elementPathEnabled:false,  
+		toolbars: [
+		[	 'emotion',//表情
+		 	 'simpleupload',//单图上传
+	        '|',  
+	        'selectall', //全选
+	        'cleardoc', //清空文档
+	        '|',        
+	        'bold', //加粗  
+	        'italic', //斜体  
+	        'underline', //下划线  
+	        'strikethrough', //删除线  
+	        '|',  
+	        'blockquote', //引用  
+	        'preview', //预览  
+	        'fullscreen', //全屏  
+	    ]
+		]
+		});
+	</script>
+	{else /}
+	<a href="{:url('Forum/Forums/forum_login')}">登录超时，点击重新登录</a> {/if}
+	<!-- 核心JavaScript文件 -->
+	<script src="__PUBLIC__/luntan/js/jquery.min.js"></script>
+	<script src="__PUBLIC__/luntan/js/bootstrap.min.js"></script>
+	<script src="__PUBLIC__/luntan/contactform/contactform.js"></script>
+</body>
+</html>

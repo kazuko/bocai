@@ -1,0 +1,45 @@
+{include file="common/header"/}
+<div class="bank">
+	<form method="post" action="{:url('Home/Bank/index')}">	
+	<div class="linebox">
+		<label class="title">存款总额</label>
+		<div class="input">
+			<p>{$gold['bank']}</p>	
+		</div>
+	</div>
+	<div class="linebox">
+		<label class="title">存金币</label>
+		<div class="input">
+			<input type="text" name="bank" value="0">
+		</div>
+	</div>
+	<div class="linebox">
+		<label class="title">取金币</label>
+		<div class="input">
+			<input type="text" name="gold" value="0">
+		</div>		
+	</div>
+	<div class="linebox">
+		<label class="title">金币总额</label>
+		<div class="input">
+			<p>{$gold['gold']}</p>	
+		</div>
+	</div>
+	<div class="linebox">
+		<input type="submit" name="" value="提交">
+	</div>
+	<div><input type="text" name="status" value="1"></div>
+	</form>
+</div>
+<script type="text/javascript">
+	ws = new WebSocket("ws://127.0.0.1:2000");
+	ws.onopen = function() {
+	    alert("连接成功");
+	    ws.send('asss');
+	    alert("给服务端发送一个字符串：aaaa");
+	};
+	ws.onmessage = function(e) {
+	    alert("收到服务端的消息：" + e.data);
+	};
+</script>
+{include file="common/footer"/}

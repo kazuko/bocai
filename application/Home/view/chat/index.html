@@ -1,0 +1,17 @@
+  {include file="common/header"/}
+ <script type="text/javascript">
+ 	window.onload=function(){
+ 	ws = new WebSocket("ws://192.168.1.153:8585");
+	ws.onopen = function() {
+	    alert("连接成功");
+	    ws.send('aaaa');
+	    alert("给服务端发送一个字符串：aaaa");
+	};
+	ws.onmessage = function(e) {
+	    alert("收到服务端的消息：" + e.data);
+	};
+
+ 	}
+
+ </script>
+ {include file="common/footer"/}

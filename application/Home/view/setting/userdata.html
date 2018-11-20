@@ -1,0 +1,79 @@
+{include file="common/header"/}
+<div class="personalsetting">
+	<div><a href="javascript:;" onclick="javasrcipt:history.back(-1);"><点击返回上一页</a></div>
+	<div class="linebox"><label>个人资料设置</label></div>
+	<form id="form" enctype="multipart/form-data" method="post" action="{:url('Home/Setting/userdata')}">
+		<div class="linebox">
+			<img src="{$user['head']}" alt="头像">
+			<input type="file" name="image">
+		</div>
+		<div class="linebox">
+			<div class="inlinebox">
+				昵称
+			</div>	
+			<div class="inlinebox">
+				<input type="text" name="username" id="username" value="{$user['username']}">
+			</div>	
+			<div style="clear:both"></div>
+		</div>
+		<div class="linebox">
+			<div class="inlinebox">
+				个性签名
+			</div>	
+			<div class="inlinebox">
+				<input type="text" name="signature" value="{$user['signature']}">
+			</div>
+			<div style="clear:both"></div>	
+		</div>
+		<div class="linebox">
+			<div class="inlinebox">
+				登录密码修改
+			</div>
+			<div style="clear:both"></div>	
+		</div>
+		<div class="linebox">
+			<div class="inlinebox">
+				原始密码
+			</div>	
+			<div class="inlinebox">
+				<input type="text" name="oldpass" placeholder="请输入原始密码">
+			</div>
+			<div style="clear:both"></div>	
+		</div>
+		<div class="linebox">
+			<div class="inlinebox">
+				新密码
+			</div>	
+			<div class="inlinebox">
+				<input type="text" name="oldpass" placeholder="请输入新密码">
+			</div>
+			<div style="clear:both"></div>	
+		</div>
+		<div class="linebox">
+			<div class="inlinebox">
+			    再次输入密码
+			</div>	
+			<div class="inlinebox">
+				<input type="text" name="oldpass" placeholder="请再次输入新密码">
+			</div>
+			<div style="clear:both"></div>	
+		</div>
+		<div class=linebox>
+			<input type="submit" name="btn" value="提交"> 
+		</div>
+   </form>
+</div>
+<script type="text/javascript">
+	    $('.inputimg').on('change',function(){  
+                var filePath = $(this)[0].files[0].name;   //获取到input的value，里面是文件的路径
+                fileFormat = filePath.split('.')[1].toLowerCase();//  
+                src = window.URL.createObjectURL(this.files[0]);//转成可以在本地预览的格式  
+                // 检查是否是图片  
+                if( !fileFormat.match(/png|jpg|jpeg/) ) {  
+                    layer.msg('上传错误,文件格式必须为：png/jpg/jpeg');
+                    return;   
+                }  
+                $('.img').attr('src',src)
+            });
+</script>
+{include file="common/footer"/}

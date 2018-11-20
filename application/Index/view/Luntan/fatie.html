@@ -1,0 +1,59 @@
+{include file='public/header' /}
+<section class="admin-fatie-middle">
+	<form id="admin-fatie-middle-form">
+		<ul>
+			<input type="hidden" name="id" value="{$info.id}">
+			<li>
+				<div class="fenlei">发帖奖励</div>
+				<div>
+					<span>显示：</span>
+					<input class="inputRadio" type="radio" name="tie_pride_show" value="1" {if $info['tie_pride_show']==1}checked="checked"{/if}>
+					<span>开启</span>
+					<input class="inputRadio" type="radio" name="tie_pride_show" value="0" {if $info['tie_pride_show']==0}checked="checked"{/if}>
+					<span>关闭</span>
+				</div>
+				<div>
+					<span>奖励贴数：前</span>
+					<input class="inputBox" type="text" name="tie_pride_num" value="{$info.tie_pride_num}">
+					<span>帖</span>
+				</div>
+				<div>
+					<span>金币：</span>
+					<input class="inputBox" type="text" name="tie_pride_gold" value="{$info.tie_pride_gold}">
+					<span>积分：</span>
+					<input class="inputBox" type="text" name="tie_pride_sliver" value="{$info.tie_pride_sliver}">
+				</div>
+			</li>
+			<li>
+				<div class="fenlei">发帖限制</div>
+				<div>
+					<span>标题长度：</span>
+					<input class="inputBox" type="text" name="tie_limit_words" value="{$info.tie_limit_words}">
+					<span>字</span>
+				</div>
+				<div>
+					<span>新用户限制：</span>
+					<input class="inputBox" type="text" name="tie_limit_seconds" value="{$info.tie_limit_seconds}">
+					<span>秒</span>
+				</div>
+				<div>
+					<span>充值解除限制：</span>
+					<input class="inputRadio" type="radio" name="tie_limit_relieve" value="1" {if $info['tie_limit_relieve']==1}checked="checked"{/if}>
+					<span>开启</span>
+					<input class="inputRadio" type="radio" name="tie_limit_relieve" value="0" {if $info['tie_limit_relieve']==0}checked="checked"{/if}>
+					<span>关闭</span>
+				</div>
+				<div>
+					<span>防刷间隔：</span>
+					<input class="inputBox" type="text" name="tie_limit_refender_seconds" value="{$info.tie_limit_refender_seconds}">
+					<span>秒</span>
+				</div>
+			</li>
+			<li style="">
+				<button type="button" onclick="submitForm('admin-fatie-middle-form','{:url('Index/Luntan/fatie')}')">确定</button>
+			</li>
+			<script type="text/javascript" src="__PUBLIC__/Index/js/event.js"></script>
+		</ul>
+	</form>
+</section>
+{include file='public/footer' /}

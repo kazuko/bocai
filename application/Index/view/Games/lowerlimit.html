@@ -1,0 +1,124 @@
+{include file="public/header" /}
+<section class="admin-setLimit-middle">
+	<form id="lowerlimitForm" method="post">
+		<table>
+			<tr>
+				<td rowspan="2">百家乐</td>
+				<td>
+					<span>积分：</span>
+					<input type="text" name="sliver_{$list['game_1']['id']}" value="{$list['game_1']['sliver']}">
+				</td>
+				<td rowspan="2">三公</td>
+				<td>
+					<span>积分：</span>
+					<input type="text" name="sliver_{$list['game_2']['id']}" value="{$list['game_2']['sliver']}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>金币：</span>
+					<input type="text" name="gold_{$list['game_1']['id']}" value="{$list['game_1']['gold']}">
+				</td>
+				<td>
+					<span>金币：</span>
+					<input type="text" name="gold_{$list['game_2']['id']}" value="{$list['game_2']['gold']}">
+				</td>
+			</tr>
+			<tr>
+				<td rowspan="2">北京赛车PK10</td>
+				<td>
+					<span>积分：</span>
+					<input type="text" name="sliver_{$list['game_3']['id']}" value="{$list['game_3']['sliver']}">
+				</td>
+				<td rowspan="2">分分彩</td>
+				<td>
+					<span>积分：</span>
+					<input type="text" name="sliver_{$list['game_4']['id']}" value="{$list['game_4']['sliver']}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>金币：</span>
+					<input type="text" name="gold_{$list['game_3']['id']}" value="{$list['game_3']['gold']}">
+				</td>
+				<td>
+					<span>金币：</span>
+					<input type="text" name="gold_{$list['game_4']['id']}" value="{$list['game_4']['gold']}">
+				</td>
+			</tr>
+			<tr>
+				<td rowspan="2">广东11选5</td>
+				<td>
+					<span>积分：</span>
+					<input type="text" name="sliver_{$list['game_5']['id']}" value="{$list['game_5']['sliver']}">
+				</td>
+				<td rowspan="2">江苏快3</td>
+				<td>
+					<span>积分：</span>
+					<input type="text" name="sliver_{$list['game_6']['id']}" value="{$list['game_6']['sliver']}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>金币：</span>
+					<input type="text" name="gold_{$list['game_5']['id']}" value="{$list['game_5']['gold']}">
+				</td>
+				<td>
+					<span>金币：</span>
+					<input type="text" name="gold_{$list['game_6']['id']}" value="{$list['game_6']['gold']}">
+				</td>
+			</tr>
+			<tr>
+				<td rowspan="2">香港六合彩</td>
+				<td>
+					<span>积分：</span>
+					<input type="text" name="sliver_{$list['game_7']['id']}" value="{$list['game_7']['sliver']}">
+				</td>
+				<td rowspan="2">重庆时时彩</td>
+				<td>
+					<span>积分：</span>
+					<input type="text" name="sliver_{$list['game_8']['id']}" value="{$list['game_8']['sliver']}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>金币：</span>
+					<input type="text" name="gold_{$list['game_7']['id']}" value="{$list['game_7']['gold']}">
+				</td>
+				<td>
+					<span>金币：</span>
+					<input type="text" name="gold_{$list['game_8']['id']}" value="{$list['game_8']['gold']}">
+				</td>
+			</tr>
+			<tr>
+				<td rowspan="2">足球彩</td>
+				<td>
+					<span>积分：</span>
+					<input type="text" name="sliver_{$list['game_9']['id']}" value="{$list['game_9']['sliver']}">
+				</td>
+				<td rowspan="2"></td>
+				<td>
+					
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>金币：</span>
+					<input type="text" name="gold_{$list['game_9']['id']}" value="{$list['game_9']['gold']}">
+				</td>
+				<td colspan="2"></td>
+			</tr>
+			<tr>
+				<td colspan="10">
+					<button type="button" onclick="saveData('lowerlimitForm')">提交</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<script type="text/javascript">
+		function saveData(formid){
+			submitForm(formid,'{:url("Index/Games/lowerLimit")}');
+		}
+	</script>
+</section>
+{include file="public/footer" /}

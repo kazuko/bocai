@@ -1,0 +1,76 @@
+{include file="public/header" /}
+<section class="admin-online-middle">
+	<ul class="admin-online-middle-ul">
+		<form id="admin-online-middle-form" method="POST" action="{:url('Index/Online/index')}">
+			<input type="hidden" name="id" value="{$info.id}">
+			<li>
+				<span>统计范围：</span>
+				<select name="online_count">
+					<option {if $info['online_count']==1}selected="selected"{/if} value="1">简单统计</option>
+					<option {if $info['online_count']==2}selected="selected"{/if} value="2">全站统计</option>
+					<option {if $info['online_count']==3}selected="selected"{/if} value="3">论坛统计</option>
+					<option {if $info['online_count']==4}selected="selected"{/if} value="4">聊天室统计</option>
+					<option {if $info['online_count']==5}selected="selected"{/if} value="5">游戏统计</option>
+					<option {if $info['online_count']==0}selected="selected"{/if} value="0">关闭统计</option>
+				</select>
+			</li>
+			<li>
+				<span>统计游客：</span>
+				<select name="online_vister">
+					<option {if $info['online_vister']==1}selected="selected"{/if} value="1">开启统计</option>
+					<option {if $info['online_vister']==0}selected="selected"{/if} value="0">关闭统计</option>
+				</select>
+			</li>
+			<li>
+				<span>游客昵称：</span>
+				<input type="text" value="{$info.online_nickname}" name="online_nickname">
+			</li>
+			<li>
+				<span>虚拟游客：</span>
+				<input type="text" value="{$info.online_man}" name="online_man"> 人
+			</li>
+			<li>
+				<span>自动离线：</span>
+				<input type="text" value="{$info.online_munite}" name="online_munite"> 分钟
+			</li>
+			<li>
+				<span>自加金币：</span>
+				<input type="text" value="{$info.online_gold}" name="online_gold"> 个
+			</li>
+			<li>
+				<span>自加积分：</span>
+				<input type="text" value="{$info.online_sliver}" name="online_sliver"> 分
+			</li>
+			<li>
+				<span>书签过期：</span>
+				<input type="text" value="{$info.online_bookmark}" name="online_bookmark"> 天
+			</li>
+			<li>
+				<span>高峰时间段：</span>
+				<div>
+					<input style="font-size: 3.5vw;" type="text" name="online_time_start" value="{$info.online_time_start|date='Y-m-d H:i:s'}" onfocus="choseDate('online_time_start')" placeholder="2018-01-01 1:1:1">—<input style="font-size: 3.5vw;" type="text" name="online_time_end" value="{$info.online_time_end|date='Y-m-d H:i:s'}" onfocus="choseDate('online_time_end')" placeholder="2018-01-01 23:59:59">
+				</div>
+			</li>
+			<li style="text-align: center;">
+				<button type="button" onclick="submitForm('admin-online-middle-form','{:url("Index/Online/index")}')" style="width: 50%;padding: 3px;">确定</button>
+			</li>
+		</form>
+		<li>
+			<span class="admin-online-middle-remark">
+				<p>简单统计：建议使用此模式，性能最佳（无法统计版块）</p>
+				<p>游客统计：不建议开启，比较消耗性能</p>
+				<p>书签过期：代表多少天没有登录，则书签失效（建议启用）</p>
+				<p>在线奖励：系统再更新在线时间事同步更新金币、积分！</p>
+				<p>更新在线：系统更新在线间隔为“自动离线”时间的半数！</p>
+				<p>高峰时段：高峰时段会员在线不变更位置，不收集动态，减少资源损耗！</p>
+			</span>
+		</li>
+	</ul>
+	<script type="text/javascript">
+		function choseDate(name){
+			wenDate(name,5);
+		}
+		
+	</script>
+</section>
+{include file="public/footer" /}

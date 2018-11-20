@@ -1,0 +1,1253 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	border-spacing: 0px;
+	font-family: '宋体';
+	font-size: 5vw;
+	font-style: normal;
+}
+.clear{
+	clear: both;
+	height: 0px;
+	padding: 0px;
+}
+.active{
+	background: pink;
+}
+
+/*公共头部*/
+.admin-index-top,.admin-index-topbox{
+	width: 100%;
+	height: 10vw;
+	line-height: 10vw;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+}
+.admin-index-top{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 10000;
+	background: rgb(255,255,255);
+}
+.admin-index-top span{
+	font-size: 7vw;
+}
+.admin-index-top .admin-index-top-back{
+	position: absolute;
+	left: 15px;
+	/*font-weight: bold;*/
+}
+.admin-index-middle{
+	width: 100%;
+}
+.admin-index-middle .admin-index-middle-nav{
+	width: 95%;
+	margin: auto;
+	text-align: center;
+}
+.admin-index-middle .admin-index-middle-nav li{
+	box-sizing: border-box;
+	padding: 0px 5px;
+	width: 30%;
+	height: 10vw;
+	line-height: 10vw;
+	border: 1px solid #ccc;
+	display: inline-block;
+	border-spacing: 0px;
+	text-align: center;
+	margin-top: 5px;
+	font-size: 5vw;
+}
+
+/*后台首页*/
+.admin-system-index-middle{
+	width: 100%;
+}
+.admin-system-index-middle .admin-system-index-middle-ul{
+	width: 95%;
+	margin: 10px auto;
+	border-top: 1px solid #ccc;
+}
+.admin-system-index-middle .admin-system-index-middle-ul li{
+	width: 100%;
+	height: 12vw;
+	line-height: 12px;
+	border: 1px solid #ccc;
+	text-align: center;
+	padding: 0px;
+}
+.admin-system-index-middle .admin-system-index-middle-ul li span{
+	margin: 0px;
+	font-size: 5vw;
+	display: inline-block;
+	border-spacing: 0px;
+	height: 11vw;
+	line-height: 11vw;
+	float: left;
+}
+.admin-system-index-middle .admin-system-index-middle-ul li span:nth-child(1){
+	width: 23vw;
+	text-align: right;
+	/*min-width: 80px;*/
+	/*border: 1px solid red;*/
+}
+.admin-system-index-middle .admin-system-index-middle-ul li span:nth-child(2){
+	width: 67vw;
+	/*border: 1px solid #ccc;*/
+}
+.admin-system-index-middle .admin-system-index-middle-ul li span input{
+	width: 100%;
+	height: 100%;
+	border: 0px;
+	outline: none;
+	font-size: 5vw;
+	padding-left: 5px;
+	box-sizing: border-box;
+}
+.admin-system-middle-uploadLOGO{
+	border: 1px solid #ccc;
+	width: 20vw !important;
+	height: 9vw !important;
+	line-height: 9vw !important;
+	margin-top: 1vw !important;
+	float: right !important;
+	margin-right: 10px !important;
+}
+
+.admin-system-middle-status{
+	width: 5vw !important;
+	height: 5vw !important;
+}
+.admin-system-middle-status-f{
+	font-size: 5vw !important;
+}
+.admin-system-middle-showLOGO{
+	/*border: 1px solid red;*/
+	width: 100% !important;
+	/*height: 100%;*/
+	height: 40vw !important;
+}
+/*IP地址管理*/
+.admin-computer-middle{
+	/*border: 1px solid red;*/
+	width: 100%;
+	margin-top: 10px;
+}
+
+.admin-computer-middle .admin-computer-middle-ul{
+	width: 95%;
+	margin: auto;
+	border: 1px solid #ccc;
+	/*padding: 5px;*/
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.admin-computer-middle .admin-computer-middle-ul div{
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 5px;
+	font-weight: bold;
+	box-sizing: border-box;
+}
+
+.admin-computer-middle .admin-computer-middle-ul .admin-computer-middle-dl{
+	border: 100%;
+}
+
+.admin-computer-middle .admin-computer-middle-ul .admin-computer-middle-dl dd{
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 10vw;
+	line-height: 10vw;
+	/*padding: 5px;*/
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	vertical-align: middle;
+}
+
+.admin-computer-middle .admin-computer-middle-ul .admin-computer-middle-dl dd input{
+	width: 18%;
+	margin: 0px;
+	text-align: center;
+	/*min-width: 51px;*/
+}
+.admin-computer-middle .admin-computer-middle-ul .admin-computer-middle-dl dd img{
+	width: 7%;
+	float: right;
+	margin-top: 1.7vw;
+	margin-right: 15px;
+}
+
+.admin-computer-middle .admin-computer-middle-ul #admin-computer-middle-form2{
+	border: 1px solid #ccc;
+	width: 99.4%;
+	margin: auto;
+	min-height: 120px;
+	border-spacing: 0px;
+}
+
+.admin-computer-middle .admin-computer-middle-ul #admin-computer-middle-form2 textarea{
+	border: 0px;
+	border-bottom: 2px solid #ccc;
+	min-height: 100px;
+	width: 100%;
+	margin: 0px;
+	margin-bottom: -5px;
+	padding: 5px;
+	box-sizing: border-box;
+	outline: none;
+	resize: none;
+}
+.admin-computer-middle .admin-computer-middle-ul #admin-computer-middle-form2 button{
+	width: 100%;
+	text-align: center;
+	min-height: 20px;
+	border: 1px solid #ccc;
+	padding: 5px 0px;
+	cursor: pointer;
+}
+
+/*论坛设置样式*/
+
+.admin-luntan-middle{
+	width: 95%;
+	margin: 10px auto;
+	/*border: 1px solid #ccc;*/
+
+}
+.admin-luntan-middle a{
+	text-decoration: none;
+}
+.admin-luntan-middle ul{
+	width: 100%;
+	/*border: 1px solid #ccc;*/
+	text-align: center;
+	/*border: 1px solid red;*/
+}
+.admin-luntan-middle ul li{
+	width: 48%;
+	display: inline-block;
+	border: 1px solid #ccc;
+	text-align: center;
+	padding: 5px;
+	box-sizing: border-box;
+	margin-top: 8px;
+}
+
+
+/*发帖设置*/
+
+.admin-fatie-middle{
+	width: 95%;
+	margin: 10px auto;
+	border: 1px solid #ccc;
+}
+.admin-fatie-middle ul{
+	width: 100%;
+	margin:0px;
+	/*border: 1px solid red;*/
+}
+.admin-fatie-middle ul li{
+	width: 100%;
+	/*border: 1px solid green;*/
+
+}
+.admin-fatie-middle ul li div{
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 2vw;
+	box-sizing: border-box;
+}
+.admin-fatie-middle ul li button{
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 2vw;
+	box-sizing: border-box;
+	outline: none;
+}
+.admin-fatie-middle ul li .fenlei{
+	background: #cce;
+}
+.admin-fatie-middle ul li .inputBox{
+	min-width: 80px;
+	width: 25%;
+	text-align: center;
+}
+.admin-fatie-middle ul li .inputRadio{
+	width: 4vw;
+	height: 4vw;
+}
+
+/*回帖设置*/
+
+.admin-huitie-middle{
+	width: 95%;
+	margin: 10px auto;
+	border: 1px solid #ccc;
+}
+.admin-huitie-middle ul{
+	width: 100%;
+	margin:0px;
+	/*border: 1px solid red;*/
+}
+.admin-huitie-middle ul li{
+	width: 100%;
+	/*border: 1px solid green;*/
+
+}
+.admin-huitie-middle ul li div{
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 2vw;
+	box-sizing: border-box;
+}
+.admin-huitie-middle ul li button{
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 2vw;
+	box-sizing: border-box;
+	outline: none;
+}
+.admin-huitie-middle ul li .fenlei{
+	background: #cce;
+}
+.admin-huitie-middle ul li .inputBox{
+	min-width: 80px;
+	width: 25%;
+	text-align: center;
+}
+.admin-huitie-middle ul li .inputRadio{
+	width: 4vw;
+	height: 4vw;
+}
+.admin-huitie-middle ul li .timebox{
+	width: 47%;
+	text-align: center;
+}
+
+
+/*添加新分区*/
+.admin-addfenqu-middle{
+	width: 95%;
+	margin: 10px auto;
+
+}
+.admin-addfenqu-middle ul{
+	border: 1px solid #ccc;
+	width: 100%;
+}
+.admin-addfenqu-middle ul li{
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+.admin-addfenqu-middle ul li .inputRadio{
+	width: 4vw;
+	height: 4vw;
+}
+.admin-addfenqu-middle ul li input[name='name']{
+	width: 55vw;
+}
+.admin-addfenqu-middle ul li input[name='gold']{
+	width: 30vw;
+}
+.admin-addfenqu-middle ul li input[name='pride_percent']{
+	width: 30vw;
+}
+.admin-addfenqu-middle ul li input{
+	text-align: center;
+}
+.admin-addfenqu-middle ul li button{
+	width: 48%;
+	/*height: 100%;*/
+	padding: 5px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+}
+
+/*货币设置*/
+.admin-huobishezhi-middle{
+	width: 95%;
+	margin: 10px auto;
+}
+.admin-huobishezhi-middle ul{
+	border: 1px solid #ccc;
+	width: 100%;
+}
+.admin-huobishezhi-middle ul li{
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	width: 100%;
+	padding: 2.5vw 1vw;
+}
+.admin-huobishezhi-middle ul li .admin-huobishezhi-middle-coin{
+	width: 30%;
+	float: left;
+	border: 0px solid red;
+}
+
+.admin-huobishezhi-middle ul li .admin-huobishezhi-middle-coin span{
+	display: block;
+	width: 100%;
+	padding: 1.5vw 1vw;
+
+}
+.admin-huobishezhi-middle ul li .admin-huobishezhi-middle-coin img{
+	width: 8vw;
+	float: right;
+	margin-top: -.5vw;
+	margin-right: 2vw;
+	border: 0px solid red;
+}
+.admin-huobishezhi-middle ul li .admin-huobishezhi-middle-coin input{
+	width: 15vw;
+	text-align: center;
+}
+
+.admin-huobishezhi-middle ul li .admin-huobishezhi-middle-coin-desc{
+	border: 0px solid red;
+	float: left;
+	width: 68%;
+	padding: .5vw;
+	position: relative;
+
+}
+.admin-huobishezhi-middle ul li .admin-huobishezhi-middle-coin-desc span{
+	position: absolute;
+	font-size: 4vw;
+	top: 3px;
+	left: 3px;
+	z-index: 1000;
+	height: 5vw;
+	width: 11vw;
+	display: block;
+	/*border: 1px solid red;*/
+}
+.admin-huobishezhi-middle ul li .admin-huobishezhi-middle-coin-desc textarea{
+	width: 99%;
+	height: 15vw;
+	margin: 0px;
+	font-size: 4vw;
+	padding: .5vw;
+	outline: none;
+	border: 1px solid #ccc;
+	resize: none;
+	color: #999;
+}
+.admin-huobishezhi-middle ul li .inputRadio{
+	width: 4vw;
+	height: 4vw;
+}
+.admin-huobishezhi-middle ul li .coinBox{
+}
+.admin-huobishezhi-middle ul li .coinsBox{
+}
+.admin-huobishezhi-middle ul li .coinsBox input{
+	width: 20%;
+	text-align: center;
+	float: left;
+	margin-top: 2.5vw;
+	margin-left: 2.5vw;
+}
+.admin-huobishezhi-middle ul li button{
+	width: 100%;
+	border: 0px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 1.8vw;
+}
+
+/*等级规划*/
+
+.admin-rank-middle{
+	width: 95%;
+	margin: auto;
+	/*border: 1px solid #ccc;*/
+}
+.admin-rank-middle .admin-rank-nav,.admin-rank-middle .admin-rank-navbox{
+	width: 100%;
+	text-align: center;
+	height: 10vw;
+	background: rgb(255,255,255);
+	/*border: 1px solid red;*/
+}
+.admin-rank-middle .admin-rank-nav{
+	/*border: 1px solid green;*/
+	position: fixed;
+	top: 10vw;
+	left: 0px;
+	margin-top: 1px;
+	padding-top: 5px;
+}
+.admin-rank-middle .admin-rank-nav span{
+	display: inline-block;
+	border: 1px solid green;
+	width: 30%;
+	padding: 5px;
+	box-sizing: border-box;
+}
+
+.admin-rank-middle .admin-rank-list{
+	margin-top: 10px;
+	box-sizing: border-box;
+	text-align: center;
+}
+.admin-rank-middle .admin-rank-list li{
+	border: 1px solid #ccc;
+	width: 90%;
+	margin: 10px auto;
+
+}
+.admin-rank-middle .admin-rank-list li div{
+	/*border: 1px solid #ccc;*/
+	padding: 0px;
+	text-align: left;
+	padding: 5px 5px;
+}
+.admin-rank-middle .admin-rank-list li div input{
+	color: #666;
+}
+.admin-rank-middle .admin-rank-list li div:nth-child(1) span{
+	display: inline-block;
+	width: 13%;
+	border: 1px solid #ccc;
+	font-size: 4.5vw;
+	padding: 3px 1px;
+	box-sizing: border-box;
+	text-align: center;
+}
+.admin-rank-middle .admin-rank-list li div:nth-child(1) input{
+	width: 15%;
+	font-size: 4vw;
+	text-align: center;
+	padding: 3px 0px;
+}
+.admin-rank-middle .admin-rank-list li div:nth-child(1) input:nth-child(2){
+	width: 23%;
+	/*border: 1px solid red;*/
+}
+.admin-rank-middle .admin-rank-list li div:nth-child(2) span{
+	display: block;
+	float: left;
+	font-size: 4.5vw;
+}
+.admin-rank-middle .admin-rank-list li div:nth-child(2) span:nth-child(1){
+	/*border: 1px solid red;*/
+	width: 13%;
+}
+.admin-rank-middle .admin-rank-list li div:nth-child(2) span:nth-child(1) i{
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 3px 0px;
+	text-align: center;
+	font-size: 4.5vw;
+	font-style: normal;
+	display: inline-block;
+}
+.admin-rank-middle .admin-rank-list li div:nth-child(2) span:nth-child(1) i:nth-child(2){
+	margin-top: 10px;
+}
+.admin-rank-middle .admin-rank-list li div:nth-child(2) span:nth-child(2){
+	/*border: 1px solid red;*/
+	width: 27%;
+	padding-bottom: 20%;
+	height: 0;
+	text-align: center;
+}
+.admin-rank-middle .admin-rank-list li div:nth-child(2) span:nth-child(2) img{
+	/*border: 1px solid #ccc;*/
+	/*width: 80%;*/
+	height: 16vw;
+	/*padding-bottom: 45%;*/
+}
+
+.admin-rank-middle .admin-rank-list li div:nth-child(2) span:nth-child(3){
+	width: 58%;
+	padding-bottom: 4.5%;
+	/*border: 1px solid red;*/
+}
+.admin-rank-middle .admin-rank-list li div:nth-child(2) span:nth-child(3) textarea{
+	border: 1px solid #ccc;
+	width: 100%;
+	padding: 0px 5px;
+	padding-bottom: 34%;
+	height: 0;
+	box-sizing: border-box;
+	outline: none;
+	resize: none;
+	font-size: 3.7vw;
+	color: #666;
+}
+.admin-rank-middle .admin-rank-list li div:nth-child(2) dl{
+	text-align: center;
+}
+.admin-rank-middle .admin-rank-list li div:nth-child(2) dl button{
+	width: 45%;
+	font-size: 4vw;
+	padding: 2px 5px;
+	box-sizing: border-box;
+	color: #666;
+}
+.admin-rank-middle .admin-rank-addBtn{
+	text-align: center;
+	border: 1px solid #ccc;
+	margin-bottom: 50px;
+}
+
+.admin-rank-middle .admin-rank-addBtn button{
+	width: 100%;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	padding: 5px;
+}
+
+/*在线设置*/
+.admin-online-middle{
+	width: 95%;
+	margin: 10px auto;
+	border: 1px solid #ccc;
+}
+.admin-online-middle .admin-online-middle-ul{
+	width: 100%;
+}
+.admin-online-middle .admin-online-middle-ul li{
+	width: 100%;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	padding: 5px;
+}
+.admin-online-middle .admin-online-middle-ul li input,.admin-online-middle .admin-online-middle-ul li select{
+	padding: 3px 5px;
+	box-sizing: border-box;
+	width: 45%;
+}
+.admin-online-middle .admin-online-middle-ul li span p{
+	font-size: 3.6vw;
+	color: #666;
+}
+.admin-online-middle .admin-online-middle-ul li .admin-online-middle-remark{
+}
+/*会员注册*/
+.admin-register-middle{
+	width: 95%;
+	margin: 10px auto;
+	border: 1px solid #ccc;
+}
+
+.admin-register-middle .admin-register-middle-ul{
+	width: 100%;
+}
+.admin-register-middle .admin-register-middle-ul li{
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 5px;
+	box-sizing: border-box;
+}
+
+.admin-register-middle .admin-register-middle-ul li input{
+	width: 62%;
+	padding: 3px 5px;
+}
+.admin-register-middle .admin-register-middle-ul li select{
+	padding: 3px 5px;
+}
+.admin-register-middle .admin-register-middle-ul li div{
+	width: 100%;
+	text-align: center;
+}
+.admin-register-middle .admin-register-middle-ul li div textarea{
+	width: 90%;
+	resize: none;
+	/*outline: none;*/
+	padding: 5px;
+	font-size: 3vw;
+	color: #666;
+	line-height: 5.5vw;
+}
+.admin-register-middle .admin-register-middle-ul li button{
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 7px;
+}
+
+/*输入限制*/
+.admin-input-limit-middle{
+	width: 95%;
+	margin: 10px auto;
+	border: 1px solid #ccc;
+}
+.admin-input-limit-middle .admin-input-limit-middle-ul{
+	width: 100%;
+}
+
+.admin-input-limit-middle .admin-input-limit-middle-ul li{
+	width: 100%;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+.admin-input-limit-middle .admin-input-limit-middle-ul li div{
+	width: 100%;
+	text-align: center;
+}
+.admin-input-limit-middle .admin-input-limit-middle-ul li textarea{
+	width: 90%;
+	border: 1px solid #ccc;
+	resize: none;
+	box-sizing: border-box;
+	padding: 10px;
+	line-height: 5vw;
+	font-size: 4vw;
+	color: #666;
+}
+.admin-input-limit-middle .admin-input-limit-middle-ul li button{
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+.admin-input-limit-middle .admin-input-limit-middle-ul li input,.admin-input-limit-middle .admin-input-limit-middle-ul li select{
+	box-sizing: border-box;
+	padding: 3px 5px;
+	width: 50%;
+}
+
+/*用户管理*/
+.admin-user-list-middle{
+	width: 95%;
+	border: 1px solid #ccc;
+	margin:  auto;
+}
+.admin-user-list-middle .admin-user-list-middle-soso,.admin-user-list-middle .admin-user-list-middle-sosobox{
+	width: 100%;
+	height: 12vw;
+	border: 1px solid #ccc;
+	box-sizing:  border-box;
+	padding: 1.5vw;
+	text-align: center;
+	/*border: 1px solid red;*/
+}
+.admin-user-list-middle .admin-user-list-middle-soso{
+	/*border: 1px solid yellow;*/
+	width: 95%;
+	position: fixed;
+	top: 10vw;
+	left: 2.5%;
+	margin-top: 1px;
+	background: rgb(255,255,255);
+}
+.admin-user-list-middle .admin-user-list-middle-soso input{
+	padding: 3px 5px;
+	width: 70%;
+	text-align: center;
+	border: 2px solid #ccc;
+}
+.admin-user-list-middle .admin-user-list-middle-soso button{
+	display: inline-block;
+	width: 20%;
+	padding: 3px;
+	text-align: center;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	background: #ccc;
+}
+.admin-user-list-middle .admin-user-list-middle-ul{
+	width: 100%;
+}
+.admin-user-list-middle .admin-user-list-middle-ul li{
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 5px;
+	box-sizing: border-box;
+}
+.admin-user-list-middle .admin-user-list-middle-ul li h3{
+	text-align: center;
+}
+.admin-user-list-middle .admin-user-list-middle-ul li div{
+	text-align: center;
+	margin-top: 10px;
+}
+.admin-user-list-middle .admin-user-list-middle-ul li div form{
+	display: none;
+}
+.admin-user-list-middle .admin-user-list-middle-ul li div span{
+	display: inline-block;
+	padding: 2px 5px;
+	background: #ccc;
+	border: 1px solid #999;
+}
+.admin-user-list-middle .admin-user-list-middle-ul li div span{
+	margin-left: 1%;
+}
+.admin-user-list-middle .admin-user-list-middle-ul li div span:nth-child(1){
+	margin-left: 0px;
+}
+.admin-user-list-middle .admin-user-list-middle-loading{
+	width: 100%;
+	/*border: 1px solid green;*/
+	height: 15vw;
+	line-height: 15vw;
+	text-align: center;
+	display: none;
+}
+
+/*金币流水*/
+.admin-gold-history-middle{
+	width: 95%;
+	border: 1px solid #ccc;
+	margin: 10px auto;
+}
+.admin-gold-history-middle .admin-gold-history-middle-div{
+	text-align: center;
+	border: 1px solid #ccc;
+	padding: 5px;
+	box-sizing: border-box;
+}
+.admin-gold-history-middle .admin-gold-history-middle-div span{
+	font-weight: bold;
+}
+.admin-gold-history-middle .admin-gold-history-middle-ul{
+	width: 100%;
+}
+	
+.admin-gold-history-middle .admin-gold-history-middle-ul li{
+	width: 100%;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	padding: 5px;
+}
+.admin-gold-history-middle .admin-gold-history-middle-ul li dl{
+	width: 100%;
+	display: block;
+}
+.admin-gold-history-middle .admin-gold-history-middle-ul li dl span{
+	display: inline-block;
+	border: 1px solid #ccc;
+	float: left;
+	margin: 5px 10px;
+	box-sizing: border-box;
+	padding: 5px;
+}
+.admin-gold-history-middle button{
+	width: 100%;
+	margin: auto;
+	border: 1px solid #ccc;
+	padding: 5px;
+	box-sizing: border-box;
+}
+
+/*奖励发放*/
+.admin-user-pride-middle{
+	width: 95%;
+	margin: 10px auto;
+	border: 1px solid #ccc;
+
+}
+.admin-user-pride-middle .admin-user-pride-middle-ul{
+	width: 100%;
+}
+.admin-user-pride-middle .admin-user-pride-middle-ul li{
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 5px;
+	box-sizing: border-box;
+}
+.admin-user-pride-middle .admin-user-pride-middle-ul li input,.admin-user-pride-middle .admin-user-pride-middle-ul li button{
+	box-sizing: border-box;
+	padding: 3px 10px;
+}
+.admin-user-pride-middle .admin-user-pride-middle-ul li .admin-user-pride-xunzhang{
+	width: 100%;
+	min-height: 30vw;
+	border: 1px solid #ccc;
+	margin-top: 5px;
+}
+
+.admin-user-pride-chosexunzhang{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+	height: 100vh;
+	margin: auto;
+	background: rgb(0,0,0);
+	opacity: 0.5;
+	filter: opacity(5);
+	z-index: 99;
+	display: none;
+}
+.admin-user-pride-chosexunzhang-ul{
+	width: 95%;
+	margin: auto;
+	background: rgb(255,255,255);
+	position: fixed;
+	z-index: 100;
+	left: 2.5%;
+	top: 15vh;
+	height: 60vh;
+	text-align: center;
+	display: none;
+	/*padding-bottom: 50vw;*/
+}
+.admin-user-pride-chosexunzhang-ul li{
+	display: inline-block;
+	width: 30%;
+	border: 1px solid #ccc;
+	margin-top: 10px;
+	box-sizing: border-box;
+	padding: 3px 5px;
+	font-weight: bold;
+}
+.chosexunzhang-active{
+	background: #ccc;
+}
+.admin-user-pride-chosexunzhang-ul li div{
+	position: absolute;
+	top: 8vh;
+	left: 2.5%;
+	width: 95%;
+	height: 45vh;
+	border: 1px solid #ccc;
+	overflow-y: auto;
+	text-align: center;
+}
+.admin-user-pride-chosexunzhang-ul li div span{
+	display: inline-block;
+	text-align: center;
+	width: 20%;
+	height: 18vw;
+	margin-top: 8vw;
+	margin-left: 3.1vw;
+	border: 1px solid #ccc;
+	float: left;
+	font-weight: 300;
+}
+.admin-user-pride-chosexunzhang-ul li div span dl{
+	width: 100%;
+	height: 100%;
+	font-size: 3vw;
+}
+
+.admin-user-pride-chosexunzhang-ul li div span dl:nth-child(2){
+	margin-top: 5px;
+}
+.admin-user-pride-chosexunzhang-ul li div span dl img{
+}
+.admin-user-pride-chosexunzhang-button{
+	position: absolute;
+	top: 54.5vh;
+	text-align: center;
+	width: 100%;
+}
+.admin-user-pride-chosexunzhang-button button{
+	padding: 1px 5px;
+	box-sizing: border-box;
+}
+.admin-user-pride-chosexunzhang-button button:nth-child(2){
+	margin-left: 50px;
+}
+/*系统安全*/
+.admin-security-middle{
+	width: 95%;
+	margin: 10px auto;
+	border: 1px solid #ccc;
+}
+
+.admin-security-middle ul{
+	width: 100%;
+}
+.admin-security-middle ul li{
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 5px;
+	box-sizing: border-box;
+}
+	
+.admin-security-middle ul li div{
+	width: 100%;
+}
+.admin-security-middle ul li div dl{
+	width: 95%;
+	margin: 5px auto;
+}
+.admin-security-middle ul li div dl input{
+	width: 13%;
+	text-align: center;
+}
+.admin-security-middle ul li button{
+	padding: 2px 5px;
+}
+.admin-security-middle ul li span p{
+	font-size: 4vw;
+	line-height: 6vw;
+	color: #666;
+}
+
+/*消息系统*/
+.system-news-middle{
+	width: 95%;
+	margin: 10px auto;
+	border: 1px solid #ccc;
+}
+.system-news-middle ul{
+	width: 100%;
+
+}
+.system-news-middle ul li{
+	width: 100%;
+	border: 1px solid #ccc;
+}
+.system-news-middle ul li div{
+	width: 100%;
+	box-sizing: border-box;
+	/*padding: 10px;*/
+}
+.system-news-middle ul li .title{
+	text-align: center;
+	background: #ccc;
+	padding: 5px;
+	box-sizing: border-box;
+	font-weight: bold;
+}
+.system-news-middle ul li div dl{
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px;
+	display: block;
+	/*border: 1px solid red;*/
+}
+.system-news-middle ul li div dl input{
+	width: 70vw;
+	height: 10vw;
+	float: left;
+	margin-left: 2vw;
+	box-sizing: border-box;
+	padding: 1.5vw;
+	border: 1px solid #ccc;
+}
+
+.system-news-middle ul li div dl .fuxuankuan,.system-news-middle ul li div dl img{
+	width: 6vw;
+	height: 6vw;
+	border: 1px solid #ccc;
+	margin-top: 1.5vw;
+}
+.system-news-middle ul li div dl img{
+	margin-left: 2vw;
+}
+.system-news-middle ul li div button{
+	padding: 3px 5px;
+	margin: 10px;
+	border: 1px solid #ccc;
+}
+.system-news-middle ul li input[name="laba_time"]{
+	height: 10vw;
+	width: 30vw;
+	border: 1px solid #ccc;
+}
+
+.system-news-middle ul li .lababox{
+	border: 0px solid red;
+	padding: 10px 5px;
+}
+.system-news-middle ul li .submitBtn{
+	width: 100%;
+	border: 0px;
+	padding: 8px;
+	border: 1px solid #ccc;
+}
+/*游戏管理*/
+.admin-games-middle{
+	width: 95%;
+	margin:10px auto;
+	border: 1px solid #ccc;
+}
+.admin-games-middle .admin-games-middle-ul{
+	width: 100%;
+	text-align: center;
+}
+.admin-games-middle .admin-games-middle-ul a{
+	display: inline-block;
+	border: 1px solid #ccc;
+	text-decoration: none;
+	width: 45vw;
+	height: 20vw;
+}
+.admin-games-middle .admin-games-middle-ul a li{
+	width: 100%;
+	height: 100%;
+}
+.admin-games-middle .admin-games-middle-ul a li img{
+	height: 16vw;
+	width: auto;
+	margin-left: 3vw;
+	margin-top: 2vw;
+	float: left;
+}
+.admin-games-middle .admin-games-middle-ul a li span{
+	float: left;
+	line-height: 20vw;
+	font-size: 4vw;
+	margin-left: 1.5vw;
+}
+
+/*广东11选5*/
+.admin-GD11x5-middle{
+	width: 95%;
+	margin: 10px auto;
+	border: 1px solid #ccc;
+}
+.admin-GD11x5-middle .admin-GD11x5-middle-navs{
+	width: 100%;
+	height: 10vw;
+	border-bottom: 1px solid #ccc;
+	line-height: 9.5vw;
+	text-align: center;
+}
+.admin-GD11x5-middle .admin-GD11x5-middle-navs span{
+	display: inline-block;
+	/*width: 17%;*/
+	box-sizing: border-box;
+	padding: 0px 15px;
+	/*font-size: 4vw;*/
+	/*border: 1px solid red;*/
+}
+.admin-GD11x5-middle .admin-GD11x5-middle-box{
+	width: 100%;
+	position: relative;
+	/*border: 1px solid red;*/
+}
+.admin-GD11x5-middle .admin-GD11x5-middle-box ul{
+	position: absolute;
+	left: -1px;
+	top: 0px;
+	width: 100%;
+	display: none;
+	/*border: 1px solid green;*/
+}
+.admin-GD11x5-middle .admin-GD11x5-middle-box ul li{
+	width: 100%;
+}
+.admin-GD11x5-middle .admin-GD11x5-middle-box ul li table{
+	width: 100%;
+}
+.admin-GD11x5-middle .admin-GD11x5-middle-box ul li table tr{
+
+}
+.admin-GD11x5-middle .admin-GD11x5-middle-box ul li table tr td,.admin-GD11x5-middle .admin-GD11x5-middle-box ul li table tr th{
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	padding: 5px 0px;
+}
+.admin-GD11x5-middle .admin-GD11x5-middle-box ul li table tr th{
+	text-align: center;
+}
+.admin-GD11x5-middle .admin-GD11x5-middle-box ul li table:nth-child(1) tr td{
+	width: 20%;
+}
+.admin-GD11x5-middle .admin-GD11x5-middle-box ul li .button{
+	width: 100%;
+	margin: 15px 0px;
+	text-align: center;
+}
+.admin-GD11x5-middle .admin-GD11x5-middle-box ul li .button button{
+	width: 30vw;
+	padding: 5px;
+}
+.admin-GD11x5-middle .admin-GD11x5-middle-box ul li input{
+	font-size: 4vw;
+	height: 6vw;
+	text-align: center;
+}
+.admin-GD11x5-middle .admin-GD11x5-middle-box .activeUL{
+	display: block;
+}
+
+/*三公*/
+.admin-sg-middle{
+	width: 95%;
+	margin: 10px auto;
+	border: 1px solid #ccc;2
+}
+.admin-sg-middle table{
+	width: 100%;
+}
+.admin-sg-middle table td,.admin-sg-middle table th{
+	border: 1px solid #ccc;
+	width: 22%;
+	text-align: center;
+	padding: 5px;
+}
+.admin-sg-middle table td input{
+	width: 100%;
+	border: 0px solid #ccc;
+	text-align: center;
+}
+.admin-sg-middle td button{
+	padding: 3px 20px;
+}
+
+/*下限设置*/
+.admin-setLimit-middle{
+	width: 95%;
+	margin: 10px auto;
+	border: 1px solid #ccc;
+}
+.admin-setLimit-middle table{
+	width: 100%;
+}
+	
+.admin-setLimit-middle table td{
+	border: 1px solid #ccc;
+	width: 20%;
+	box-sizing: border-box;
+	padding: 5px;
+	/*font-size: 3vw;*/
+	text-align: center;
+}
+.admin-setLimit-middle table td:nth-child(2),.admin-setLimit-middle table td:nth-child(4){
+	width: 30%;
+}
+.admin-setLimit-middle table td span,.admin-setLimit-middle table td input{
+	font-size: 3vw;
+	color: #666;
+}
+
+.admin-setLimit-middle table td input{
+	width: 55%;
+	float: right;
+	height: 5.5vw;
+	text-align: center;
+	border: 1px solid #ccc;
+}
+.admin-setLimit-middle table td button{
+	padding: 5px 15px;
+}
+
+/* 百家乐赔率设置 */
+.admin-bjle-middle{
+    width: 95%;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+}
+
+.admin-bjle-middle table{
+    display: block;
+    width: 100%;
+
+}
+.admin-bjle-middle table td{
+    width: 24%;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    text-align: center;
+    padding: 5px 0px;
+    box-sizing: border-box;
+}
+.admin-bjle-middle table td input{
+    width: 80%;
+    border: 0px solid #ccc;
+    text-align: center;
+}

@@ -1,0 +1,50 @@
+{include file="common/header"/}
+<div class="setting">
+	<div><a href="javascript:;" onclick="javasrcipt:history.back(-1);"><点击返回上一页</a></div>
+	<div class="linebox"><label>我的设置</label></div>
+	<div class="linebox">修改名字</div>
+	<div class="linebox"><input type="text" name="username" style="border:1px solid black"></div>
+	<div class="linebox"><button class="username">提交</button></div>
+	<div class="linebox">修改昵称</div>
+	<div class="linebox"><input type="text" name="signature" style="border:1px solid black"></div>
+	<div class="linebox"><button class="signature">提交</button></div>
+</div>
+<script type="text/javascript">
+	$("button[class='username']").on('click',function(){
+		var username = $("input[name='username']").val();
+		url = "{:url('Home/Setting/userdata')}",
+		$.ajax({
+			type:"POST",
+			url:url,
+			data:{"passwordType":2,"password":username},
+			dataType:"json",
+			success :function(data){
+				console.log(data);
+				return;
+			},
+			error:function(data){
+				console.log(data);
+				return;
+			}
+		})
+	});
+	$("button[class='signature']").on('click',function(){
+		var signature = $("input[name='signature']").val();
+		url = "{:url('Home/Setting/userdata')}",
+		$.ajax({
+			type:"POST",
+			url:url,
+			data:{"passwordType":4,"password":signature},
+			dataType:"json",
+			success :function(data){
+				console.log(data);
+				return;
+			},
+			error:function(data){
+				console.log(data);
+			}
+		})
+	})
+
+</script>
+{include file="common/footer"/}

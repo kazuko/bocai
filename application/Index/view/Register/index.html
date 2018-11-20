@@ -1,0 +1,140 @@
+{include file="public/header" /}
+<section class="admin-register-middle">
+	<form id="admin-register-middle-form" method="post">
+		<input type="hidden" name="id" value="{$info.id}">
+		<ul class="admin-register-middle-ul">
+			<li>
+				<span>会员前缀：</span>
+				<input type="text" name="register_prefix" value="{$info.register_prefix}" placeholder="请输入前缀">
+			</li>
+			<li>
+				<span>注册模式：</span>
+				<select name="register_mod">
+					<option {if $info['register_mod']==1}selected="selected"{/if} value="1">任意</option>
+					<option {if $info['register_mod']==2}selected="selected"{/if} value="2">手机号码</option>
+					<option {if $info['register_mod']==3}selected="selected"{/if} value="3">短信验证</option>
+					<option {if $info['register_mod']==0}selected="selected"{/if} value="0">禁止</option>
+				</select>
+			</li>
+			<li>
+				<span>起始编号：</span>
+				<input {if $info.register_start_number}readonly onclick="startNum()" {else/}name="register_start_number"{/if} type="text" value="{$info.register_start_number}" placeholder="只可填写一次，请慎重填写">
+			</li>
+			<li>
+				<span>初始账号：</span>
+				<input type="text" {if $info.register_init_account}readonly onclick="startNum()" {else/}name="register_init_account"{/if} value="{$info.register_init_account}">
+				<em style="color: red;font-size: 3vw;">注意：初始账号将会根据“起始编号”递减来编号并且在“初始账号”后面追加编号。</em>
+			</li>
+			<li>
+				<span>初始密码：</span>
+				<input type="text" {if $info.register_init_password}readonly onclick="startNum()" {else/}name="register_init_password"{/if} value="{$info.register_init_password}">
+			</li>
+			<li>
+				<span>保留规则：</span>
+				<div>
+					<textarea name="register_rules" placeholder="多个规则，请使用‘|’隔开。例如：88|*88|88*">{$info.register_rules}</textarea>
+				</div>
+			</li>
+			<li>
+				<span>默认签名：</span>
+				<div>
+					<textarea name="register_signature">{$info.register_signature}</textarea>
+				</div>
+			</li>
+			<li>
+				<span>昵称禁止关键字：</span>
+				<div>
+					<textarea name="register_keyword" placeholder="多个关键字，请使用‘|’隔开">{$info.register_keyword}</textarea>
+				</div>
+			</li>
+			<li>
+				<span>默认头像：</span>
+				<input id="file" type="file" name="register_head" style="display: none;" onchange="preview()">
+				<input type="button" value="上传" onclick="choseImg()">
+				<div>
+					<img id="prev" style="height: 20vw;width: 20vw;border: 1px solid #ccc;border-radius: 5px;margin-top: 5px;" src="{$info.register_head}">
+				</div>
+			</li>
+			<li>
+				<span>昵称长度：</span>
+				<input style="width: 20%;text-align: center;min-width: 50px;" type="text" name="register_max_length" value="{$info.register_max_length}">
+				<i>字</i>
+			</li>
+			<li>
+				<span>欢迎信息：</span>
+				<div>
+					<textarea name="register_welcome" placeholder="如需用到用户你名称请使用格式‘[@用户]’,例如：欢迎[@用户]，请及时修改密码以便保持账号安全！">{$info.register_welcome}</textarea>
+				</div>
+			</li>
+			<li>
+				<span>初始金币</span>
+				<input type="text" name="register_gold" style="width: 18%;text-align: center;min-width: 50px;" value="{$info.register_gold}">
+				<span>初始积分</span>
+				<input type="text" name="register_integral" style="width: 18%;text-align: center;min-width: 50px;" value="{$info.register_integral}">
+			</li>
+			<li>
+				<span>验证密钥：</span>
+				<input type="text" name="register_check_key" value="{$info.register_check_key}">
+			</li>
+			<li>
+				<span>到期时间：</span>
+				<input onclick="wenDate('register_end_time',5)" type="text" name="register_end_time" value="{$info.register_end_time|date='Y-m-d H:i:s'}">
+			</li>
+
+			<li style="text-align: center;padding: 0px;">
+				<button type="button" onclick="save()">确定</button>
+			</li>
+		</ul>
+	</form>
+	<script type="text/javascript">
+		function startNum(){
+			show_tips_box("不可以再更改，如需更改，请联系运维人员。");
+		}
+		function choseImg(){
+			$("input[name='register_head']").trigger('click');
+		}
+		function preview(){
+			var file = document.getElementById('file').files[0];
+			if(!file || file.length===0){
+				return false;
+			}
+			var prev = document.getElementById('prev');
+			var reader = new FileReader();
+			reader.readAsDataURL(file);
+			reader.onload = function(){
+				prev.src = this.result;
+			}
+		}
+		$("input[name='register_start_number']").on('input properchange',function(){
+			$(this).val($(this).val().match(/[0-9]*/));
+		})
+		function save(){
+			if($('#admin-register-middle-form').find('input[name="register_start_number"]').length){
+				if(!Number($("input[name='register_start_number']").val())){
+					show_tips_box("请设置起始编号！");
+					return false;
+				}
+				if(!$("input[name='register_init_account']").val()){
+					show_tips_box("请输入初始账号！");
+					return false;
+				}
+				if(!$('input[name="register_init_password"]').val()){
+					show_tips_box("请输入初始密码");
+					return false;
+				}
+				show_tips_box('【起始编号|初始账号|初始密码】只能设置1次，您确定提交？','提示',1,500,1000,3,true,true,function(){
+					submitForm('admin-register-middle-form','{:url("Index/Register/save")}',function(res){
+						console.log(res)
+						show_tips_box(res['msg']);
+					});
+				});
+			}else{
+				submitForm('admin-register-middle-form','{:url("Index/Register/save")}',function(res){
+					console.log(res)
+					show_tips_box(res['msg']);
+				});
+			}
+		}
+	</script>
+</section>
+{include file="public/footer" /}

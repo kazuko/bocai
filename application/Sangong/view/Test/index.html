@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>websocket图片上传</title>
+	<script type="text/javascript" src="__PUBLIC__/Home/static/js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<input type="text" name="text">
+<img src="__PUBLIC__/Home/static/images/head.jpg">
+<input type="button" name="upload" onclick=uploadText()>
+<input type="file" name="file">
+<div class="img">
+	
+
+</div>
+<script type="text/javascript">
+	ws  = new WebSocket("ws://127.0.0.100:2400");
+	function uploadText(){
+		var text = $("input[type='text']").val();
+		console.log(text+' has been upload');
+		ws.send(text);
+	}
+	$("input[name='file']").on("change",function(){
+		console.log('file had been upload');
+
+	})
+	ws.onmessage = function(e){
+		switch(e.data){
+			case "online": 
+			ws.send("online");
+			break;
+			case "hello":
+			console.log(e.data);
+			break;
+			default:
+			console.log(e.data);
+			$("[class=img]").append(
+				"<img src='"+e.data+"'></img>"
+				);
+			break;
+		}	
+	}
+</script>
+</body>
+
+</html>

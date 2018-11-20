@@ -1,0 +1,6 @@
+[ 2018-08-15T02:41:00+00:00 ][ error ] [2]require(D:\phpstudy\PHPTutorial\WWW\bocai\vendor\composer/../topthink/think-worker/src/config.php): failed to open stream: No such file or directory[D:\phpstudy\PHPTutorial\WWW\bocai\thinkphp\library\think\Loader.php:396]
+[ info ] [ LOG ] INIT File
+[ 2018-08-15T02:41:00+00:00 ][ error ] [64]think\__require_file(): Failed opening required 'D:\phpstudy\PHPTutorial\WWW\bocai\vendor\composer/../topthink/think-worker/src/config.php' (include_path='.;C:\php\pear')[D:\phpstudy\PHPTutorial\WWW\bocai\thinkphp\library\think\Loader.php:396]
+[ 2018-08-15T02:41:24+00:00 ][ error ] [2]require(D:\phpstudy\PHPTutorial\WWW\bocai\vendor\composer/../topthink/think-worker/src/config.php): failed to open stream: No such file or directory[D:\phpstudy\PHPTutorial\WWW\bocai\thinkphp\library\think\Loader.php:396]
+[ info ] [ LOG ] INIT File
+[ 2018-08-15T02:41:24+00:00 ][ error ] [64]think\__require_file(): Failed opening required 'D:\phpstudy\PHPTutorial\WWW\bocai\vendor\composer/../topthink/think-worker/src/config.php' (include_path='.;C:\php\pear')[D:\phpstudy\PHPTutorial\WWW\bocai\thinkphp\library\think\Loader.php:396]

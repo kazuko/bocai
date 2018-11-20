@@ -1,0 +1,70 @@
+{include file="public/header" /}
+<section class="admin-security-middle">
+	<ul>
+		<form method="post" id="admin-security-middle-form">
+			<input type="hidden" name="id" value="{$info.id}">
+			<li>
+				<span>地址绑定：</span>
+				<select name="security_ip_open">
+					<option {if $info.security_ip_open==0}selected="selected"{/if} value="0">关闭</option>
+					<option {if $info.security_ip_open==1}selected="selected"{/if} value="1">开启</option>
+				</select>
+			</li>
+			<li>
+				<span>认证密码：</span>
+				<input type="text" name="security_password" value="{$info.security_password}">
+			</li>
+			<li>
+				<span>定时设置：</span>
+				<select name="security_time_open">
+					<option {if $info.security_time_open==0}selected="selected"{/if} value="0">关闭</option>
+					<option {if $info.security_time_open==1}selected="selected"{/if} value="1">开启</option>
+				</select>
+				<div style="{if $info.security_time_open==1}display: block;{else/}display: none;{/if}">
+					<dl>
+						<span>开始时间：</span>
+						<input type="text" name="start_hours" value="{$info.security_time_start[0]}">时
+						<input type="text" name="start_munite" value="{$info.security_time_start[1]}">分
+						<input type="text" name="start_seconds" value="{$info.security_time_start[2]}">秒
+					</dl>
+					<dl>
+						<span>结束时间：</span>
+						<input type="text" name="end_hours" value="{$info.security_time_end[0]}">时
+						<input type="text" name="end_munite" value="{$info.security_time_end[1]}">分
+						<input type="text" name="end_seconds" value="{$info.security_time_end[2]}">秒
+					</dl>
+				</div>
+			</li>
+		</form>
+
+		<li style="text-align: center;">
+			<button onclick="save()">保存设置</button>
+		</li>
+		<li>
+			<span>
+				<p>1、地址绑定：开启后需要IP登记方可登录，请慎重。</p>
+				<p>2、认证密码：即登录时所需要用到的密码。</p>
+				<p>3、定时关闭：开启后在指定的时间范围内将不可以登录后台。</p>
+				<p>4、开始时间：开启定时关闭后，此为时间范围的起始时间。</p>
+				<p>5、结束时间：开启定时关闭后，此为时间范围的结束时间。</p>
+				<p style="color: red;">（注意：请慎重修改设置，以防因为设置原因导致自己无法登录后台。）</p>
+			</span>
+		</li>
+	</ul>
+	<script type="text/javascript">
+		$('select[name="security_time_open"]').change(function(e){
+			if(Number($(this).val())){
+				$(this).siblings('div').show();
+			}else{
+				$(this).siblings('div').hide();
+			}
+		});
+		function save(){
+			submitForm('admin-security-middle-form','{:url("Index/Security/dataDeal")}',function(res){
+				console.log(res)
+
+			});
+		}
+	</script>
+</section>
+{include file="public/footer" /}

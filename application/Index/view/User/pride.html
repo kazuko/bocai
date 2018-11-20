@@ -1,0 +1,160 @@
+{include file="public/header" /}
+<section class="admin-user-pride-middle">
+	<form id="admin-user-pride-middle-form" method="post">
+		<ul class="admin-user-pride-middle-ul">
+			<li>
+				<span>奖励账号：</span>
+				<input type="text" name="username" value="{$userInfo['username']}" placeholder="请输入用户账号">
+			</li>
+			<li>
+				<span>奖励金币：</span>
+				<input class="numberBox" type="text" name="gold" value="" placeholder="请输入奖励金额">
+			</li>
+			<li>
+				<span>奖励积分：</span>
+				<input class="numberBox"  type="text" name="sliver" value="" placeholder="请输入奖励积分">
+			</li>
+			<li>
+				<span>奖励勋章：</span>
+				<button type="button" onclick="showXunZhang()">选择勋章</button>
+				<div class="admin-user-pride-xunzhang"></div>
+			</li>
+			<li style="text-align: center;">
+				<button type="button" onclick="prideBtn()">奖励</button>
+			</li>
+		</ul>
+	</form>
+</section>
+<section class="admin-user-pride-chosexunzhang"></section>
+<section class="admin-user-pride-chosexunzhang-ul">
+	<ul>
+		{foreach $xunzhangs as $key => $vo}
+		<li class="{if $key==0}chosexunzhang-active{/if}">
+			<span>{if $key==0}{$coin.coin1_name}{elseif $key==1 /}{$coin.coin2_name}{else/}特殊{/if}头衔</span>
+			<div style="{if $key==0}display: block;{else/}display: none;{/if}">
+				{foreach $vo as $k => $v}
+				<span style="{if $k<4}margin-top: 1vw;{/if}">
+					<dl class="xunzhangInfo" onclick="choseXunZhang({$v.id})" style="position: relative;" data-id="{$v.id}" data-status="0" id="OwnerStatus{$v.id}" data-url="{$v.src}" data-name="{$v.name}">
+						<img style="height: 17vw;width: auto;" src="{$v.src}">
+						<img id="hasOwned{$v.id}" style="width: 5vw;height: 5vw;border-radius: 5vw;position: absolute;top: 2px;left: 12.5vw;background: red;display: none;" src="__PUBLIC__/Index/images/chose.svg">
+					</dl>
+					<dl>{$v.name}</dl>
+				</span>
+				{/foreach}
+			</div>
+		</li>
+		{/foreach}		
+	</ul>
+	<div class="admin-user-pride-chosexunzhang-button">
+		<button onclick="suerBtn()">确定</button>
+		<button onclick="cancelBtn()">取消</button>
+	</div>
+</section>
+
+<script type="text/javascript">
+	$(".numberBox").on('input propertychange',function(e){
+		$(this).val($(this).val().match(/[0-9]*/));
+	});
+	function prideBtn(){
+		var val = $("input[name='username']").val();
+		if(!val){
+			show_tips_box('请输入用户账号');
+			return;
+		}
+		
+		if(!$('input[name="gold"]').val()&&!$('input[name="sliver"]').val()&&!$('.admin-user-pride-xunzhang').html()){
+			show_tips_box('请输入选择奖励');
+			return;
+		}
+
+		show_tips_box('您确定要提交数据吗？','提示',1,500,1000,3,true,true,function(e){
+			submitForm(
+				'admin-user-pride-middle-form',
+				'{:url("Index/User/updateUserRanks")}',
+				function(res){
+					console.log(res);
+					if(!res['code']){
+						$("input[name='sliver']").val('');
+						$("input[name='gold']").val('');
+						$(".admin-user-pride-xunzhang").html('');
+					}
+					show_tips_box(res['msg']);
+				});
+		},function(e){
+		});
+	}
+	function suerBtn(){
+		var htmlStr = '';
+		$('.admin-user-pride-chosexunzhang-ul').find('.xunzhangInfo').each(function(i,y){
+			var status = $(y).attr('data-status');
+			if(Number(status)==2){
+				var id = $(y).attr('data-id');
+				var src = $(y).attr('data-url');
+				var name = $(y).attr('data-name');
+				htmlStr += '<dl style="width:15vw;height:22vw;margin:4vw 1.3vw; border:1px solid #ccc;display:block;float:left;overflow:hide;"><dd style="text-align:center;"><img style="height:22vw;box-sizing:border-box;padding:3px;" src="'+src+'" /><input type="checkbox" checked="checked" name="medal_id[]" value="'+id+'" style="display:none;" /></dd><dd style="font-size:3vw;text-align:center;">'+name+'</dd></dl>';
+			}
+		});
+		htmlStr += '<div class="clear" style="height:5vw;"></div>';
+		cancelBtn();
+		$(".admin-user-pride-xunzhang").html(htmlStr);
+	}
+	function cancelBtn(){
+		$(".admin-user-pride-chosexunzhang,.admin-user-pride-chosexunzhang-ul").hide();
+		$('.admin-user-pride-chosexunzhang-ul').find('.xunzhangInfo').each(function(i,y){
+			var id = $(y).attr('data-id');
+			$(y).attr('data-status','0');
+			$("#hasOwned"+id).hide();
+		});
+	}
+	function showXunZhang(){
+		var username = $("input[name='username']").val();
+		if(!username){
+			show_tips_box("请输入正确的用户账号！");
+			return;
+		}
+		$.ajax({
+			url: '{:url("Index/User/getUserRanks")}',
+			type: 'post',
+			data: {
+				username: username
+			},
+			dataType: 'json',
+			success: function(res){
+				console.log(res);
+				if(res['code']=='unfind'){
+					show_tips_box('请输入正确的用户账户！');
+				}else if(res[0]){
+					for(var i=0; i<res.length; i++){
+						$("#hasOwned"+res[i]['medal_id']).show();
+						$("#OwnerStatus"+res[i]['medal_id']).attr('data-status','1');
+					}
+					$(".admin-user-pride-chosexunzhang,.admin-user-pride-chosexunzhang-ul").show();
+				}else{
+					$(".admin-user-pride-chosexunzhang,.admin-user-pride-chosexunzhang-ul").show();
+				}
+			},
+			fail: function(res){
+				console.log(res);
+				show_tips_box('发生未知意外，请刷新试试！');
+			}
+		});
+	}
+	function choseXunZhang(id){
+		var status = $("#OwnerStatus"+id).attr('data-status');
+		console.log(status);
+		if(Number(status)==1){
+			alert("该用户已有该勋章！");
+		}else if(Number(status)==2){
+			$("#hasOwned"+id).hide();
+			$("#OwnerStatus"+id).attr('data-status','0');
+		}else{
+			$("#hasOwned"+id).css('background','yellow').show();
+			$("#OwnerStatus"+id).attr('data-status','2');
+		}
+	}
+	$(".admin-user-pride-chosexunzhang-ul li").click(function(e){
+		$(this).addClass('chosexunzhang-active').siblings().removeClass('chosexunzhang-active');
+		$(this).children('div').show().parent().siblings().children('div').hide();
+	});
+</script>
+{include file="public/footer" /}

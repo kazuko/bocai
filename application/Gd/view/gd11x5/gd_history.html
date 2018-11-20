@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-Ch">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10,chrome=1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="description" content="">
+<meta name="author" content="">
+<title>广东11选5开奖历史</title>
+<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+<!--[if lt IE 9]>
+	  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<!-- [if lt IE 7]> 
+  <script src='http://ie7-js.googlecode.com/svn/version/2.0(beta)/IE7.js' type=”text/javascript”></script> 
+  <![endif]-–> -->
+<!-- css -->
+<link href="__PUBLIC__/luntan/css/bootstrap.min.css" rel="stylesheet"
+	type="text/css">
+<link href="__PUBLIC__/luntan/css/style.css" rel="stylesheet">
+<link href="__PUBLIC__/luntan/color/default.css" rel="stylesheet">
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+	<form action="{:url('Gd/Gd11x5/gd_history')}" method="post">
+		<div>
+			<table class="table table-hover">
+				<thead>
+					<tr class="tieba-label">
+						<th width="20%">期数&nbsp;
+							<button class="refresh-button" type="button"
+								onclick="location.reload()">
+								<i class="glyphicon glyphicon-refresh"></i>
+							</button>
+						</th>
+						<th width="50%">开奖号码</th>
+						<th width="30%">开奖时间</th>
+					</tr>
+				</thead>
+				<tbody>
+					{volist name="games_gdopen" id="vo" }
+					<tr>
+						<td>{$vo.expect}</td>
+						<td>{$vo.opencode}</td>
+						<td>{$vo.opentime|date='Y-m-d H:i:s'}</td>
+					</tr>
+					{/volist}
+				</tbody>
+			</table>
+		</div>
+		<input type="date" value="" name="opentime">
+		<input type="submit" value="查询">
+	</form>
+
+</body>
+</html>

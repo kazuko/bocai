@@ -1,0 +1,173 @@
+{include file="common/header"/}
+<div>
+	<table>
+		<tr>
+			<td>
+			<label>用户名：{$user['username']}</label>	
+			</td>
+			<td>
+				<label>金币数：<span id='property'>{$user['property']}</span></label>
+			</td>
+			<td>
+				<label>积分：<span id='integral'>{$user['integral']}</span></label>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>所拥有勋章</label>
+				<div class="img">
+					{foreach $medal as $key=>$vo}
+					<img src="{$vo['src']}" width="40px" height="40px"> 
+					{/foreach}
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="text" name="money" placeholder="请输入充值金额">
+
+			</td>
+			<td>
+				<input type="text" name="gold" placeholder="可获得的金币">
+				<button class='trading'>充值</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button class="sign" onclick="integral(2)">签到+2积分</button>
+			</td>
+			<td>
+				<button class="comment" onclick="integral(1)">评论+1积分</button>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<script type="text/javascript">
+	$("input[name='money']").change(function (){
+		var money = $("input[name='money']").val();
+		var gold = money*10;
+		$("input[name='gold']").val(gold);
+	})
+
+	/*充值金币触发事件
+	**1充值失败返回充值失败
+	**2充值成功返回新的金币数
+	**3充值成功并解锁新的勋章 1 解锁成功 更新金币数与勋章数 2 解锁失败仅跟新金币数并提示勋章解锁失败
+	*/
+	$("button.trading").on('click',function(){
+		var money = $("input[name='money']").val();
+		var gold = $("input[name='gold']").val();
+		var url = "{:url('Home/Base/tradingactive')}"
+		$.ajax({
+			type:'POST',
+			url:url,
+			data:{"money":money,"gold":gold},
+			datatype:'json',
+			success:function(message){
+				message = JSON.parse(message);
+				console.log(message);
+
+			   	// 充值失败
+				if(message['first']==0){
+					layer.msg(message['tips']);
+					return false;
+				}
+				//充值成功
+				if(message['first']==1){
+					layer.msg(message['tips']);
+					document.getElementById("property").innerHTML=message['property'];
+					return false;
+				}
+				//触发解锁勋章事件，但是解锁出错
+				if(message['first']==2){
+					layer.msg('2'+message['tips']);
+					document.getElementById("property").innerHTML=message['property'];
+				}
+				else{
+				//解锁成功
+				var s = '';
+					for(var i=0; i<message['first'].length;i++){
+						s+="<img src='"+message['first'][i]['src']+"'  width='40px' height='40px'/>";
+					}
+					layer.msg('充值成功并解锁勋章',function(){
+						console.log(message['first'].length);
+							// layer.msg(<img src = "message[i]['src']" width='40px' height='40px'>);
+							layer.open({
+							  time:1000,
+							  type: 1,
+							  skin: 'layui-layer-rim', //加上边框
+							  area: ['420px', '240px'], //宽高
+							  content:s
+							  // content : "<img src='tp5/public/static/images/head/medal1.gif'/>"
+							});
+					});
+					document.getElementById("property").innerHTML=message['property'];
+					$(".img").append(s);
+				}
+			},
+			error:function(){
+				layer.msg('出现了未知错误');
+			}
+		})
+	})
+
+	/*积分增加触发事件
+	**1积分增加返回充值失败
+	**2积分增加成功返回新的总积分
+	**3积分增加成功并解锁新的勋章 1 解锁成功 更新积分数与新勋章 2 解锁失败仅更新积分数并提示勋章解锁失败
+	*/
+	 function integral(weight=0){
+		var url = "{:url('Home/Base/integralactive')}"
+		$.ajax({
+			type:'POST',
+			url:url,
+			data:{"weight":weight},
+			datatype:'json',
+			success:function(message){
+				message = JSON.parse(message);
+				console.log(message);
+
+			   	// 积分增加失败
+				if(message['first']==0){
+					layer.msg(message['tips']);
+					return false;
+				}
+				//积分增加成功
+				if(message['first']==1){
+					layer.msg(message['tips']);
+					document.getElementById("integral").innerHTML=message['integral'];
+					return false;
+				}
+				//触发解锁勋章事件，但是解锁出错
+				if(message['first']==2){
+					layer.msg(message['tips']);
+					document.getElementById("integral").innerHTML=message['integral'];
+				}
+				else{
+				//解锁成功
+				var s = '';
+					for(var i=0; i<message['first'].length;i++){
+						s+="<img src='"+message['first'][i]['src']+"'  width='40px' height='40px'/>";
+					}
+					layer.msg('积分增加成功并解锁勋章',{time:1000},function(){
+							layer.open({
+							  time:1000,
+							  type: 1,
+							  skin: 'layui-layer-rim', //加上边框
+							  area: ['420px', '240px'], //宽高
+							  content:s
+							});
+					});
+					document.getElementById("integral").innerHTML=message['integral'];
+					$(".img").append(s);
+				}
+			},
+			error:function(){
+				layer.msg('出现了未知错误');
+			}
+		})
+	}
+
+</script>
+{include file="common/footer"/}

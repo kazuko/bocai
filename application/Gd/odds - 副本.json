@@ -1,0 +1,56 @@
+{
+  "odds": {
+    "sanma": {
+      "qiansanzhixuan": {
+        "zx_fushi": 975.15,
+        "zx_danshi": 975.15
+      },
+      "qiansanzuxuan": {
+        "zux_fushi": 162.525,
+        "zux_danshi": 162.525
+      }
+    },
+    "erma": {
+      "qianerzhixuan": {
+        "zx_fushi": 975.15,
+        "zx_danshi": 975.15
+      },
+      "qianerzuxuan": {
+        "zux_fushi": 162.525,
+        "zux_danshi": 162.525
+      }
+    },
+    "budingdan": {
+      "budingdan": {
+        "qiansanwei": 3.611
+      }
+    },
+    "dingweidan": {
+      "dingweidan": {
+        "dingweidan": 10.835
+      }
+    },
+    "renxuan": {
+      "renxuanfushi": {
+        "fx_one": 2.167,
+        "fx_two": 5.418,
+        "fx_three": 16.253,
+        "fx_four": 65.01,
+        "fx_five": 455.07,
+        "fx_fiveInSix": 75.845,
+        "fx_fiveInSeven": 21.67,
+        "fx_fiveInEight": 8.126
+      },
+      "renxuandanshi": {
+        "dx_one": 2.167,
+        "dx_two": 5.418,
+        "dx_three": 16.253,
+        "dx_four": 65.01,
+        "dx_five": 455.07,
+        "dx_fiveInSix": 75.845,
+        "dx_fiveInSeven": 21.67,
+        "dx_fiveInEight": 8.126
+      }
+    }
+  }
+}

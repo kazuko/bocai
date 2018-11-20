@@ -1,0 +1,117 @@
+{include file="public/header" /}
+<section class="admin-sg-middle">
+	<form id="sg_form">
+		<table>
+			<tr>
+				<th colspan="10">闲家1</th>
+			</tr>
+			<tr>
+				<td>对牌以上</td>
+				<td>
+					<input type="text" name="sg_{$list['player1']['id']}" value="{$list['player1']['odds']}">
+				</td>
+				<td>三公</td>
+				<td>
+					<input type="text" name="sg_{$list['player1']['id']}" value="{$list['player1']['odds']}">
+				</td>
+			</tr>
+			<tr>
+				<td>赢</td>
+				<td>
+					<input type="text" name="sg_{$list['player1']['id']}" value="{$list['player1']['odds']}">
+				</td>
+				<td>输</td>
+				<td>
+					<input type="text" name="sg_{$list['player1']['id']}" value="{$list['player1']['odds']}">
+				</td>
+			</tr>
+			<tr>
+				<td>和</td>
+				<td>
+					<input type="text" name="sg_{$list['player1']['id']}" value="{$list['player1']['odds']}">
+				</td>
+				<td colspan="2"></td>
+			</tr>
+			<tr>
+				<th colspan="10">闲家2</th>
+			</tr>
+			<tr>
+				<td>对牌以上</td>
+				<td>
+					<input type="text" name="sg_{$list['player2']['id']}" value="{$list['player2']['odds']}">
+				</td>
+				<td>三公</td>
+				<td>
+					<input type="text" name="sg_{$list['player2']['id']}" value="{$list['player2']['odds']}">
+				</td>
+			</tr>
+			<tr>
+				<td>赢</td>
+				<td>
+					<input type="text" name="sg_{$list['player2']['id']}" value="{$list['player2']['odds']}">
+				</td>
+				<td>输</td>
+				<td>
+					<input type="text" name="sg_{$list['player2']['id']}" value="{$list['player2']['odds']}">
+				</td>
+			</tr>
+			<tr>
+				<td>和</td>
+				<td>
+					<input type="text" name="sg_{$list['player2']['id']}" value="{$list['player2']['odds']}">
+				</td>
+				<td colspan="2"></td>
+			</tr>
+			<tr>
+				<th colspan="10">闲家3</th>
+			</tr>
+			<tr>
+				<td>对牌以上</td>
+				<td>
+					<input type="text" name="sg_{$list['player3']['id']}" value="{$list['player3']['odds']}">
+				</td>
+				<td>三公</td>
+				<td>
+					<input type="text" name="sg_{$list['player3']['id']}" value="{$list['player3']['odds']}">
+				</td>
+			</tr>
+			<tr>
+				<td>赢</td>
+				<td>
+					<input type="text" name="sg_{$list['player3']['id']}" value="{$list['player3']['odds']}">
+				</td>
+				<td>输</td>
+				<td>
+					<input type="text" name="sg_{$list['player3']['id']}" value="{$list['player3']['odds']}">
+				</td>
+			</tr>
+			<tr>
+				<td>和</td>
+				<td>
+					<input type="text" name="sg_{$list['player3']['id']}" value="{$list['player3']['odds']}">
+				</td>
+				<td colspan="2"></td>
+			</tr>
+			<tr>
+				<td colspan="10">
+					<button type="button" onclick="saveData('sg_form')">提交</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<script type="text/javascript">
+		function saveData(formid){
+			submitForm(formid,'{:url("Index/Games/sg")}',function(res){
+				console.log(res);
+			});
+        }
+        $('input').on('input propertychange',function(e){
+            var v = $(this).val().match(/[0-9]+\.[0-9]{0,2}/);
+            if(!v){
+                v = $(this).val().match(/[0-9]+/);
+            }
+            $(this).val(v);
+        });
+	</script>
+</section>
+{include file="public/footer" /}

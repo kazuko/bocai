@@ -1,0 +1,14 @@
+{
+    "window.zoomLevel": 1,
+    "php.validate.executablePath": "H:/phpstudy/php/php-5.6.27-nts/php.exe",
+    "files.autoSave": "onFocusChange",
+    "git.path": "H:/git/Git-2.18.0-64-bit.exe",
+    "search.useIgnoreFiles": false,
+    "git.enabled": false,
+    "git.autofetch": false,
+    "vetur.format.defaultFormatter.html": "prettier",
+    "php-cs-fixer.executablePath": "${extensionPath}\\php-cs-fixer.phar",
+    "php-cs-fixer.autoFixBySemicolon": false,
+    "php-cs-fixer.onsave": false,
+    "php-cs-fixer.lastDownload": 1536194338697,
+}

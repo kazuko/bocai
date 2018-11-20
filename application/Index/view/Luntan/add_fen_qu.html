@@ -1,0 +1,76 @@
+{include file="public/header"}
+<section class="admin-addfenqu-middle">
+	<form id="admin-addfenqu-middle-form">
+		<input type="hidden" name="id" value="{$info.id}">
+		<ul>
+			<li>
+				<span class="titlebox">新分区名称：</span>
+				<input type="text" name="name" placeholder="请输入分区名称" value="{$info.name}">
+			</li>
+			<li>
+				<span class="titlebox">进入设置：</span>
+				<input class="inputRadio" type="radio" name="door" value="0" {if $info.door==0}checked="checked"{/if}>
+				<span>不限制</span>
+				<input class="inputRadio" type="radio" name="door" value="1" {if $info.door==1}checked="checked"{/if}>
+				<span>仅会员</span>
+			</li>
+			<li>
+				<span class="titlebox">看帖所需金币：</span>
+				<input type="text" name="gold" placeholder="请输入金币数量" value="{$info.gold}">
+				<span>金币</span>
+			</li>
+			<li>
+				<span class="titlebox">高手发帖奖励：</span>
+				<input type="text" name="pride_percent" placeholder="请输入奖励百分比" value="{$info.pride_percent}" {if !$info.gold}disabled="disabled"{/if}>
+				<span>%</span>
+			</li>
+			<li>
+				<span class="titlebox">限制发帖：</span>
+				<input class="inputRadio" type="radio" name="limit_tie" value="0" {if $info.limit_tie==0}checked="checked"{/if}>
+				<span>不限制</span>
+				<input class="inputRadio" type="radio" name="limit_tie" value="1" {if $info.limit_tie==1}checked="checked"{/if}>
+				<span>限制</span>
+			</li>
+			<li style="padding: 0px;">
+				<button type="button" onclick="submitForm('admin-addfenqu-middle-form','{:url("Index/Luntan/add_fen_qu")}')">保存</button>
+			</li>
+			
+		</ul>
+	</form>
+	<script type="text/javascript">
+		$("input[name='gold']").on('input propertychange',function(e){
+			$(this).val($(this).val().match(/[0-9]*/));
+			if(Number($(this).val())){
+				$("input[name='pride_percent']").removeAttr('disabled');
+			}else{
+				$("input[name='pride_percent']").val(0);
+				$("input[name='pride_percent']").attr('disabled','disabled');
+			}
+		});
+
+
+		$("input[name='pride_percent']").on('input propertychange',function(e){
+
+			var val = $(this).val();
+			// console.log(val);
+			if(val.indexOf('.')>=0){
+				var stmp = val.split('.');
+				stmp[0] = stmp[0].match(/[0-9]*/);
+				stmp[1] = stmp[1].match(/[0-9]*/);
+				// console.log(stmp);
+				val = stmp[0]+'.'+stmp[1];
+				if(stmp[1][0]){
+					val = Number(val);
+					// console.log('number:'+val);
+					val = Math.round(val*100)/100;
+					// console.log('round:'+val);
+				}
+			}else{
+				val = val.match(/[0-9]*/);
+			}
+			// console.log(Number(val));
+			$(this).val(val);
+		});
+	</script>
+</section>
+{include file="public/footer"}

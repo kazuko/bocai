@@ -1,0 +1,128 @@
+{include file="public/header"}
+<section class="admin-huobishezhi-middle">
+	<form id="admin-huobishezhi-middle-form">
+		<input type="hidden" name="id" value="{$info.id}">
+		<ul>
+			<li>
+				<div class="admin-huobishezhi-middle-coin">
+					<span>货币1</span>
+					<span>
+						<input type="text" name="coin1_name" value="{$info.coin1_name}" disabled="disabled">
+						<img onclick="editCoin(this)" src="__PUBLIC__/Index/images/edit.png" />
+					</span>
+				</div>
+				<div class="admin-huobishezhi-middle-coin-desc">
+					<textarea id="coin1_desc" name="coin1_desc">描述： {$info.coin1_desc}</textarea>
+					<span  onclick="textareaFocus('coin1_desc')"></span>
+				</div>
+				<div style="clear: both;"></div>
+			</li>
+			<li>
+				<div class="admin-huobishezhi-middle-coin">
+					<span>货币2</span>
+					<span>
+						<input type="text" name="coin2_name" value="{$info.coin2_name}" disabled="disabled">
+						<img onclick="editCoin(this)" src="__PUBLIC__/Index/images/edit.png" />
+					</span>
+				</div>
+				<div class="admin-huobishezhi-middle-coin-desc">
+					<textarea id="coin2_desc" name="coin2_desc">描述： {$info.coin2_desc}</textarea>
+					<span onclick="textareaFocus('coin2_desc')"></span>
+				</div>
+				<div style="clear: both;"></div>
+            </li>
+            <li>
+                <span>货币1银行利率：</span>
+                <input class="NUMBERFORMAT" style="max-width: 100px;width: 17vw;text-align:center;" type="text" name="coin1_bank_percent" value="{$info.coin1_bank_percent}"> %
+            </li>
+			<li>
+				<span>货币1充值：</span>
+				<input class="inputRadio" type="radio" name="coin1_recharge" value="1" {if $info['coin1_recharge']==1}checked="checked"{/if} >
+				<span>开启</span>
+				<input class="inputRadio" type="radio" name="coin1_recharge" value="0" {if $info['coin1_recharge']==0}checked="checked"{/if} >
+				<span>关闭</span>
+			</li>
+			<li class="COINS" style="{if $info['coin1_recharge']==1}display: block;{else/}display: none;{/if}">
+				<div class="coinBox">货币1充值金额设置：</div>
+				<div class="coinsBox">
+					<span class="coins">
+						{foreach $info['recharge'] as $key => $vo}
+						<input class="checkbbox" style="display: none;" type="checkbox" checked="checked" value="{$vo}" name="recharge[]">
+						<input class="checkkval" type="text" value="{$vo}">
+						{/foreach}
+					</span>
+					<input type="button" value="+" onclick="addCoin(this)">
+					<div style="clear: both;"></div>
+				</div>
+			</li>
+			<li>
+				<span>安全密钥：</span>
+				<input type="text" name="security_key" value="{$info.security_key}">
+			</li>
+			<li>
+				<span>官方密钥：</span>
+				<input type="text" name="official_key" value="{$info.official_key}">
+			</li>
+			<li style="padding: 0px;">
+				<button type="button" onclick="submitForm('admin-huobishezhi-middle-form','{:url('Index/SetCoin/index')}')">确定</button>
+			</li>
+		</ul>
+	</form>
+    <script type="text/javascript">
+
+		var textareaObj1 = document.getElementById('coin1_desc');
+		var textareaObj2 = document.getElementById('coin2_desc');
+		textareaObj1.addEventListener('touchend',touch,false);
+		textareaObj2.addEventListener('touchend',touch,false);
+		function touch(event){
+			event = event || window.event;
+			console.log(event.target.id);
+			var val = document.getElementById(event.target.id).value;
+			if(val == '描述：' || val == '描述'){
+				document.getElementById(event.target.id).value = '描述： ';
+			}
+		}
+		$("textarea").keydown(function(e){
+			console.log(e.keyCode);
+			if($(this).val()=='描述'||$(this).val()=='描述：'){
+				$(this).val('描述： ');
+			}
+		});
+		function textareaFocus(elementId){
+			var textObj = document.getElementById(elementId);
+			setCursor(elementId,textObj.value.length,textObj.value.length);
+		}
+		$("input[name='coin1_recharge']").change(function(e){
+			if(Number($(this).val())==1){
+				$(".COINS").show();
+			}else{
+				$(".COINS").hide();
+			}
+		});
+
+		function addCoin(that){
+			$('.coins').append('<input style="display: none;" type="checkbox" checked="checked" value="0" name="recharge[]"><input type="text" value="0">');
+			coinBind();
+		}
+		function coinBind(){
+			$(".coins .checkkval").bind('input propertychange',function(e){
+				var index = $(this).index();
+				var v = $(this).val().match(/[0-9]*/);
+				$(this).val(v);
+				$('.coins input').eq(index-1).val(Number(v));
+			});
+		}
+		coinBind();
+		function editCoin(that){
+			$(that).siblings('input').removeAttr('disabled').focus();
+        }
+        $(".NUMBERFORMAT").bind('input propertychange',function(e){
+            var v = $(this).val().match(/[0-9]+\.[0-9]{0,2}/g);
+            if(!v){
+                v = $(this).val().match(/[0-9]+/g);
+            }
+            $(this).val(v);
+        });
+	</script>
+</section>
+{include file="public/footer"}

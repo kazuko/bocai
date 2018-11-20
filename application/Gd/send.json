@@ -1,0 +1,189 @@
+{
+  "version":1,
+  "rules": {
+    "sanma-qiansanzhixuan-zx_fushi": {
+      "tips": "从第一、二、三位中各选1个不同的号码组成一注。",
+      "rule": "所选号与开奖号前三位号码相同，且顺序一致，即为中奖。",
+      "case": "按序选号：05 06 02，开奖号：05 06 02**，即为中奖。"
+    },
+    "sanma-qiansanzhixuan-zx_danshi": {
+      "tips": "手动输入1个三位不同的号码组成一注。",
+      "rule": "输入号与开奖号前三位号码相同，且顺序一致，即为中奖。",
+      "case": "按序选号：05 06 02，开奖号：05 06 02**，即为中奖。"
+    },
+    "sanma-qiansanzuxuan-zux_fushi": {
+      "tips": "从01-11中任选3个不同的号码组成一注。",
+      "rule": "不限顺序，开奖号前三位中包含全部所选号，即为中奖。",
+      "case": "按序选号：05 06 02，开奖号：06 02 05**，05 06 02**，即为中奖。"
+    },
+    "sanma-qiansanzuxuan-zux_danshi": {
+      "tips": "手动输入1个三位不同的号码组成一注。",
+      "rule": "不限顺序，开奖号前三位中包含全部所选号，即为中奖。",
+      "case": "按序选号：05 06 02，开奖号：06 02 05**，05 06 02**，即为中奖。"
+    },
+    "erma-qianerzhixuan-zx_fushi": {
+      "tips": "从第一、二位中各选1个不同的号码组成一注。",
+      "rule": "所选号与开奖号前两位号码相同，且顺序一致，即为中奖。",
+      "case": "按序选号：02 09，开奖号：02 09***。"
+    },
+    "erma-qianerzhixuan-zx_danshi": {
+      "tips": "手动输入1个两位不同的号码组成一注。",
+      "rule": "输入号与开奖号前两位相同，且顺序一致，即为中奖。",
+      "case": "按序输入号05 06，开奖号：05 06***。"
+    },
+    "erma-qianerzuxuan-zux_fushi": {
+      "tips": "从01-11中任选2个不同的号码组成一注。",
+      "rule": "不限顺序，开奖号前两位中包含全部所选号，即为中奖。",
+      "case": "按序选号08 11，开奖号：08 11***、11 08***，均为中奖。"
+    },
+    "erma-qianerzuxuan-zux_danshi": {
+      "tips": "手动输入1个两位不同的号码组成一注。",
+      "rule": "不限顺序，开奖号前两位中包含全部所选号，即为中奖。",
+      "case": "按序输入号：09 02，开奖号：09 02***、02 09 **，均为中奖。"
+    },
+    "budingdan-budingdan-qiansanwei": {
+      "tips": "从01-11中任选1个号码组成一注。",
+      "rule": "不限顺序，开奖号前三位任意一位中包含所选号，即为中奖。",
+      "case": "选号：08，开奖号：**08**、*08****、08****，均为中奖。"
+    },
+    "dingweidan-dingweidan-dingweidan": {
+      "tips": "任选1个位置并选1个号码组成一注。",
+      "rule": "投注号与开奖号位置及号码相同，即为中奖。",
+      "case": "选号：第二位08，开奖号：*08***，即为中奖。"
+    },
+    "renxuan-renxuanfushi-fx_one": {
+      "tips": "从01-11中任选1个号码组成一注。",
+      "rule": "不限顺序，开奖号中包含全部所选号，即为中奖。",
+      "case": "选号：05，开奖号：**05*。"
+    },
+    "renxuan-renxuanfushi-fx_two": {
+      "tips": "从01-11中任选2个不同的号码组成一注。",
+      "rule": "不限顺序，开奖号中包含全部所选号，即为中奖。",
+      "case": "选号：0508，开奖号：08*05**。"
+    },
+    "renxuan-renxuanfushi-fx_three": {
+      "tips": "从01-11中任选3个不同的号码组成一注。",
+      "rule": "不限顺序，开奖号中包含全部所选号，即为中奖。",
+      "case": "按序选号：05 06 02，开奖号：06*02*05即为中奖。"
+    },
+    "renxuan-renxuanfushi-fx_four": {
+      "tips": "从01-11中任选4个不同的号码组成一注。",
+      "rule": "不限顺序，开奖号中包含全部所选号，即为中奖。",
+      "case": "按序选号：05 06 02 07，开奖号：06* 02 07 05，即为中奖。"
+    },
+    "renxuan-renxuanfushi-fx_five": {
+      "tips": "从01-11中任选5个不同的号码组成一注。",
+      "rule": "不限顺序，开奖号中包含全部所选号，即为中奖。",
+      "case": "选号：05 08 01 07 02，开奖号：08 02 05 07 01。"
+    },
+    "renxuan-renxuanfushi-fx_fiveInSix": {
+      "tips": "从01-11中任选6个不同的号码组成一注。",
+      "rule": "不限顺序，开奖号中包含6个所选号中的任意5个号码，即为中奖。",
+      "case": "选号：03 05 08 01 07 02，开奖号：08 02 05 07 01。"
+    },
+    "renxuan-renxuanfushi-fx_fiveInSeven": {
+      "tips": "从01-11中任选7个不同的号码组成一注。",
+      "rule": "不限顺序，开奖号中包含7个所选号中的任意5个号码，即为中奖。",
+      "case": "选号：03 09 05 08 01 07 02，开奖号：08 02 05 07 01。"
+    },
+    "renxuan-renxuanfushi-fx_fiveInEight": {
+      "tips": "从01-11中任选8个不同的号码组成一注。",
+      "rule": "不限顺序，开奖号中包含8个所选号中的任意5个号码，即为中奖。",
+      "case": "选号：03 09 05 08 01 07 02 06，开奖号：08 02 05 07 01。"
+    },
+    "renxuan-renxuandanshi-dx_one": {
+      "tips": "从01-11中手动输入1个号码组成一注。",
+      "rule": "不限顺序，开奖号中包含全部所选号，即为中奖。",
+      "case": "输入号：05，开奖号：**05**。"
+    },
+    "renxuan-renxuandanshi-dx_two": {
+      "tips": "从01-11中手动输入2个号码组成一注。",
+      "rule": "不限顺序，开奖号中包含全部所选号，即为中奖。",
+      "case": "输入号：05 08，开奖号：08*05**。"
+    },
+    "renxuan-renxuandanshi-dx_three": {
+      "tips": "从01-11中手动输入3个号码组成一注。",
+      "rule": "不限顺序，开奖号中包含全部所选号，即为中奖。",
+      "case": "输入号：05 08 01，开奖号：08*05*01。"
+    },
+    "renxuan-renxuandanshi-dx_four": {
+      "tips": "从01-11中手动输入4个号码组成一注。",
+      "rule": "不限顺序，开奖号中包含全部所选号，即为中奖。",
+      "case": "输入号：05 08 01 07，开奖号：08*05 07 01。"
+    },
+    "renxuan-renxuandanshi-dx_five": {
+      "tips": "从01-11中手动输入5个号码组成一注。",
+      "rule": "不限顺序，开奖号中包含全部所选号，即为中奖。",
+      "case": "输入号：05 08 01 07 02，开奖号：08 02 05 07 01。"
+    },
+    "renxuan-renxuandanshi-dx_fiveInSix": {
+      "tips": "从01-11中手动输入6个号码组成一注。",
+      "rule": "不限顺序，开奖号中包含全部所选号，即为中奖。",
+      "case": "输入号：03 05 08 01 07 02，开奖号：08 02 05 07 01。"
+    },
+    "renxuan-renxuandanshi-dx_fiveInSeven": {
+      "tips": "从01-11中手动输入7个号码组成一注。",
+      "rule": "不限顺序，开奖号中包含全部所选号，即为中奖。",
+      "case": "输入号：03 09 05 08 01 07 02，开奖号：08 02 05 07 01。"
+    },
+    "renxuan-renxuandanshi-dx_fiveInEight": {
+      "tips": "从01-11中手动输入8个号码组成一注。",
+      "rule": "不限顺序，开奖号中包含全部所选号，即为中奖。",
+      "case": "输入号：03 09 05 08 01 07 02 06，开奖号：08 02 05 07 01。"
+    }
+  },
+  "odds": {
+    "sanma": {
+      "qiansanzhixuan": {
+        "zx_fushi": 975.15,
+        "zx_danshi": 975.15
+      },
+      "qiansanzuxuan": {
+        "zux_fushi": 162.525,
+        "zux_danshi": 162.525
+      }
+    },
+    "erma": {
+      "qianerzhixuan": {
+        "zx_fushi": 975.15,
+        "zx_danshi": 975.15
+      },
+      "qianerzuxuan": {
+        "zux_fushi": 162.525,
+        "zux_danshi": 162.525
+      }
+    },
+    "budingdan": {
+      "budingdan": {
+        "qiansanwei": 3.611
+      }
+    },
+    "dingweidan": {
+      "dingweidan": {
+        "dingweidan": 10.835
+      }
+    },
+    "renxuan": {
+      "renxuanfushi": {
+        "fx_one": 2.167,
+        "fx_two": 5.418,
+        "fx_three": 16.253,
+        "fx_four": 65.01,
+        "fx_five": 455.07,
+        "fx_fiveInSix": 75.845,
+        "fx_fiveInSeven": 21.67,
+        "fx_fiveInEight": 8.126
+      },
+      "renxuandanshi": {
+        "dx_one": 2.167,
+        "dx_two": 5.418,
+        "dx_three": 16.253,
+        "dx_four": 65.01,
+        "dx_five": 455.07,
+        "dx_fiveInSix": 75.845,
+        "dx_fiveInSeven": 21.67,
+        "dx_fiveInEight": 8.126
+      }
+    }
+  }
+}

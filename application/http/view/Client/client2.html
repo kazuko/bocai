@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="菠菜项目组" />
+    <meta name="description" content="这是一个关于世界杯的网站">
+    <script type="text/javascript" src="__PUBLIC__/Index/js/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <section style="width:600px;margin:auto;"> 
+        <div id="CONTENTBOX" style="width: 100%;height: 300px;border: 1px solid #ccc;"></div>
+        <textarea name="" id="sendContent" cols="30" rows="5" style="width:100%;"></textarea>
+        <div style="text-align: center;width: 100%;">
+            <button onclick="send()">发送</button>
+            <button onclick="closeSK()">关闭</button>
+        </div>
+    </section>
+    <script>
+        function send(){
+            var text = $("#sendContent").val();
+            $("#sendContent").val('');
+            $("#CONTENTBOX").append("<p>我："+text+"</p>");
+			text = '{"toUser":"client1","me":"client2","text":"'+text+'"}';
+            ws.send(text);
+        }
+        function closeSK(){
+            ws.onclose = function(){
+                alert("关闭成功！");
+            }
+        }
+        var ws = new WebSocket('ws://192.168.0.133:2525');
+        ws.onopen = function(evt){
+            console.log('connection open ...');
+            ws.send('{"handle":true,"me":"client2"}');
+        }
+        
+        ws.onmessage = function(evt){
+            console.log("Recived Message: "+evt.data);
+            $("#CONTENTBOX").append("<p style='text-align:right;'>"+evt.data+"</p>");
+        }
+        
+    </script>
+</body>

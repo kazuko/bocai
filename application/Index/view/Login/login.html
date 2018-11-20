@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="菠菜项目组"/>
+	<meta name="description" content="这是一个关于世界杯的网站">
+	<title>{$web_title}</title>
+	<link rel="icon" href="__PUBLIC__/{$logo}">
+	<script type="text/javascript" src="__PUBLIC__/Index/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/Index/js/bocai.js"></script>
+	<style type="text/css">
+	*{
+		padding: 0px;
+		margin: 0px;
+		list-style: none;
+		font-size: 5vw;
+	}
+	#login-section{
+		width: 100vw;			
+		height: 100vh;
+		text-align: center;
+		background: url('__PUBLIC__/Index/images/bocai.jpg');
+		background-size: 100vw 100vh;
+		padding-top: 25vh;
+		box-sizing: border-box;
+	}
+	#login-section ul{
+		width: 95%;
+		height: 73vw;
+		border-radius: 10px;
+		background: rgb(255,255,255);
+		opacity: 0.8;
+		filter: opacity(8);
+		margin: auto;
+		text-align: left;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	#login-section ul li{
+		/*border: 1px solid red;*/
+		height: 13vw;
+		line-height: 13vw;
+		position: relative;
+	}
+	#login-section ul li input{
+		width: 60%;
+		padding: 5px 5px;
+		box-sizing: border-box;
+		font-size: 4vw;
+		border: 1px solid #ccc;
+	}
+	#login-section ul li img{
+		width: 30%;
+		/*height: 7vw;*/
+		border: 1px solid green;
+		position: absolute;
+		left: 53vw;
+		top: 2.5vw;
+		/*display: inline-block;*/
+	}
+	#login-section ul li input,#login-section ul li img{
+		height: 8vw;
+	}
+	#login-section ul li button{
+		width: 50%;
+		padding: 5px;
+		box-sizing: border-box;
+	}
+</style>
+</head>
+<body>
+	<section id="login-section">
+		<form id="login-form" method="post">
+			<ul>
+				<li>
+					<span>登录账号：</span>
+					<input type="text" name="account" placeholder="请输入登录账号">
+				</li>
+				<li>
+					<span>登录密码：</span>
+					<input type="password" name="pwd" placeholder="请输入登录密码">
+				</li>
+				<li>
+					<span>认证密码：</span>
+					<input type="password" name="password" placeholder="请输入认证密码">
+				</li>
+				<li>
+					<span>验证码：</span>
+					<input type="text" name="checkNum" style="width: 30%;" placeholder="请输入验证码">
+					<img src="{:url('Index/Login/vertify')}" onclick="this.src='{:url("Index/Login/vertify")}'" alt="验证码">
+				</li>
+				<li style="text-align: center;">
+					<button type="button" onclick="LOGIN()">登录</button>
+				</li>
+			</ul>
+		</form>
+		<script type="text/javascript">
+			function LOGIN(){
+				submitForm('login-form','{:url("Index/Login/login")}',function(res){
+					console.log(res);
+						// return;
+					if(res['code']){
+						show_tips_box(res['msg']);
+					}else{
+						window.location.href='{:url("Index/Index/index")}';
+					}
+				},'正在登陆...');
+			}
+		</script>
+	</section>
+</body>

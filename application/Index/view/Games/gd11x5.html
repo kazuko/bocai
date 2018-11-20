@@ -1,0 +1,341 @@
+{include file="public/header" /}
+<section class="admin-GD11x5-middle">
+	<div class="admin-GD11x5-middle-navs">
+		<span class="active">两面盘</span>
+		<span>单码</span>
+		<span>任选|组选|直选</span>
+	</div>
+	<div class="admin-GD11x5-middle-box">
+		<ul class="activeUL">
+			<li>
+				<form id="twofaceForm" method="post">
+					<table>
+						<tr>
+							<td>总和大</td>
+							<td>
+								<input style="width:100%;text-align:center;border:0px;" type="text" name="{$list.twoface['1_-1_1']['id']}_id" value="{$list.twoface['1_-1_1']['odds']}">
+							</td>
+							<td>总和小</td>
+							<td>
+								<input style="width:100%;text-align:center;border:0px;" type="text" name="{$list.twoface['1_-1_2']['id']}_id" value="{$list.twoface['1_-1_2']['odds']}">
+							</td>
+						</tr>
+						<tr>
+							<td>总和单</td>
+							<td>
+								<input style="width:100%;text-align:center;border:0px;" type="text" name="{$list.twoface['1_-1_3']['id']}_id" value="{$list.twoface['1_-1_3']['odds']}">
+							</td>
+							<td>总和双</td>
+							<td>
+								<input style="width:100%;text-align:center;border:0px;" type="text" name="{$list.twoface['1_-1_4']['id']}_id" value="{$list.twoface['1_-1_4']['odds']}">
+							</td>
+						</tr>
+						<tr>
+							<td>总和尾大</td>
+							<td>
+								<input style="width:100%;text-align:center;border:0px;" type="text" name="{$list.twoface['1_-1_5']['id']}_id" value="{$list.twoface['1_-1_5']['odds']}">
+							</td>
+							<td>总和尾小</td>
+							<td>
+								<input style="width:100%;text-align:center;border:0px;" type="text" name="{$list.twoface['1_-1_6']['id']}_id" value="{$list.twoface['1_-1_6']['odds']}">
+							</td>
+						</tr>
+						<tr>
+							<td>龙</td>
+							<td>
+								<input style="width:100%;text-align:center;border:0px;" type="text" name="{$list.twoface['1_-1_7']['id']}_id" value="{$list.twoface['1_-1_7']['odds']}">
+							</td>
+							<td>虎</td>
+							<td>
+								<input style="width:100%;text-align:center;border:0px;" type="text" name="{$list.twoface['1_-1_8']['id']}_id" value="{$list.twoface['1_-1_8']['odds']}">
+							</td>
+						</tr>
+					</table>
+					<table>
+						<thead>
+							<tr>
+								<th>第一球</th>
+								<th>第二球</th>
+								<th>第三球</th>
+								<th>第四球</th>
+								<th>第五球</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<input class="toto" data-ball='firstBall' style="width: 100%;border: 0px;" type="text" name="">
+								</td>
+								<td>
+									<input class="toto" data-ball='secondBall' style="width: 100%;border: 0px;" type="text" name="">
+								</td>
+								<td>
+									<input class="toto" data-ball='thirdBall' style="width: 100%;border: 0px;" type="text" name="">
+								</td>
+								<td>
+									<input class="toto" data-ball='fourthBall' style="width: 100%;border: 0px;" type="text" name="">
+								</td>
+								<td>
+									<input class="toto" data-ball='fifthBall' style="width: 100%;border: 0px;" type="text" name="">
+								</td>
+							</tr>
+							<tr class="ballbox">
+								<td>
+									<span>大</span>
+									<input type="text" class="firstBall" name="{$list.twoface['1_1_1']['id']}_id" value="{$list.twoface['1_1_1']['odds']}" style="float:right;width:67%;border:1px solid #ccc;">
+								</td>
+								<td>
+									<span>大</span>
+									<input type="text" class="secondBall" name="{$list.twoface['1_2_1']['id']}_id" value="{$list.twoface['1_2_1']['odds']}" style="float:right;width:67%;border:1px solid #ccc;">
+								</td>
+								<td>
+									<span>大</span>
+									<input type="text" class="thirdBall" name="{$list.twoface['1_3_1']['id']}_id" value="{$list.twoface['1_3_1']['odds']}" style="float:right;width:67%;border:1px solid #ccc;">
+								</td>
+								<td>
+									<span>大</span>
+									<input type="text" class="fourthBall" name="{$list.twoface['1_4_1']['id']}_id" value="{$list.twoface['1_4_1']['odds']}" style="float:right;width:67%;border:1px solid #ccc;">
+								</td>
+								<td>
+									<span>大</span>
+									<input type="text" class="fifthBall" name="{$list.twoface['1_5_1']['id']}_id" value="{$list.twoface['1_5_1']['odds']}" style="float:right;width:67%;border:1px solid #ccc;">
+								</td>
+							</tr>
+							<tr class="ballbox">
+								<td>
+									<span>小</span>
+									<input type="text" class="firstBall" name="{$list.twoface['1_1_2']['id']}_id" value="{$list.twoface['1_1_2']['odds']}" style="float:right;width:67%;border:1px solid #ccc;">
+								</td>
+								<td>
+									<span>小</span>
+									<input type="text" class="secondBall" name="{$list.twoface['1_2_2']['id']}_id" value="{$list.twoface['1_2_2']['odds']}" style="float:right;width:67%;border:1px solid #ccc;">
+								</td>
+								<td>
+									<span>小</span>
+									<input type="text" class="thirdBall" name="{$list.twoface['1_3_2']['id']}_id" value="{$list.twoface['1_3_2']['odds']}" style="float:right;width:67%;border:1px solid #ccc;">
+								</td>
+								<td>
+									<span>小</span>
+									<input type="text" class="fourthBall" name="{$list.twoface['1_4_2']['id']}_id" value="{$list.twoface['1_4_2']['odds']}" style="float:right;width:67%;border:1px solid #ccc;">
+								</td>
+								<td>
+									<span>小</span>
+									<input type="text" class="fifthBall" name="{$list.twoface['1_5_2']['id']}_id" value="{$list.twoface['1_5_2']['odds']}" style="float:right;width:67%;border:1px solid #ccc;">
+								</td>
+							</tr>
+							<tr class="ballbox">
+								<td>
+									<span>单</span>
+									<input type="text" class="firstBall" name="{$list.twoface['1_1_3']['id']}_id" value="{$list.twoface['1_1_3']['odds']}" style="float:right;width:67%;border:1px solid #ccc;">
+								</td>
+								<td>
+									<span>单</span>
+									<input type="text" class="secondBall" name="{$list.twoface['1_2_3']['id']}_id" value="{$list.twoface['1_2_3']['odds']}" style="float:right;width:67%;border:1px solid #ccc;">
+								</td>
+								<td>
+									<span>单</span>
+									<input type="text" class="thirdBall" name="{$list.twoface['1_3_3']['id']}_id" value="{$list.twoface['1_3_3']['odds']}" style="float:right;width:67%;border:1px solid #ccc;">
+								</td>
+								<td>
+									<span>单</span>
+									<input type="text" class="fourthBall" name="{$list.twoface['1_4_3']['id']}_id" value="{$list.twoface['1_4_3']['odds']}" style="float:right;width:67%;border:1px solid #ccc;">
+								</td>
+								<td>
+									<span>单</span>
+									<input type="text" class="fifthBall" name="{$list.twoface['1_5_3']['id']}_id" value="{$list.twoface['1_5_3']['odds']}" style="float:right;width:67%;border:1px solid #ccc;">
+								</td>
+							</tr>
+							<tr class="ballbox">
+								<td>
+									<span>双</span>
+									<input type="text" class="firstBall" name="{$list.twoface['1_1_4']['id']}_id" value="{$list.twoface['1_1_4']['odds']}" style="float:right;width:67%;border:1px solid #ccc;">
+								</td>
+								<td>
+									<span>双</span>
+									<input type="text" class="secondBall" name="{$list.twoface['1_2_4']['id']}_id" value="{$list.twoface['1_2_4']['odds']}" style="float:right;width:67%;border:1px solid #ccc;">
+								</td>
+								<td>
+									<span>双</span>
+									<input type="text" class="thirdBall" name="{$list.twoface['1_3_4']['id']}_id" value="{$list.twoface['1_3_4']['odds']}" style="float:right;width:67%;border:1px solid #ccc;">
+								</td>
+								<td>
+									<span>双</span>
+									<input type="text" class="fourthBall" name="{$list.twoface['1_4_4']['id']}_id" value="{$list.twoface['1_4_4']['odds']}" style="float:right;width:67%;border:1px solid #ccc;">
+								</td>
+								<td>
+									<span>双</span>
+									<input type="text" class="fifthBall" name="{$list.twoface['1_5_4']['id']}_id" value="{$list.twoface['1_5_4']['odds']}" style="float:right;width:67%;border:1px solid #ccc;">
+								</td>
+							</tr>
+
+						</tbody>
+					</table>
+				</form>
+				<div class="button">
+					<button onclick="saveData('twofaceForm','toto')">提交</button>
+				</div>
+				
+			</li>
+		</ul>
+		<ul>
+			<li style="padding: 0px;text-align: center;">
+				<table style="border: 0px solid green;display: block;margin: auto;">
+					<thead>
+						<tr>
+							<th>第一球</th>
+							<th>第二球</th>
+							<th>第三球</th>
+							<th>第四求</th>
+							<th>第五球</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<input data-ball="onecodeInput1" type="text" class="onceTotal" style="width: 100%;border: 0px;">
+							</td>
+							<td>
+								<input data-ball="onecodeInput2" type="text" class="onceTotal" style="width: 100%;border: 0px;">
+							</td>
+							<td>
+								<input data-ball="onecodeInput3" type="text" class="onceTotal" style="width: 100%;border: 0px;">
+							</td>
+							<td>
+								<input data-ball="onecodeInput4" type="text" class="onceTotal" style="width: 100%;border: 0px;">
+							</td>
+							<td>
+								<input data-ball="onecodeInput5" type="text" class="onceTotal" style="width: 100%;border: 0px;">
+							</td>
+						</tr>
+						<form id="onecodeForm">
+							{foreach $data['y'] as $K => $v}
+							<tr>
+								{foreach $data['x'] as $key => $vo}
+								<td>
+									<span>{$v}</span>
+									<input class="onecodeInput{$vo}" style="width:67%;text-align:center;float: right;border: 1px solid #ccc;color: #666;" type="text" name="{$list['onecode']['2_'.$vo.'_'.$v]['id']}_id" value="{$list['onecode']['2_'.$vo.'_'.$v]['odds']}">
+								</td>
+								{/foreach}
+							</tr>
+							{/foreach}
+						</form>
+					</tbody>
+				</table>
+				<div class="button">
+					<button onclick="saveData('onecodeForm','onceTotal')">提交</button>
+				</div>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<form id="everythingForm" method="post">
+					<table>
+						<th colspan="10">单码</th>
+						<tr>
+							<td style="text-align:center;">一中一</td>
+							<td style="text-align:center;">
+								<input type="text" style="width:100%;text-align:center;border:0px;" name="3_1_group" value="{$list['everything']['3_1']}">
+							</td>
+							<td style="text-align:center;">二中二</td>
+							<td style="text-align:center;">
+								<input type="text" style="width:100%;text-align:center;border:0px;" name="3_2_group" value="{$list['everything']['3_2']}">
+							</td>
+						</tr>
+						<tr>
+							<td style="text-align:center;">三中三</td>
+							<td style="text-align:center;">
+								<input type="text" style="width:100%;text-align:center;border:0px;" name="3_3_group" value="{$list['everything']['3_3']}">
+							</td>
+							<td style="text-align:center;">四中四</td>
+							<td style="text-align:center;">
+								<input type="text" style="width:100%;text-align:center;border:0px;" name="3_4_group" value="{$list['everything']['3_4']}">
+							</td>
+						</tr>
+						<tr>
+							<td style="text-align:center;">五中五</td>
+							<td style="text-align:center;">
+								<input type="text" style="width:100%;text-align:center;border:0px;" name="3_5_group" value="{$list['everything']['3_5']}">
+							</td>
+							<td style="text-align:center;">六中五</td>
+							<td style="text-align:center;">
+								<input type="text" style="width:100%;text-align:center;border:0px;" name="3_6_group" value="{$list['everything']['3_6']}">
+							</td>
+						</tr>
+						<tr>
+							<td style="text-align:center;">七中五</td>
+							<td style="text-align:center;">
+								<input type="text" style="width:100%;text-align:center;border:0px;" name="3_7_group" value="{$list['everything']['3_7']}">
+							</td>
+							<td style="text-align:center;">八中五</td>
+							<td style="text-align:center;">
+								<input type="text" style="width:100%;text-align:center;border:0px;" name="3_8_group" value="{$list['everything']['3_8']}">
+							</td>
+						</tr>
+						<tr>
+							<th colspan="10">组选</th>
+						</tr>
+						<tr>
+							<td style="text-align: center;">前二</td>
+							<td style="text-align: center;">
+								<input type="text" style="width: 100%;border: 0px;text-align: center;" name="4_2_group" value="{$list['group']['4_2']}">
+							</td>
+							<td style="text-align: center;">前三</td>
+							<td style="text-align: center;">
+								<input type="text" style="width: 100%;border: 0px;text-align: center;" name="4_3_group" value="{$list['group']['4_3']}">
+							</td>
+						</tr>
+						<tr>
+							<th colspan="10">直选</th>
+						</tr>
+						<tr>
+							<td style="text-align: center;">前二</td>
+							<td style="text-align: center;">
+								<input type="text" style="width: 100%;border: 0px;text-align: center;" name="5_2_group" value="{$list['direct']['5_2']}">
+							</td>
+							<td style="text-align: center;">前三</td>
+							<td style="text-align: center;">
+								<input type="text" style="width: 100%;border: 0px;text-align: center;" name="5_3_group" value="{$list['direct']['5_3']}">
+							</td>
+						</tr>
+					</table>
+				</form>
+				<div class="button">
+					<button onclick="saveData('everythingForm')">提交</button>
+				</div>
+			</li>
+		</ul>
+	</div>
+</section>
+<script type="text/javascript">
+	$(".admin-GD11x5-middle-navs span").click(function(){
+		var Index = $(this).index();
+		$(this).addClass('active').siblings().removeClass('active');
+		$(".admin-GD11x5-middle-box ul").eq(Index).addClass('activeUL').siblings().removeClass('activeUL');
+	});
+	function saveData(formid,className=''){
+		submitForm(formid,'{:url("Index/Games/gd11x5DataDeal")}',function(res){
+			show_tips_box(res['msg']);
+			if(!res['code']&&className){
+				$("."+className).val('');
+			}
+		})
+	}
+	$(".toto,.onceTotal").on('input propertychange',function(e){
+		var v = $(this).val().match(/[0-9]+\.[0-9]{0,2}/g);
+		console.log(v);
+		if(!v){
+			v = $(this).val().match(/[0-9]+/g);
+		}
+		var classball = $(this).attr('data-ball');
+		$("."+classball).val(v);
+	});
+	$('input').on('input propertychange',function(e){
+		var v = $(this).val().match(/[0-9]+\.[0-9]{0,2}/g);
+		console.log(v);
+		if(!v){
+			v = $(this).val().match(/[0-9]+/g);
+		}
+		$(this).val(v);
+	})
+</script>
+{include file="public/footer" /}

@@ -1,0 +1,65 @@
+{include file="public/header" /}
+<section class="admin-gold-history-middle">
+	<div class="admin-gold-history-middle-div">
+		用户《<span>{$username}</span>》的{$title}
+	</div>
+	<ul class="admin-gold-history-middle-ul">
+		{foreach $list as $key => $vo}
+		<li>
+			<dl>
+				<span>{$vo.time|date="Y-m-d H:i:s"}</span>
+				<span>{$vo.operation}</span>
+			</dl>
+			<dl class="clear"></dl>
+			{foreach $vo['detail'] as $k => $v}
+			<dl>
+				<span>{$k}</span>
+				<span>{$v}</span>
+			</dl>
+			<dl class="clear"></dl>
+			{/foreach}
+		</li>
+		{/foreach}
+	</ul>
+	<button onclick="loadingMore(this)">加载更多</button>
+	<script type="text/javascript">
+		var page = 1;
+		var loading = false;
+		var end = false;
+		function loadingMore(that){
+			if(loading || end){
+				return;
+			}
+			loading = true;
+			$(that).html('加载中');
+			$.ajax({
+				url: '{$url}',
+				type: 'POST',
+				dataType: 'json',
+				data: {
+					page: page,
+					username: '{$username}',
+				},
+				success:function(res){
+					console.log(res)
+					loading = false;
+					if(res['str']){
+						$(".admin-gold-history-middle-ul").append(res['str']);
+						$(that).html('加载更多');
+						page++;
+					}else{
+						end = true;
+						$(that).html('已没有更多').css('color','#999');
+					}
+				},
+				fail:function(res){
+					loading = false;
+					$(that).hmtl('加载更多')
+					console.log(res)
+					show_tips_box("发生小意外，请检查网络是否正常！");
+				}
+			});
+		}
+	</script>
+</section>
+{include file="public/footer" /}

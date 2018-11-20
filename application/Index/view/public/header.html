@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="菠菜项目组"/>
+	<meta name="description" content="这是一个关于世界杯的网站">
+	<title>{$web_title}</title>
+	<link rel="icon" href="__PUBLIC__/{$logo}">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Index/css/index.css">
+	<script type="text/javascript" src="__PUBLIC__/Index/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/Index/js/bocai.js"></script>
+</head>
+<body>
+	<section class="admin-index-top">
+		{if $back_url}
+		<a href="{$back_url}">
+			<span class="admin-index-top-back"><</span>
+		</a>
+		{else/}
+		<a href="javascript:void(0)" onclick="logout()">
+			<span class="admin-index-top-back" style="font-size: 3vw;color: #666;">退出</span>
+		</a>
+		{/if}
+		<span>{$title}</span>
+	</section>
+	<section class="admin-index-topbox"></section>
+	<script type="text/javascript">
+		function logout(){
+			show_tips_box('您确定退出？','提示',1,500,1000,3,true,true,function(){
+				window.location.href = '{:url("Index/Login/logout")}';
+			})
+		}
+	</script>

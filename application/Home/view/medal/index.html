@@ -1,0 +1,39 @@
+{include file="common/header"/}
+<div class="medal">
+	<div><a href="javascript:;" onclick="javasrcipt:history.back(-1);"><点击返回上一页</a></div>
+	<div class="linebox"><label>勋章中心</label></div>
+	{foreach $medal as $key=>$vo}
+		<div class="float">
+				<!-- 找到用户已有的勋章id -->
+				{if in_array($vo['id'],$userMedalId)}
+				<!-- 根据已有勋章id输出勋章信息 -->
+					<div class="yes">
+						<div><img src="{$vo['src']}"></div>
+						<div><span>{$vo['name']}</span></div>
+						<div>
+							<input type="checkbox" name="status[]" {in name="$vo['id']" value="$wearId"}checked{/in} value="{$vo['id']}">
+						</div>				
+					</div>
+				{else/}
+					<div class="no">
+						<div><img src="{$vo['src']}"></div>
+						<div><span>{$vo['name']}</span></div>
+						<div><span>未激活</span></div>
+					</div>
+				{/if}
+		</div>
+   {/foreach}	
+</div>
+ <script type="text/javascript">
+	ws = new WebSocket("ws://127.0.0.1:2347");
+	ws.onopen = function() {
+	    alert("连接成功");
+	    ws.send('aaaa');
+	    alert("给服务端发送一个字符串：aaaa");
+	};
+	ws.onmessage = function(e) {
+	    alert("收到服务端的消息：" + e.data);
+	};
+
+ </script>
+{include file="common/footer"/}

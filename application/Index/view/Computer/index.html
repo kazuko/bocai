@@ -1,0 +1,108 @@
+{include file="public/header"/}
+<section class="admin-computer-middle">
+	<ul class="admin-computer-middle-ul">
+		<li>
+			<div>IP白名单：</div>
+			<dl class="admin-computer-middle-dl">
+				<span id="BaiMingDan">
+					{foreach $bai_ming_dan_ip as $key => $vo}
+					<dd id="Delete{$vo.id}">
+						<form id="deleteform{$vo.id}" method="post" style="display: none;">
+							<input type="hidden" name="id" value="{$vo.id}">
+							<input type="hidden" name="status" value="{$vo.status}">
+							<input type="hidden" name="ip" value="{$vo.ip[0]}.{$vo.ip[1]}.{$vo.ip[2]}.{$vo.ip[3]}">
+						</form>
+						<input type="text" readonly="readonly" value="{$vo['ip'][0]}">.<input type="text" readonly="readonly" value="{$vo['ip'][1]}">.<input type="text" readonly="readonly" value="{$vo['ip'][2]}">.<input type="text" readonly="readonly" value="{$vo['ip'][3]}"><img src="__PUBLIC__/Index/images/delete.png" onclick="deleteIP({$vo.id})">
+					</dd>
+					{/foreach}
+				</span>
+				<dd>
+					<form id="admin-computer-middle-form" action="{:url('Index/Computer/index')}" method="POST">
+						<span id="BaiIP">
+							<input type="text" name="ip0" required="required">.<input type="text" name="ip1" required="required">.<input type="text" name="ip2" required="required">.<input type="text" name="ip3" required="required">
+						</span>
+						<img src="__PUBLIC__/Index/images/add.png" onclick="addIP('admin-computer-middle-form','BaiMingDan')">
+						<input type="hidden" name="status" value="1">
+					</form>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<div>IP黑名单：</div>
+			<dl class="admin-computer-middle-dl">
+				<span id="HeiMingDan">
+					{foreach $hei_ming_dan_ip as $key => $vo}
+					<dd id="Delete{$vo.id}">
+						<form id="deleteform{$vo.id}" method="post" style="display: none;">
+							<input type="hidden" name="id" value="{$vo.id}">
+							<input type="hidden" name="status" value="{$vo.status}">
+							<input type="hidden" name="ip" value="{$vo.ip[0]}.{$vo.ip[1]}.{$vo.ip[2]}.{$vo.ip[3]}">
+						</form>
+						<input type="text" readonly="readonly" value="{$vo['ip'][0]}">.<input type="text" readonly="readonly" value="{$vo['ip'][1]}">.<input type="text" readonly="readonly" value="{$vo['ip'][2]}">.<input type="text" readonly="readonly" value="{$vo['ip'][3]}"><img src="__PUBLIC__/Index/images/delete.png" onclick="deleteIP({$vo.id})">
+					</dd>
+					{/foreach}
+				</span>
+				<dd>
+					<form id="admin-computer-middle-form1" action="{:url('Index/Computer/index')}" method="POST">
+						<span id="HeiIP">
+							<input type="text" name="ip0" required="required">.<input type="text" name="ip1" required="required">.<input type="text" name="ip2" required="required">.<input type="text" name="ip3" required="required">
+						</span>
+						<img src="__PUBLIC__/Index/images/add.png" onclick="addIP('admin-computer-middle-form1','HeiMingDan')">
+						<input type="hidden" name="status" value="0">
+					</form>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<div>电脑访问显示内容：</div>
+			<form id="admin-computer-middle-form2" method="POST">
+				<input type="hidden" name="id" value="{$error_content.id}">
+				<textarea name="error_str">{$error_content.error_str}</textarea>
+				<button type="button" onclick="saveError('admin-computer-middle-form2')">保存</button>
+			</form>
+		</li>
+	</ul>
+	<script type="text/javascript"> 
+		function saveError(formid){
+			submitForm(formid,'{:url("Index/Computer/saveError")}',function(res){
+				console.log(res);
+				show_tips_box(res['msg']);
+			});
+		}
+		function addIP(formid, parentId){
+			submitForm(formid, '{:url("Index/Computer/add")}',function(res){
+				console.log(res);
+				show_tips_box(res['msg']);
+				if(!res['code']){
+					refresh(parentId,res['data']);
+					$("#"+formid+" span input").val('');
+				}
+			});
+		}
+		function deleteIP(id){
+			submitForm('deleteform'+id,'{:url("Index/Computer/delete")}',function(res){
+				console.log(res);
+				if(!res['code']){
+					$("#Delete"+id).remove();
+				}
+				show_tips_box(res['msg']);
+			});
+
+		}
+
+		function refresh(parentId,data){
+			var str = '<dd id="Delete'+data['id']+'">';
+			str += '<form id="deleteform'+data['id']+'" method="post" style="display: none;">';
+			str += '<input type="hidden" name="id" value="'+data['id']+'">';
+			str += '<input type="hidden" name="status" value="'+data['status']+'">';
+			str += '<input type="hidden" name="ip" value="'+data['ip']+'">';
+			str += '</form>';
+			str += '<input type="text" readonly="readonly" value="'+data['ip0']+'">.<input type="text" readonly="readonly" value="'+data['ip1']+'">.<input type="text" readonly="readonly" value="'+data['ip2']+'">.<input type="text" readonly="readonly" value="'+data['ip3']+'"><img src="__PUBLIC__/Index/images/delete.png" onclick="deleteIP('+data['id']+')">';
+			str += '</dd>';
+			$("#"+parentId).append(str);
+		}
+		IP_input('BaiIP');
+		IP_input('HeiIP');
+	</script>
+</section>
+{include file="public/footer"/}

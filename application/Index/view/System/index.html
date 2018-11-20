@@ -1,0 +1,89 @@
+{include file="public/header"}
+<section class="admin-system-index-middle">
+	<form id="myform" action="system.html" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="id" value="{$info.id}">
+		<ul class="admin-system-index-middle-ul">
+			<li>
+				<span>app名称:</span>
+				<span>
+					<input type="text" name="app_name" required="required" placeholder="请输入app名称" value="{$info.app_name}">
+				</span>
+			</li>
+			<li>
+				<span>网站URL:</span>
+				<span>
+					<input type="text" required="required" name="web_url" placeholder="请输入网站url"  value="{$info.web_url}">
+				</span>
+			</li>
+			<li>
+				<span>备案信息:</span>
+				<span>
+					<input type="text" name="web_info" placeholder="请输入备案信息" value="{$info.web_info}">
+				</span>
+			</li>
+			<li>
+				<span>站点状态:</span>
+				<span>
+					<input class="admin-system-middle-status" required="required" type="radio" name="web_status" value="1" {if $info["web_status"]==1}checked="checked"{/if}>
+					<em class="admin-system-middle-status-f" style="margin-right: 4vw;">开始</em>
+					<input class="admin-system-middle-status" required="required" style="margin-left: 4vw;" type="radio" name="web_status" value="0" {if $info["web_status"]==0}checked="checked"{/if}>
+					<em class="admin-system-middle-status-f">关闭</em>
+				</span>
+			</li>
+			<li>
+				<span>外链处理:</span>
+				<span>
+					<input  class="admin-system-middle-status" required="required" type="radio" name="web_link" value="0" {if $info["web_link"]==0}checked="checked"{/if}>
+					<em class="admin-system-middle-status-f">链出</em>
+					<input  class="admin-system-middle-status" required="required" type="radio" name="web_link" value="1" {if $info["web_link"]==1}checked="checked"{/if} >
+					<em class="admin-system-middle-status-f">提示</em>
+					<input  class="admin-system-middle-status" required="required" type="radio" name="web_link" value="2" {if $info["web_link"]==2}checked="checked"{/if} >
+					<em class="admin-system-middle-status-f">禁止</em>
+				</span>
+			</li>
+			<li>
+				<span>LOGO:</span>
+				<span class="admin-system-middle-uploadLOGO" id="uploadLogo">上传</span>
+			</li>
+			<li style="border: 0px;min-height: 40vw;line-height: 40vw;vertical-align: middle;padding: 10px 0px; border-top: 1px solid #ccc;">
+				<input type="file" id="LOGO" name="logo_src" style="display: none;width: 0px;height: 0px;">
+				<span class="admin-system-middle-showLOGO">
+					<img style="max-height: 100%;" id="showLogo" src="__PUBLIC__/{$info.logo_src}" alt="LOGO预览区" title="LOGO预览区">
+				</span>
+			</li>
+			<li style="border: 0px;">
+				<button type="button" onclick="save()" style="height: 9vw;line-height: 8.5vw; font-size: 5vw;min-width: 80px;width: 80vw;vertical-align: middle;margin-top: 1vw;">确定</button>
+			</li>
+		</ul>
+	</form>
+	<script type="text/javascript">
+		$("#uploadLogo").click(function(){
+			// alert('手里的看法');
+			$("#LOGO").trigger('click');
+		});
+		$("#LOGO").change(function(){
+			var prev = document.getElementById('showLogo');
+			var f = document.getElementById('LOGO').files[0];
+			var r = new FileReader();
+			if(f){
+				r.readAsDataURL(f);
+				r.onload = function(){
+					prev.src = r.result;
+				}
+			}
+		});
+		function save(){
+			submitForm('myform','{:url("Index/System/index")}',function(res){
+				console.log(res);
+				if(res['errno']){
+					show_tips_box('保存失败！')
+				}else{
+					show_tips_box('保存成功！');
+				}
+			});
+
+		}
+	</script>
+</section>
+
+{include file="public/footer"}

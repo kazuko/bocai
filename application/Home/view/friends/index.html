@@ -1,0 +1,93 @@
+{include file="public/header"}
+<div class="friends containerbox">
+	<div class="friends module">
+		<div class="friends linebox">
+			<a href="{:url('index/Index/index')}"><span class="friends front"> < </span></a>
+			<div class="friends header">好友栏</div>
+			<div class="friends img"><img src="__PUBLIC__/Home/static/images/header.png"></div>	
+			<div style="clear:both"></div>
+		</div>
+	</div>
+	
+	<div class="friends module">
+		<div class="friends linebox">
+			<div class="friedts circle"></div>
+			<div class="friends across"> 全部好友 <span>(100/100)</span></div>
+		</div>
+		<!-- foreach循环输出好友，超过module控制下滑展示 -->
+		<div class="friends linebox">
+			<div class="friedts circle"></div>
+			<div  class="friends left">
+				张三	
+			</div>
+			<div class="friends middle">
+				勋章
+			</div>
+			<div class="friends button">
+				删除按钮
+			</div>
+			<div style="clear:both"></div>
+		</div>
+
+	</div>
+	<div class="friends module">
+		<div class="friends linexbox">
+			<div class="friedts circle"></div>
+			<div class="friends across">陌生人<span>(100/100)</span></div>
+			<div style="clear:both"></div>
+		</div>
+		<!-- foreach 循环输出添加信息 只展示一行 -->
+		<div class="friends linebox">
+			<div class="friedts circle"></div>
+			<div  class="friends left">
+				张三	
+			</div>
+			<div class="friends wants">
+			    想添加你为好友
+			</div>
+			<div class="friends button">
+				拒绝添加
+			</div>
+			<div class="friends button">
+				删除按钮
+			</div>
+			<div style="clear:both"></div>
+		</div>
+
+		<!-- foreach循环输出陌生人，超过module控制下滑展示 -->
+		<div class="friends linebox">
+			<div class="friedts circle"></div>
+			<div  class="friends left">
+				张三	
+			</div>
+			<div class="friends middle">
+				勋章
+			</div>
+			<div class="friends button">
+				删除按钮
+			</div>
+			<div style="clear:both"></div>
+		</div>
+
+	</div>
+	<div class="friends module">
+		<div class="friends linexbox">
+			<div class="friedts circle"></div>
+			<div class="friends across">系统</div>
+		</div>
+		<div class="friends linebox">
+			<div class="friedts circle"></div>
+			<div  class="friends left">
+				张三	
+			</div>
+			<div class="friends middle">
+				勋章
+			</div>
+			<div class="friends button">
+				删除按钮
+			</div>
+			<div style="clear:both"></div>
+		</div>
+	</div>
+</div>
+{include file="public/footer"}

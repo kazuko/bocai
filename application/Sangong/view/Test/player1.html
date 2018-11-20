@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>玩家1</title>
+</head>
+<body onload=connect('player1')>
+<button onclick=sanGong('jerry')>玩家一押注</button>
+<!-- <button id='demo'>hello</button> -->
+</body>
+</html>
+
+<script type="text/javascript">
+ws = new WebSocket("ws://127.0.0.1:2300");
+function sanGong(sanGong){
+		var data = '{"player":"player","id":11,'+
+		'"bet":['+
+		'{"player":"player2","status":"toDeal"},'+
+		'{"player":"player1","status":"win"}]'+
+		',"gold":10,"allGold":20,"remaining":12000}';
+		obj = JSON.parse(data);
+    	alert("玩家:"+obj.id+"开始下注");
+    	ws.send(1);
+};
+function connect(sanGong){
+	ws.onopen = function() {
+	    alert("给服务端发送一个字符串:"+sanGong);
+	    ws.send(sanGong);
+	};
+	
+	ws.onmessage = function(e) {
+	switch(e.data){
+		case 1:
+		alert("收到服务端的消息：" + e.data);
+		break;
+		default:
+	    console.log(e.data);
+	    // ws.send(e.data);
+	    break;
+	}
+};
+}
+
+</script>
+</body>
+</html>

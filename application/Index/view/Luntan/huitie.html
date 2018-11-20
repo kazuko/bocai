@@ -1,0 +1,93 @@
+{include file="public/header" /}
+<section class="admin-huitie-middle">
+	<form id="admin-huitie-middle-form" method="POST">
+		<input type="hidden" name="id" value="{$info.id}">
+		<ul>
+			<li>
+				<div style="background: #cce;">基本设置</div>
+				<div>
+					<span>回帖开关：</span>
+					<input type="radio" class="inputRadio" {if $info['huitie_open']==0}checked="checked"{/if} name="huitie_open" value="0">
+					<span>允许</span>
+					<input type="radio" class="inputRadio" {if $info['huitie_open']==1}checked="checked"{/if} name="huitie_open" value="1">
+					<span>禁止</span>
+					<input type="radio" class="inputRadio" {if $info['huitie_open']==2}checked="checked"{/if} name="huitie_open" value="2">
+					<span>限时</span>
+				</div>
+				<div class="xianshifanwei" style="{if $info['huitie_open']==2}display: block;{else/}display: none;{/if}">
+					<span style="display:block;margin-bottom: 5px;">限时范围：</span>
+					<input class="timebox" type="text" readonly="readonly" name="huitie_time_start" value="{$info.huitie_time_start|date='Y-m-d H:i'}">-<input type="text" class="timebox" readonly="readonly" name="huitie_time_end" value="{$info.huitie_time_end|date='Y-m-d H:i'}">
+				</div>
+				<div>
+					<span>楼层排序：</span>
+					<input type="radio" class="inputRadio" name="huitie_order" value="0" {if $info.huitie_order==0}checked="checked"{/if}>
+					<span>顺序</span>
+					<input type="radio" class="inputRadio" name="huitie_order" value="1" {if $info.huitie_order==1}checked="checked"{/if}>
+					<span>倒序</span>
+				</div>
+
+			</li>
+			<li>
+				<div style="background: #cce;">回帖奖励</div>
+				<div>
+					<span>奖励帖数：前</span>
+					<input type="text" name="huitie_num" class="inputBox" value="{$info.huitie_num}">
+					<span>帖</span>
+				</div>
+				<div>
+					<span>金币：</span>
+					<input type="text" name="huitie_gold" class="inputBox" value="{$info.huitie_gold}">
+					<span>积分：</span>
+					<input type="text" class="inputBox" name="huitie_sliver" value="{$info.huitie_sliver}">
+				</div>
+
+			</li>
+			<li>
+				<div style="background: #cce;">VIP回帖额外奖励</div>
+				<div>
+					<span>金币：</span>
+					<input type="text" class="inputBox" name="huitie_vip_gold" value="{$info.huitie_vip_gold}">
+					<span>积分：</span>
+					<input type="text" class="inputBox" name="huitie_vip_sliver" value="{$info.huitie_vip_sliver}">
+				</div>
+			</li>
+			<li>
+				<div style="background: #cce;">回帖限制</div>
+				<div>
+					<span>允许重复：</span>
+					<input type="radio" class="inputRadio" name="huitie_repeate" value="0" {if $info.huitie_repeate==0}checked="checked"{/if}>
+					<span>允许</span>
+					<input type="radio" class="inputRadio" name="huitie_repeate" value="1" {if $info.huitie_repeate==1}checked="checked"{/if}>
+					<span>不允许</span>
+				</div>
+				<div>
+					<span>防刷间隔：</span>
+					<input type="text" class="inputBox" name="huitie_refender_seconds" value="{$info.huitie_refender_seconds}">
+					<span>秒</span>
+				</div>
+			</li>
+			<li style="">
+				<button type="button" onclick="submitForm('admin-huitie-middle-form','{:url("Index/Luntan/huitie")}')">确定</button>
+			</li>
+		</ul>
+	</form>
+	<script type="text/javascript" src="__PUBLIC__/Index/js/event.js"></script>
+</section>
+<script type="text/javascript">
+	$('input[name="huitie_time_start"]').focus(function(e){
+		wenDate('huitie_time_start',4);
+	});
+	$('input[name="huitie_time_end"]').focus(function(e){
+		wenDate('huitie_time_end',4);
+	});
+
+	$('input[name="huitie_open"]').change(function(e){
+		if($(this).val()==2){
+			$('.xianshifanwei').show();
+		}else{
+			$('.xianshifanwei').hide();
+		}
+	});
+</script>
+
+{include file="public/footer" /}

@@ -1,0 +1,47 @@
+{include file="common/header"/}
+<div class="setting">
+	<div><a href="javascript:;" onclick="javasrcipt:history.back(-1);"><点击返回上一页</a></div>
+	<div class="linebox"><label>我的设置</label></div>
+	<div class="linebox">
+		<div class="inlinebox">
+			<a href="{:url('Home/Setting/userdata')}">修改个人资料</a>	
+		</div>
+		<div class="inlinebox">
+			<a href="{:url('Home/Setting/trading')}">交易密码</a>
+		</div>		
+	</div>
+    <div class="linebox">
+    	<div class="inlinebox">
+			好友验证设置
+		</div>	
+		<div class="inlinebox">
+			<input type="checkbox" name="verify[]" checked value="1">验证
+			<input type="checkbox" name="verify[]" value="0">不验证
+		</div>	
+    </div>
+    <div class="linebox">
+    	<div class="inlinebox">
+			陌生信息
+		</div>	
+		<div class="inlinebox">
+			<input type="checkbox" name="stmessage[]" checked value="1">接受
+			<input type="checkbox" name="stmessage[]" value="0">拒收
+		</div>	
+    </div>
+    <div class="linebox">
+    	<div class="inlinebox">
+			广播消息
+		</div>	
+		<div class="inlinebox">
+			<input type="checkbox" name="broadcast" checked value="1">接受
+			<input type="checkbox" name="nonebroadcast" value="0">拒收
+		</div>	
+    </div>
+    <button class="btn">提交</button>
+</div>
+<script type="text/javascript">
+	$(".btn").on('click',functin(){
+
+	})
+</script>
+{include file="common/footer"/}
